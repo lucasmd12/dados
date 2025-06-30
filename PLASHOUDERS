@@ -1,0 +1,34 @@
+Resultados para "// TODO:":
+
+lib/screens/call_screen.dart: // TODO: Implementar toggle speaker
+lib/screens/clan_list_screen.dart: // TODO: Implementar criação de clã (apenas ADM/Líder de Federação)
+lib/screens/federation_list_screen.dart: // TODO: Implementar criação de federação (apenas ADM)
+lib/services/federation_service.dart: // TODO: Implementar upload de arquivo multipart/form-data
+lib/services/firebase_service.dart: // TODO: Implement actual Firebase logic to listen to active voice rooms
+lib/services/firebase_service.dart: // TODO: Implement actual Firebase logic to listen to voice room participants
+lib/services/firebase_service.dart: // TODO: Implement actual Firebase logic to get voice room details
+lib/services/firebase_service.dart: // TODO: Implement actual Firebase logic to join a voice room
+Resultados para "placeholder":
+
+lib/models/member_model.dart: avatarUrl: json['avatar'] as String? ?? 'https://via.placeholder.com/150',
+lib/screens/call_screen.dart: // Vídeo remoto (placeholder por enquanto)
+lib/screens/qrr_detail_screen.dart: backgroundImage: NetworkImage(participant.avatar ?? 'https://via.placeholder.com/150'),
+lib/services/firebase_service.dart: Logger.info('Method createVoiceRoom called (placeholder)');
+lib/services/firebase_service.dart: // NOTE: This is a placeholder implementation. Adjust based on your QRRStatus enum values.
+lib/services/mission_service.dart: // For now, this assumes 'mediaUrl' is a string that the backend can process, or it's a placeholder.
+lib/widgets/cached_image_widget.dart: placeholder: (context, url) => const CircularProgressIndicator(),
+lib/widgets/user_identity_widget.dart: placeholder: (context, url) => Container(
+lib/widgets/user_identity_widget.dart: placeholder: (context, url) => Container(
+lib/widgets/user_identity_widget.dart: placeholder: (context, url) => Container(
+lib/widgets/user_identity_widget.dart: placeholder: (context, url) => Container(
+Resultados para "implement actual":
+
+lib/services/firebase_service.dart: // TODO: Implement actual Firebase logic to listen to active voice rooms
+lib/services/firebase_service.dart: // TODO: Implement actual Firebase logic to listen to voice room participants
+lib/services/firebase_service.dart: // TODO: Implement actual Firebase logic to get voice room details
+lib/services/firebase_service.dart: // TODO: Implement actual Firebase logic to join a voice room
+Esta lista mostra os lugares onde o código indica que algo precisa ser implementado ou substituído por uma lógica real, seja usando TODO, a palavra "placeholder", ou a frase "implement actual".
+
+A maioria dos placeholders e TODOs estão concentrados nos serviços do Firebase (especificamente para chamadas de voz e mensagens) e em algumas telas e modelos.
+
+Agora que temos essa lista, podemos escolher qual placeholder ou TODO você gostaria de abordar em seguida para continuar o desenvolvimento.
