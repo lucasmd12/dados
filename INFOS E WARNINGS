@@ -1,0 +1,156 @@
+Warnings:
+
+dead_null_aware_expression (O operando esquerdo não pode ser nulo, então o operando direito nunca é executado): Indica código inalcançável.
+
+lib/screens/admin_panel_screen.dart:111:36
+lib/screens/admin_panel_screen.dart:483:47
+lib/screens/call_screen.dart:68:28
+lib/screens/call_screen.dart:100:61
+lib/screens/call_screen.dart:100:110
+lib/screens/call_screen.dart:168:25
+lib/screens/call_screen.dart:180:57
+lib/screens/call_screen.dart:192:57
+lib/screens/call_screen.dart:192:72
+lib/screens/clan_text_chat_screen.dart:40:33
+lib/screens/clan_text_chat_screen.dart:67:50
+lib/screens/clan_text_chat_screen.dart:69:25
+lib/screens/clan_text_chat_screen.dart:70:32
+lib/screens/qrr_detail_screen.dart:489:83
+lib/screens/voice_rooms_screen.dart:267:44
+lib/services/auth_service.dart:192:58
+lib/widgets/voice_room_widget.dart:190:44
+lib/widgets/voice_room_widget.dart:281:44
+unnecessary_null_comparison (O operando não pode ser 'null', então a condição é sempre 'true' ou 'false'): Comparações de nulo redundantes.
+
+lib/screens/call_contacts_screen.dart:73:56 (sempre 'true')
+lib/screens/call_contacts_screen.dart:76:46 (sempre 'false')
+lib/screens/profile_screen.dart:83:54 (sempre 'true')
+lib/screens/profile_screen.dart:86:44 (sempre 'false')
+lib/screens/qrr_participants_screen.dart:133:71 (sempre 'true')
+lib/screens/qrr_participants_screen.dart:136:61 (sempre 'false')
+lib/services/chat_service.dart:48:56 (sempre 'true')
+lib/services/chat_service.dart:74:50 (sempre 'true')
+lib/widgets/user_dashboard_widget.dart:29:48 (sempre 'true')
+lib/widgets/user_dashboard_widget.dart:32:38 (sempre 'false')
+unused_field (O valor do campo não é usado): Campos de classe declarados, mas não utilizados.
+
+lib/providers/call_provider.dart:8:21 (_authService)
+lib/screens/voice_call_screen.dart:30:8 (_isConnected)
+lib/services/cache_service.dart:11:23 (_metricsSuffix)
+lib/services/firebase_service.dart:49:7 (_notificationsReceived)
+lib/services/firebase_service.dart:50:7 (_notificationsShown)
+lib/services/firebase_service.dart:51:13 (_lastNotificationTime)
+lib/services/voip_service.dart:15:21 (_onCallEnded)
+lib/services/voip_service.dart:16:21 (_onCallStarted)
+unused_local_variable (O valor da variável local não é usado): Variáveis locais declaradas, mas não utilizadas.
+
+lib/screens/clan_text_chat_screen.dart:98:13 (message)
+lib/screens/clan_text_chat_screen.dart:126:13 (message)
+lib/screens/federation_text_chat_screen.dart:87:13 (message)
+lib/screens/federation_text_chat_screen.dart:114:13 (message)
+lib/services/http_file_service.dart:30:19 (cacheControl)
+unused_shown_name (O nome X é mostrado, mas não é usado): Nomes importados com show que não são utilizados.
+
+lib/screens/call_page.dart:6:66 (Call)
+lib/screens/call_page.dart:6:84 (CallType)
+lib/screens/call_screen.dart:5:84 (CallType)
+invalid_use_of_visible_for_testing_member e invalid_use_of_protected_member (Uso inválido de membro visível para testes/protegido): Acessando membros de forma incorreta.
+
+lib/screens/global_chat_screen.dart:54:27 (notifyListeners)
+unused_element (A declaração X não é referenciada): Funções ou métodos privados que não são chamados.
+
+lib/widgets/user_dashboard_widget.dart:170:11 (_getAuthToken)
+lib/widgets/voice_room_widget.dart:151:8 (_canCreateRoom)
+lib/widgets/voice_room_widget.dart:166:8 (_canJoinRoom)
+lib/widgets/voice_room_widget.dart:331:10 (_getRoomDisplayName)
+Infos:
+
+depend_on_referenced_packages (O pacote importado X não é uma dependência do pacote importador): Importando pacotes que não estão diretamente nas dependências do pubspec.yaml.
+
+lib/monitoramento/logger_reactivation.dart:1:8 (logger)
+lib/screens/clan_text_chat_screen.dart:4:8 (flutter_chat_types)
+lib/screens/federation_text_chat_screen.dart:4:8 (flutter_chat_types)
+lib/screens/global_chat_screen.dart:4:8 (flutter_chat_types)
+lib/services/http_file_service.dart:1:8 (flutter_cache_manager)
+lib/widgets/cached_image_widget.dart:4:8 (flutter_cache_manager)
+use_build_context_synchronously (Não use 'BuildContext's através de gaps assíncronos): Potencial para usar um BuildContext que não está mais válido após uma operação assíncrona.
+
+lib/screens/admin_panel_screen.dart:450:37 (guardado por mounted)
+lib/screens/admin_panel_screen.dart:451:44 (guardado por mounted)
+lib/screens/admin_panel_screen.dart:458:44 (guardado por mounted)
+lib/screens/call_page.dart:239:28 (guardado por mounted)
+lib/screens/clan_flag_upload_screen.dart:48:28
+lib/screens/clan_flag_upload_screen.dart:93:30
+lib/screens/clan_flag_upload_screen.dart:100:23
+lib/screens/clan_flag_upload_screen.dart:105:28
+lib/screens/federation_tag_management_screen.dart:102:30
+lib/screens/federation_tag_management_screen.dart:109:23
+lib/screens/federation_tag_management_screen.dart:114:28
+lib/screens/invite_list_screen.dart:55:28
+lib/screens/invite_list_screen.dart:61:28
+lib/screens/invite_list_screen.dart:71:28
+lib/screens/invite_list_screen.dart:77:28
+lib/screens/login_screen.dart:75:52
+lib/screens/profile_picture_upload_screen.dart:44:28
+lib/screens/profile_picture_upload_screen.dart:89:30
+lib/screens/profile_picture_upload_screen.dart:96:23
+lib/screens/profile_picture_upload_screen.dart:101:28
+lib/screens/qrr_create_screen.dart:49:9
+lib/screens/qrr_edit_screen.dart:57:9
+lib/screens/tabs/members_tab.dart:122:30
+lib/screens/tabs/members_tab.dart:130:28
+lib/screens/tabs/members_tab.dart:136:28
+lib/screens/tabs/members_tab.dart:163:28
+lib/screens/tabs/members_tab.dart:169:28
+lib/screens/tabs/members_tab.dart:179:28
+lib/screens/tabs/members_tab.dart:185:28
+lib/screens/tabs/members_tab.dart:208:38
+lib/screens/tabs/members_tab.dart:214:38
+lib/screens/voice_call_screen.dart:137:21
+lib/screens/voice_call_screen.dart:139:21
+lib/screens/voice_rooms_screen.dart:274:46
+lib/screens/voice_rooms_screen.dart:348:36 (guardado por mounted)
+lib/widgets/federation_management.dart:146:48
+lib/widgets/federation_management.dart:149:46
+lib/widgets/federation_management.dart:154:46 (guardado por mounted)
+lib/widgets/member_list_item.dart:166:22
+lib/widgets/member_list_item.dart:182:30
+deprecated_member_use ('withOpacity' é depreciado): Usando membros que foram marcados como depreciados e serão removidos em futuras versões.
+
+lib/screens/call_page.dart:265:35 (withOpacity)
+lib/screens/qrr_detail_screen.dart:291:56 (withOpacity)
+lib/screens/qrr_detail_screen.dart:308:58 (withOpacity)
+lib/screens/qrr_list_screen.dart:297:47 (withOpacity)
+lib/screens/qrr_list_screen.dart:384:41 (withOpacity)
+lib/screens/splash_screen.dart:261:34 (withOpacity)
+lib/screens/splash_screen.dart:270:40 (withOpacity)
+lib/screens/splash_screen.dart:301:54 (withOpacity)
+lib/screens/splash_screen.dart:349:48 (withOpacity)
+lib/screens/splash_screen.dart:364:43 (withOpacity)
+lib/screens/splash_screen.dart:386:49 (withOpacity)
+lib/screens/splash_screen.dart:426:33 (withOpacity)
+lib/screens/tabs/chat_list_tab.dart:445:47 (withOpacity)
+lib/screens/tabs/chat_list_tab.dart:453:41 (withOpacity)
+lib/screens/tabs/home_tab.dart:78:35 (withOpacity)
+lib/screens/tabs/home_tab.dart:174:35 (withOpacity)
+lib/screens/tabs/home_tab.dart:212:22 (withOpacity)
+lib/screens/tabs/home_tab.dart:214:41 (withOpacity)
+lib/widgets/admin_notification_dialog.dart:230:41 (withOpacity)
+lib/widgets/incoming_call_overlay.dart:97:30 (withOpacity)
+lib/widgets/incoming_call_overlay.dart:98:30 (withOpacity)
+lib/widgets/incoming_call_overlay.dart:102:45 (withOpacity)
+lib/widgets/member_list_item.dart:28:35 (withOpacity)
+library_private_types_in_public_api (Uso inválido de tipo privado em uma API pública): Expondo tipos privados em APIs que são públicas.
+
+lib/screens/clan_flag_upload_screen.dart:25:3
+lib/screens/federation_tag_management_screen.dart:23:3
+lib/screens/profile_picture_upload_screen.dart:21:3
+lib/screens/voice_call_screen.dart:24:3
+lib/widgets/cached_image_widget.dart:37:3
+unrelated_type_equality_checks (O tipo do operando direito não é um subtipo ou supertipo do operando esquerdo): Comparando valores de tipos que não têm relação de herança.
+
+lib/screens/qrr_edit_screen.dart:35:83 (Comparando QRRType com String)
+lib/screens/qrr_edit_screen.dart:36:91 (Comparando QRRPriority com String)
+prefer_interpolation_to_compose_strings (Use interpolação para compor strings e valores): Sugestão para usar interpolação ($\variable) em vez de concatenação (+) para melhorar a legibilidade de strings.
+
+lib/services/cache_service.dart:147:28
