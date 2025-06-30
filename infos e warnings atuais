@@ -1,0 +1,148 @@
+info • The imported package 'logger' isn't a dependency of the importing package • lib/monitoramento/logger_reactivation.dart:1:8 • depend_on_referenced_packages
+warning • The value of the field '_authService' isn't used • lib/providers/call_provider.dart:8:21 • unused_field
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/admin_panel_screen.dart:111:36 • dead_null_aware_expression
+   info • 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre • lib/screens/admin_panel_screen.dart:436:15 • deprecated_member_use
+   info • 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre • lib/screens/admin_panel_screen.dart:437:15 • deprecated_member_use
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/screens/admin_panel_screen.dart:450:37 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/screens/admin_panel_screen.dart:451:44 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/screens/admin_panel_screen.dart:458:44 • use_build_context_synchronously
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/admin_panel_screen.dart:483:47 • dead_null_aware_expression
+warning • The operand can't be 'null', so the condition is always 'true' • lib/screens/call_contacts_screen.dart:73:56 • unnecessary_null_comparison
+warning • The operand can't be 'null', so the condition is always 'false' • lib/screens/call_contacts_screen.dart:76:46 • unnecessary_null_comparison
+warning • The name Call is shown, but isn't used • lib/screens/call_page.dart:6:66 • unused_shown_name
+warning • The name CallType is shown, but isn't used • lib/screens/call_page.dart:6:84 • unused_shown_name
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/screens/call_page.dart:239:28 • use_build_context_synchronously
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/call_page.dart:265:35 • deprecated_member_use
+warning • The name CallType is shown, but isn't used • lib/screens/call_screen.dart:5:84 • unused_shown_name
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/call_screen.dart:68:28 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/call_screen.dart:100:61 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/call_screen.dart:100:110 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/call_screen.dart:168:25 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/call_screen.dart:180:57 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/call_screen.dart:192:57 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/call_screen.dart:192:72 • dead_null_aware_expression
+   info • Invalid use of a private type in a public API • lib/screens/clan_flag_upload_screen.dart:25:3 • library_private_types_in_public_api
+   info • Don't use 'BuildContext's across async gaps • lib/screens/clan_flag_upload_screen.dart:48:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/clan_flag_upload_screen.dart:93:30 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/clan_flag_upload_screen.dart:100:23 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/clan_flag_upload_screen.dart:105:28 • use_build_context_synchronously
+   info • The imported package 'flutter_chat_types' isn't a dependency of the importing package • lib/screens/clan_text_chat_screen.dart:4:8 • depend_on_referenced_packages
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/clan_text_chat_screen.dart:40:33 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/clan_text_chat_screen.dart:67:50 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/clan_text_chat_screen.dart:69:25 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/clan_text_chat_screen.dart:70:32 • dead_null_aware_expression
+warning • The value of the local variable 'message' isn't used • lib/screens/clan_text_chat_screen.dart:98:13 • unused_local_variable
+warning • The value of the local variable 'message' isn't used • lib/screens/clan_text_chat_screen.dart:126:13 • unused_local_variable
+   info • Invalid use of a private type in a public API • lib/screens/federation_tag_management_screen.dart:23:3 • library_private_types_in_public_api
+   info • Don't use 'BuildContext's across async gaps • lib/screens/federation_tag_management_screen.dart:102:30 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/federation_tag_management_screen.dart:109:23 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/federation_tag_management_screen.dart:114:28 • use_build_context_synchronously
+   info • The imported package 'flutter_chat_types' isn't a dependency of the importing package • lib/screens/federation_text_chat_screen.dart:4:8 • depend_on_referenced_packages
+warning • The value of the local variable 'message' isn't used • lib/screens/federation_text_chat_screen.dart:87:13 • unused_local_variable
+warning • The value of the local variable 'message' isn't used • lib/screens/federation_text_chat_screen.dart:114:13 • unused_local_variable
+   info • The imported package 'flutter_chat_types' isn't a dependency of the importing package • lib/screens/global_chat_screen.dart:4:8 • depend_on_referenced_packages
+warning • The member 'notifyListeners' can only be used within 'package:flutter/src/foundation/change_notifier.dart' or a test • lib/screens/global_chat_screen.dart:54:27 • invalid_use_of_visible_for_testing_member
+warning • The member 'notifyListeners' can only be used within instance members of subclasses of 'ChangeNotifier' • lib/screens/global_chat_screen.dart:54:27 • invalid_use_of_protected_member
+   info • Don't use 'BuildContext's across async gaps • lib/screens/invite_list_screen.dart:55:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/invite_list_screen.dart:61:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/invite_list_screen.dart:71:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/invite_list_screen.dart:77:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/login_screen.dart:75:52 • use_build_context_synchronously
+   info • Invalid use of a private type in a public API • lib/screens/profile_picture_upload_screen.dart:21:3 • library_private_types_in_public_api
+   info • Don't use 'BuildContext's across async gaps • lib/screens/profile_picture_upload_screen.dart:44:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/profile_picture_upload_screen.dart:89:30 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/profile_picture_upload_screen.dart:96:23 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/profile_picture_upload_screen.dart:101:28 • use_build_context_synchronously
+warning • The operand can't be 'null', so the condition is always 'true' • lib/screens/profile_screen.dart:83:54 • unnecessary_null_comparison
+warning • The operand can't be 'null', so the condition is always 'false' • lib/screens/profile_screen.dart:86:44 • unnecessary_null_comparison
+   info • Don't use 'BuildContext's across async gaps • lib/screens/qrr_create_screen.dart:49:9 • use_build_context_synchronously
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/qrr_detail_screen.dart:291:56 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/qrr_detail_screen.dart:308:58 • deprecated_member_use
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/qrr_detail_screen.dart:489:83 • dead_null_aware_expression
+   info • The type of the right operand ('QRRType') isn't a subtype or a supertype of the left operand ('String') • lib/screens/qrr_edit_screen.dart:35:83 • unrelated_type_equality_checks
+   info • The type of the right operand ('QRRPriority') isn't a subtype or a supertype of the left operand ('String') • lib/screens/qrr_edit_screen.dart:36:91 • unrelated_type_equality_checks
+   info • Don't use 'BuildContext's across async gaps • lib/screens/qrr_edit_screen.dart:57:9 • use_build_context_synchronously
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/qrr_list_screen.dart:297:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/qrr_list_screen.dart:384:41 • deprecated_member_use
+warning • The operand can't be 'null', so the condition is always 'true' • lib/screens/qrr_participants_screen.dart:133:71 • unnecessary_null_comparison
+warning • The operand can't be 'null', so the condition is always 'false' • lib/screens/qrr_participants_screen.dart:136:61 • unnecessary_null_comparison
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:261:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:270:40 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:301:54 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:349:48 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:364:43 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:386:49 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:426:33 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/chat_list_tab.dart:445:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/chat_list_tab.dart:453:41 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:78:35 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:174:35 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:212:22 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:214:41 • deprecated_member_use
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:122:30 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:130:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:136:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:163:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:169:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:179:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:185:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:208:38 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/tabs/members_tab.dart:214:38 • use_build_context_synchronously
+   info • Invalid use of a private type in a public API • lib/screens/voice_call_screen.dart:24:3 • library_private_types_in_public_api
+warning • The value of the field '_isConnected' isn't used • lib/screens/voice_call_screen.dart:30:8 • unused_field
+   info • Don't use 'BuildContext's across async gaps • lib/screens/voice_call_screen.dart:137:21 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/screens/voice_call_screen.dart:139:21 • use_build_context_synchronously
+warning • The left operand can't be null, so the right operand is never executed • lib/screens/voice_rooms_screen.dart:267:44 • dead_null_aware_expression
+   info • Don't use 'BuildContext's across async gaps • lib/screens/voice_rooms_screen.dart:274:46 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/screens/voice_rooms_screen.dart:348:36 • use_build_context_synchronously
+warning • The left operand can't be null, so the right operand is never executed • lib/services/auth_service.dart:192:58 • dead_null_aware_expression
+warning • The value of the field '_metricsSuffix' isn't used • lib/services/cache_service.dart:11:23 • unused_field
+   info • Use interpolation to compose strings and values • lib/services/cache_service.dart:147:28 • prefer_interpolation_to_compose_strings
+warning • The operand can't be 'null', so the condition is always 'true' • lib/services/chat_service.dart:48:56 • unnecessary_null_comparison
+warning • The operand can't be 'null', so the condition is always 'true' • lib/services/chat_service.dart:74:50 • unnecessary_null_comparison
+warning • The declaration '_updateUnreadMessagesBadge' isn't referenced • lib/services/firebase_service.dart:555:16 • unused_element
+   info • The imported package 'flutter_cache_manager' isn't a dependency of the importing package • lib/services/http_file_service.dart:1:8 • depend_on_referenced_packages
+warning • The value of the local variable 'cacheControl' isn't used • lib/services/http_file_service.dart:30:19 • unused_local_variable
+warning • The value of the field '_onCallEnded' isn't used • lib/services/voip_service.dart:15:21 • unused_field
+warning • The value of the field '_onCallStarted' isn't used • lib/services/voip_service.dart:16:21 • unused_field
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/admin_notification_dialog.dart:230:41 • deprecated_member_use
+   info • The imported package 'flutter_cache_manager' isn't a dependency of the importing package • lib/widgets/cached_image_widget.dart:4:8 • depend_on_referenced_packages
+   info • Invalid use of a private type in a public API • lib/widgets/cached_image_widget.dart:37:3 • library_private_types_in_public_api
+   info • Don't use 'BuildContext's across async gaps • lib/widgets/federation_management.dart:146:48 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/widgets/federation_management.dart:149:46 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/widgets/federation_management.dart:154:46 • use_build_context_synchronously
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:97:30 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:98:30 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:102:45 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/member_list_item.dart:28:35 • deprecated_member_use
+   info • Don't use 'BuildContext's across async gaps • lib/widgets/member_list_item.dart:166:22 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/widgets/member_list_item.dart:182:30 • use_build_context_synchronously
+warning • The operand can't be 'null', so the condition is always 'true' • lib/widgets/user_dashboard_widget.dart:29:48 • unnecessary_null_comparison
+warning • The operand can't be 'null', so the condition is always 'false' • lib/widgets/user_dashboard_widget.dart:32:38 • unnecessary_null_comparison
+warning • The declaration '_getAuthToken' isn't referenced • lib/widgets/user_dashboard_widget.dart:170:11 • unused_element
+warning • The declaration '_canCreateRoom' isn't referenced • lib/widgets/voice_room_widget.dart:151:8 • unused_element
+warning • The declaration '_canJoinRoom' isn't referenced • lib/widgets/voice_room_widget.dart:166:8 • unused_element
+warning • The left operand can't be null, so the right operand is never executed • lib/widgets/voice_room_widget.dart:190:44 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/widgets/voice_room_widget.dart:281:44 • dead_null_aware_expression
+warning • The declaration '_getRoomDisplayName' isn't referenced • lib/widgets/voice_room_widget.dart:331:10 • unused_element
+\n127 issues found. (ran in 2.2s)\n", "status": "failed"}}
+Okay, compreendi. Aquela parte do texto que você copiou era a descrição do problema que estávamos enfrentando com o método `createVoiceRoom` e a lista `participants`, e as ações que eu planejava tomar para corrigi-los.
+
+Pelo último `flutter analyze` que você compartilhou, parece que a correção que eu solicitei para mover o método `createVoiceRoom` para dentro da classe `FirebaseService` e ajustar a lista `participants` **funcionou**. O erro de "método não definido" relacionado a `createVoiceRoom` na classe `FirebaseService` não aparece mais na lista de problemas.
+
+Agora, o `flutter analyze` lista apenas 127 issues, que são warnings e infos. Isso é um bom sinal! Conseguimos resolver os erros críticos.
+
+A lista atual de warnings e infos inclui coisas como:
+
+*   Pacotes importados que não estão nas dependências (`depend_on_referenced_packages`).
+*   Campos ou variáveis locais que não estão sendo usados (`unused_field`, `unused_local_variable`, `unused_element`).
+*   Uso de APIs depreciadas (`deprecated_member_use`).
+*   Chamadas assíncronas que usam `BuildContext` sem a devida verificação (`use_build_context_synchronously`).
+*   Comparações desnecessárias com `null` (`unnecessary_null_comparison`).
+*   Uso de tipos privados em APIs públicas (`library_private_types_in_public_api`).
+*   Recomendações de interpolação de strings (`prefer_interpolation_to_compose_strings`).
+*   Uso incorreto de `notifyListeners` (`invalid_use_of_visible_for_testing_member`, `invalid_use_of_protected_member`).
+*   Comparações de tipos não relacionados (`unrelated_type_equality_checks`).
+*   Expressões `null-aware` que nunca serão executadas (`dead_null_aware_expression`).
+
+
