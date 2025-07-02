@@ -1,12 +1,64 @@
-025-07-01 19:37:42.774 16657-4440  nativeloader            com.lucasbeats.federacao             D  Load /data/app/~~ZbBAFPJvWBneEGQFN83jDA==/com.lucasbeats.federacao-73IDuuMjZMIS-jXLCiwYhQ==/base.apk!/lib/arm64-v8a/libflutter.so using ns clns-6 from class loader (caller=/data/app/~~ZbBAFPJvWBneEGQFN83jDA==/com.lucasbeats.federacao-73IDuuMjZMIS-jXLCiwYhQ==/base.apk!classes23.dex): ok
-2025-07-01 19:37:42.925 16657-16657 flutter                 com.lucasbeats.federacao             I  [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(61)] Using the Impeller rendering backend (Vulkan).
-2025-07-01 19:37:43.117 16657-4477  flutter                 com.lucasbeats.federacao             I  The Dart VM service is listening on http://127.0.0.1:41483/wWb6lSRI5PU=/
-2025-07-01 19:37:44.074 16657-16657 FlutterWebRTCPlugin     com.lucasbeats.federacao             W  audioFocusChangeListener [Earpiece(name=Earpiece)] Earpiece(name=Earpiece)
-2025-07-01 19:37:44.074 16657-16657 FlutterWebRTCPlugin     com.lucasbeats.federacao             W  audioFocusChangeListener [Speakerphone(name=Speakerphone), Earpiece(name=Earpiece)] Speakerphone(name=Speakerphone)
-2025-07-01 19:37:44.197 16657-16657 flutter                 com.lucasbeats.federacao             E  [ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: Instance of 'FileNotFoundError'
-                                                                                                    #0      DotEnv._getEntriesFromFile (package:flutter_dotenv/src/dotenv.dart:172:7)
+2025-07-02 11:09:28.800 11498-27125 nativeloader            com.lucasbeats.federacao             D  Load /data/app/~~t0MOsc0IK6KecPOwHrf1zg==/com.lucasbeats.federacao-1gnMUic62ko8WTJZgpzF_Q==/base.apk!/lib/arm64-v8a/libflutter.so using ns clns-6 from class loader (caller=/data/app/~~t0MOsc0IK6KecPOwHrf1zg==/com.lucasbeats.federacao-1gnMUic62ko8WTJZgpzF_Q==/base.apk!classes23.dex): ok
+2025-07-02 11:09:28.938 11498-11498 flutter                 com.lucasbeats.federacao             I  [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(61)] Using the Impeller rendering backend (Vulkan).
+2025-07-02 11:09:29.081 11498-27149 flutter                 com.lucasbeats.federacao             I  The Dart VM service is listening on http://127.0.0.1:38001/Q5B-r5Grhms=/
+2025-07-02 11:09:29.823 11498-11498 FlutterWebRTCPlugin     com.lucasbeats.federacao             W  audioFocusChangeListener [Earpiece(name=Earpiece)] Earpiece(name=Earpiece)
+2025-07-02 11:09:29.824 11498-11498 FlutterWebRTCPlugin     com.lucasbeats.federacao             W  audioFocusChangeListener [Speakerphone(name=Speakerphone), Earpiece(name=Earpiece)] Speakerphone(name=Speakerphone)
+2025-07-02 11:09:30.094 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] App Initialization Started.
+2025-07-02 11:09:30.102 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Screen orientation set to portrait.
+2025-07-02 11:09:30.102 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Running FEDERACAOMAD App.
+2025-07-02 11:09:30.119 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Jitsi listeners configured
+2025-07-02 11:09:30.119 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] VoIP Service initialized successfully
+2025-07-02 11:09:30.119 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] VoIPService initialized in main.dart
+2025-07-02 11:09:30.269 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Building FEDERACAOMADApp Widget.
+2025-07-02 11:09:30.275 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Checking initial authentication status...
+2025-07-02 11:09:30.415 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AppLifecycleReactor initialized and observing.
+2025-07-02 11:09:30.911 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider initialized. Listening to AuthService changes.
+2025-07-02 11:09:30.912 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Status changed to Unauthenticated.
+2025-07-02 11:09:30.912 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Disconnecting SocketService...
+2025-07-02 11:09:30.913 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Disconnecting socket...
+2025-07-02 11:09:30.920 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Starting keep-alive service...
+2025-07-02 11:09:30.920 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Sending keep-alive ping...
+2025-07-02 11:09:32.182 11498-11498 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot update presence: currentUser is null when trying to update.
+2025-07-02 11:09:32.733 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] No stored token found.
+2025-07-02 11:09:32.735 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-02 11:09:32.993 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Server keep-alive ping successful.
+2025-07-02 11:09:32.993 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Keep-alive ping successful
+2025-07-02 11:09:34.597 11498-11498 InputMethodManager      com.lucasbeats.federacao             D  showSoftInput() view=io.flutter.embedding.android.FlutterView{e776033 VFE...... .F....ID 0,0-1220,2570 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+2025-07-02 11:09:34.689 11498-11498 InputMethodManager      com.lucasbeats.federacao             D  showSoftInput() view=io.flutter.embedding.android.FlutterView{e776033 VFE...... .F...... 0,0-1220,2570 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+2025-07-02 11:09:39.914 11498-11498 InputMethodManager      com.lucasbeats.federacao             D  showSoftInput() view=io.flutter.embedding.android.FlutterView{e776033 VFE...... .F...... 0,0-1220,2570 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+2025-07-02 11:09:45.436 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Checking if server is awake...
+2025-07-02 11:09:45.436 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Ensuring server is awake...
+2025-07-02 11:09:46.300 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Server keep-alive ping successful.
+2025-07-02 11:09:46.300 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Server is awake and responsive
+2025-07-02 11:09:46.301 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Attempting login for: idcloned
+2025-07-02 11:09:46.302 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-02 11:09:46.304 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] API POST Request: https://beckend-ydd1.onrender.com/api/auth/login, Data: {"username":"idcloned","password":"30092010"}
+2025-07-02 11:09:47.606 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"_id":"6840fa81d3e355548749dfc6","username":"idcloned","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDBmYTgxZDNlMzU1NTQ4NzQ5ZGZjNiIsImlhdCI6MTc1MTQ2NTM4NywiZXhwIjoxNzU0MDU3Mzg3fQ.c2NrQZmNs6Miw0QOxMNALOTBb81J0jd-8qdVFmL8cgU","role":"ADM","clan":"68540ddfd07d9cedc81e86f6","federation":null}
+2025-07-02 11:09:47.618 11498-11498 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Login error: NoSuchMethodError: Class '_Map<String, dynamic>' has no instance getter 'body'.
+                                                                                                    Receiver: _Map len:6
+                                                                                                    Tried calling: body
+2025-07-02 11:09:47.649 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-02 11:09:52.223 11498-11498 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-02 11:09:52.224 11498-11498 flutter                 com.lucasbeats.federacao             I    Error: Unable to load asset: "assets/images_png/app_icon_login_splash.jpg".
+                                                                                                    Exception: Asset not found
+2025-07-02 11:09:52.224 11498-11498 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      PlatformAssetBundle.loadBuffer (package:flutter/src/services/asset_bundle.dart:374:7)
                                                                                                     <asynchronous suspension>
-                                                                                                    #1      DotEnv.load (package:flutter_dotenv/src/dotenv.dart:124:23)
+                                                                                                    #1      AssetBundleImageProvider._loadAsync (package:flutter/src/painting/image_provider.dart:787:16)
                                                                                                     <asynchronous suspension>
-                                                                                                    #2      main (package:lucasbeatsfederacao/main.dart:60:3)
+                                                                                                    #2      MultiFrameImageStreamCompleter._handleCodecReady (package:flutter/src/painting/image_stream.dart:1027:3)
                                                                                                     <asynchronous suspension>
+2025-07-02 11:09:53.812 11498-11498 InputMethodManager      com.lucasbeats.federacao             D  showSoftInput() view=io.flutter.embedding.android.FlutterView{e776033 VFE...... .F...... 0,0-1220,2570 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+2025-07-02 11:09:57.540 11498-11498 InputMethodManager      com.lucasbeats.federacao             D  showSoftInput() view=io.flutter.embedding.android.FlutterView{e776033 VFE...... .F...... 0,0-1220,2570 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+2025-07-02 11:10:01.813 11498-11498 InputMethodManager      com.lucasbeats.federacao             D  showSoftInput() view=io.flutter.embedding.android.FlutterView{e776033 VFE...... .F...... 0,0-1220,2570 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+2025-07-02 11:10:06.817 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Attempting registration for username: cadass
+2025-07-02 11:10:06.818 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-02 11:10:06.818 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] API POST Request: https://beckend-ydd1.onrender.com/api/auth/register, Data: {"username":"cadass","password":"202000"}
+2025-07-02 11:10:08.004 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 201, Body: {"_id":"68653dbff610123b22d69609","username":"cadass","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjUzZGJmZjYxMDEyM2IyMmQ2OTYwOSIsImlhdCI6MTc1MTQ2NTQwNywiZXhwIjoxNzU0MDU3NDA3fQ.KWL0wD2AWi9P7pvCDvka8v-UTMnREqs0u58eQpCp_C8"}
+2025-07-02 11:10:08.005 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] Registration request successful for user: cadass. Attempting to log in automatically...
+2025-07-02 11:10:08.005 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] API POST Request: https://beckend-ydd1.onrender.com/api/auth/login, Data: {"username":"cadass","password":"202000"}
+2025-07-02 11:10:09.431 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"_id":"68653dbff610123b22d69609","username":"cadass","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjUzZGJmZjYxMDEyM2IyMmQ2OTYwOSIsImlhdCI6MTc1MTQ2NTQwOSwiZXhwIjoxNzU0MDU3NDA5fQ.bnWqPtCDV_qBSd_gOSEZel0GfuwumnaAvMIssTbtzLo","role":"user","clan":null,"federation":null}
+2025-07-02 11:10:09.432 11498-11498 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Login error: NoSuchMethodError: Class '_Map<String, dynamic>' has no instance getter 'body'.
+                                                                                                    Receiver: _Map len:6
+                                                                                                    Tried calling: body
+2025-07-02 11:10:09.453 11498-11498 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-02 11:10:13.933 11498-11498 flutter                 com.lucasbeats.federacao             E  [ERROR:flutter/lib/ui/window/platform_configuration.cc(428)] Reported frame time is older than the last one; clamping. 7805681295 < 7805681414 ~= 119
