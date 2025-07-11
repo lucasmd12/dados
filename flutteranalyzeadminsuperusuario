@@ -1,0 +1,99 @@
+error • There's no constant named 'adm' in 'Role' • lib/screens/admin_manage_clans_screen.dart:60:36 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/admin_manage_clans_screen.dart:65:36 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/admin_manage_clans_screen.dart:173:53 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/admin_manage_clans_screen.dart:292:52 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/admin_manage_clans_screen.dart:365:54 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/admin_manage_clans_screen.dart:435:40 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/admin_manage_clans_screen.dart:451:60 • undefined_enum_constant
+error • The property 'username' can't be unconditionally accessed because the receiver can be 'null' • lib/screens/admin_panel_screen.dart:1148:90 • unchecked_use_of_nullable_value
+error • The argument type 'String' can't be assigned to the parameter type 'Map<String, dynamic>'. • lib/screens/admin_panel_screen.dart:1178:19 • argument_type_not_assignable
+error • Too many positional arguments: 1 expected, but 3 found • lib/screens/admin_panel_screen.dart:1179:19 • extra_positional_arguments
+error • Conditions must have a static type of 'bool' • lib/screens/admin_panel_screen.dart:1182:21 • non_bool_condition
+error • Undefined name 'ClanRole' • lib/screens/admin_panel_screen.dart:1371:56 • undefined_identifier
+error • Undefined name 'ClanRole' • lib/screens/admin_panel_screen.dart:1376:56 • undefined_identifier
+error • The property 'username' can't be unconditionally accessed because the receiver can be 'null' • lib/screens/admin_panel_screen.dart:1547:90 • unchecked_use_of_nullable_value
+error • The argument type 'String' can't be assigned to the parameter type 'Map<String, dynamic>'. • lib/screens/admin_panel_screen.dart:1577:19 • argument_type_not_assignable
+error • Too many positional arguments: 1 expected, but 3 found • lib/screens/admin_panel_screen.dart:1578:19 • extra_positional_arguments
+error • Conditions must have a static type of 'bool' • lib/screens/admin_panel_screen.dart:1581:21 • non_bool_condition
+error • Undefined name 'FederationRole' • lib/screens/admin_panel_screen.dart:1794:62 • undefined_identifier
+error • Undefined name 'FederationRole' • lib/screens/admin_panel_screen.dart:1799:62 • undefined_identifier
+error • There's no constant named 'adm' in 'Role' • lib/screens/clan_list_screen.dart:32:59 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/clan_list_screen.dart:125:81 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/screens/clan_list_screen.dart:125:113 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/screens/clan_management_screen.dart:40:79 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/clan_management_screen.dart:40:124 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/federation_detail_screen.dart:48:38 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/federation_list_screen.dart:137:50 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/qrr_create_screen.dart:59:44 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/screens/qrr_create_screen.dart:59:69 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/qrr_detail_screen.dart:179:32 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/screens/qrr_detail_screen.dart:182:32 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/qrr_list_screen.dart:109:52 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/qrr_list_screen.dart:260:47 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/qrr_list_screen.dart:262:61 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/qrr_participants_screen.dart:93:32 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/screens/qrr_participants_screen.dart:96:32 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/screens/tabs/members_tab.dart:318:156 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/tabs/members_tab.dart:318:201 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/screens/voice_rooms_screen.dart:143:32 • undefined_enum_constant
+error • The getter 'displayName' isn't defined for the type 'Role' • lib/services/auth_service.dart:191:42 • undefined_getter
+error • The getter 'displayName' isn't defined for the type 'Role' • lib/services/auth_service.dart:198:54 • undefined_getter
+error • There's no constant named 'adm' in 'Role' • lib/services/clan_service.dart:141:63 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/clan_service.dart:240:60 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/clan_service.dart:276:63 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:11:66 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:14:72 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:20:34 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:31:84 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:34:102 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:40:34 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:51:84 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:54:102 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:66:27 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:75:27 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:86:31 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:92:25 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:92:54 • undefined_enum_constant
+error • There's no constant named 'adminReivindicado' in 'Role' • lib/services/permission_service.dart:95:26 • undefined_enum_constant
+error • There's no constant named 'descolado' in 'Role' • lib/services/permission_service.dart:95:63 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:95:99 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:103:30 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:109:29 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:118:30 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:125:30 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:131:30 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:137:27 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:145:29 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:156:30 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:162:27 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:173:34 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:182:27 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:213:50 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:221:56 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/services/permission_service.dart:278:27 • undefined_enum_constant
+error • There's no constant named 'adminReivindicado' in 'Role' • lib/services/permission_service.dart:297:28 • undefined_enum_constant
+error • There's no constant named 'descolado' in 'Role' • lib/services/permission_service.dart:304:28 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/services/role_service.dart:61:45 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/services/role_service.dart:81:43 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/member_list_item.dart:239:17 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/widgets/member_list_item.dart:249:17 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/member_list_item.dart:260:17 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/widgets/member_list_item.dart:270:17 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/widgets/permission_widget.dart:152:21 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/widgets/permission_widget.dart:186:17 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/widgets/quick_actions_widget.dart:48:17 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/quick_actions_widget.dart:49:17 • undefined_enum_constant
+error • There's no constant named 'adminReivindicado' in 'Role' • lib/widgets/quick_actions_widget.dart:51:17 • undefined_enum_constant
+error • There's no constant named 'descolado' in 'Role' • lib/widgets/quick_actions_widget.dart:53:17 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/user_dashboard_widget.dart:199:17 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/widgets/user_dashboard_widget.dart:209:17 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/user_dashboard_widget.dart:220:17 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/widgets/user_dashboard_widget.dart:230:17 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/user_promotion_dialog.dart:85:29 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/user_promotion_dialog.dart:161:17 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/user_promotion_dialog.dart:174:17 • undefined_enum_constant
+error • There's no constant named 'adm' in 'Role' • lib/widgets/voice_room_widget.dart:154:66 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/voice_room_widget.dart:156:66 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/voice_room_widget.dart:160:34 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/voice_room_widget.dart:172:34 • undefined_enum_constant
+error • There's no constant named 'federationAdmin' in 'Role' • lib/widgets/voice_room_widget.dart:177:34 • undefined_enum_constant
