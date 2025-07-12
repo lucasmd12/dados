@@ -1,0 +1,8249 @@
+Errors
+Hide
+ 
+Resolver error at paths./api/clan-chat/{clanId}/message.post.responses.200.content.application/json.schema.properties.chatMessage.$ref
+Could not resolve reference: Could not resolve pointer: /components/schemas/ClanChatMessage does not exist in document
+Resolver error at paths./api/clan-chat/{clanId}/messages.get.responses.200.content.application/json.schema.properties.messages.items.$ref
+Could not resolve reference: Could not resolve pointer: /components/schemas/ClanChatMessage does not exist in document
+Resolver error at paths./api/federation-chat/{federationId}/message.post.responses.200.content.application/json.schema.properties.chatMessage.$ref
+Could not resolve reference: Could not resolve pointer: /components/schemas/FederationChatMessage does not exist in document
+Resolver error at paths./api/federation-chat/{federationId}/messages.get.responses.200.content.application/json.schema.properties.messages.items.$ref
+Could not resolve reference: Could not resolve pointer: /components/schemas/FederationChatMessage does not exist in document
+ 
+FederacaoMad API
+ 1.0.0 
+OAS 3.0
+Documentação automática da API usando Swagger
+
+
+Authorize
+Admin
+Rotas de administração do sistema
+
+
+
+GET
+/api/admin/users
+Listar todos os usuários
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de usuários
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "users": [
+    {
+      "_id": "665af18a2f4b9a001ea73b9a",
+      "username": "idcloned",
+      "role": "ADM"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas administradores.
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+PUT
+/api/admin/users/{userId}/role
+Alterar papel (role) de um usuário
+
+
+Parameters
+Try it out
+Name	Description
+userId *
+string
+(path)
+ID do usuário a ser alterado
+
+userId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "role": "ADM"
+}
+Responses
+Code	Description	Links
+200	
+Papel alterado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "msg": "string",
+  "user": {
+    "_id": "665af18a2f4b9a001ea73b9a",
+    "username": "idcloned",
+    "role": "ADM"
+  }
+}
+No links
+400	
+Requisição inválida (ex: papel inválido, tentar alterar o próprio papel)
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas administradores.
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/admin/users/{userId}/reset-password
+Resetar senha de um usuário
+
+
+Parameters
+Try it out
+Name	Description
+userId *
+string
+(path)
+ID do usuário para resetar a senha
+
+userId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "newPassword": "string"
+}
+Responses
+Code	Description	Links
+200	
+Senha resetada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "msg": "string",
+  "resetAt": "2025-07-12T22:17:41.062Z",
+  "resetBy": "string"
+}
+No links
+400	
+Requisição inválida (ex: senha fraca, tentar resetar a própria senha)
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas administradores.
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/admin/users/{userId}/suspend
+Suspender um usuário
+
+
+Parameters
+Try it out
+Name	Description
+userId *
+string
+(path)
+ID do usuário a ser suspenso
+
+userId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "reason": "string",
+  "duration": 0
+}
+Responses
+Code	Description	Links
+200	
+Usuário suspenso com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "msg": "string",
+  "user": {
+    "_id": "665af18a2f4b9a001ea73b9a",
+    "username": "idcloned",
+    "role": "ADM"
+  }
+}
+No links
+400	
+Requisição inválida (ex: tentar suspender a si mesmo)
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas administradores.
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+Autenticação
+Gerenciamento de usuários e autenticação
+
+
+
+POST
+/api/auth/register
+Registrar um novo usuário
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "username": "string",
+  "password": "string"
+}
+Responses
+Code	Description	Links
+200	
+Usuário registrado com sucesso e token retornado
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "token": "string"
+}
+No links
+400	
+Erro de validação ou usuário já existe
+
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "errors": [
+    {
+      "msg": "string"
+    }
+  ]
+}
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/auth/login
+Autenticar usuário e obter token
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "username": "string",
+  "password": "string"
+}
+Responses
+Code	Description	Links
+200	
+Autenticação bem-sucedida e token retornado
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "token": "string"
+}
+No links
+400	
+Credenciais inválidas
+
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "errors": [
+    {
+      "msg": "string"
+    }
+  ]
+}
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/auth/profile
+Obter perfil do usuário autenticado
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Perfil do usuário retornado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "_id": "string",
+  "username": "string",
+  "avatar": "string",
+  "clan": "string",
+  "clanRole": "string",
+  "federationRole": "string"
+}
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+500	
+Erro no servidor
+
+No links
+Canais
+Gerenciamento de canais de comunicação
+
+
+
+POST
+/api/channels
+Criar um novo canal
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string",
+  "channelType": "global",
+  "entityId": "string",
+  "mediaType": "voice",
+  "type": "public",
+  "voiceSettings": {}
+}
+Responses
+Code	Description	Links
+201	
+Canal criado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "_id": "string",
+  "name": "string",
+  "createdAt": "2025-07-12T22:17:41.102Z",
+  "success": true,
+  "message": "string",
+  "channel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Canal Geral",
+    "description": "Canal de comunicação geral",
+    "owner": "60d5ec49f8c7b7001c8e4d1b",
+    "channelType": "global",
+    "mediaType": "text",
+    "type": "public",
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro de validação ou canal já existe
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Não autorizado a criar o canal
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/channels
+Obter canais por tipo e entidade
+
+
+Parameters
+Try it out
+Name	Description
+channelType
+string
+(query)
+Tipo do canal para filtrar
+
+Available values : global, federation, clan
+
+
+--
+entityId
+string
+(query)
+ID da federação ou clã para filtrar (obrigatório para channelType federation ou clan)
+
+entityId
+mediaType
+string
+(query)
+Tipo de mídia do canal para filtrar
+
+Available values : voice, text
+
+
+--
+Responses
+Code	Description	Links
+200	
+Lista de canais retornada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "channels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Canal Geral",
+      "description": "Canal de comunicação geral",
+      "owner": "60d5ec49f8c7b7001c8e4d1b",
+      "channelType": "global",
+      "mediaType": "text",
+      "type": "public",
+      "members": [
+        "60d5ec49f8c7b7001c8e4d1b",
+        "60d5ec49f8c7b7001c8e4d1c"
+      ],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/channels/{id}
+Obter detalhes de um canal por ID
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal
+
+id
+Responses
+Code	Description	Links
+200	
+Detalhes do canal retornados com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "_id": "string",
+  "name": "string",
+  "success": true,
+  "channel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Canal Geral",
+    "description": "Canal de comunicação geral",
+    "owner": "60d5ec49f8c7b7001c8e4d1b",
+    "channelType": "global",
+    "mediaType": "text",
+    "type": "public",
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Canal não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/channels/{id}
+Atualizar um canal
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal a ser atualizado
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string",
+  "voiceSettings": {},
+  "type": "public"
+}
+Responses
+Code	Description	Links
+200	
+Canal atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "msg": "string",
+  "channel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Canal Geral",
+    "description": "Canal de comunicação geral",
+    "owner": "60d5ec49f8c7b7001c8e4d1b",
+    "channelType": "global",
+    "mediaType": "text",
+    "type": "public",
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro de validação ou nome do canal já em uso
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar este canal
+
+No links
+404	
+Canal não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+DELETE
+/api/channels/{id}
+Deletar um canal
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal a ser deletado
+
+id
+Responses
+Code	Description	Links
+200	
+Canal e mensagens associadas deletados com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "msg": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para deletar este canal
+
+No links
+404	
+Canal não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/channels/{id}/join
+Entrar em um canal
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal
+
+id
+Responses
+Code	Description	Links
+200	
+Entrou no canal com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "msg": "string",
+  "members": [
+    "string"
+  ]
+}
+No links
+400	
+Já é membro do canal
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Canal não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/channels/{id}/leave
+Sair de um canal
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal
+
+id
+Responses
+Code	Description	Links
+200	
+Saiu do canal com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "msg": "string",
+  "members": [
+    "string"
+  ]
+}
+No links
+400	
+Não é membro do canal
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Canal não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/channels/{id}/messages
+Obter mensagens de um canal
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal
+
+id
+Responses
+Code	Description	Links
+200	
+Lista de mensagens do canal
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "messages": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1d",
+      "channel": "60d5ec49f8c7b7001c8e4d1a",
+      "sender": "60d5ec49f8c7b7001c8e4d1b",
+      "text": "Olá a todos!",
+      "timestamp": "2023-10-27T10:05:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não é membro do canal
+
+No links
+404	
+Canal não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/channels/allchannels
+Obter todos os canais (sem filtros)
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de todos os canais retornada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "channels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Canal Geral",
+      "description": "Canal de comunicação geral",
+      "owner": "60d5ec49f8c7b7001c8e4d1b",
+      "channelType": "global",
+      "mediaType": "text",
+      "type": "public",
+      "members": [
+        "60d5ec49f8c7b7001c8e4d1b",
+        "60d5ec49f8c7b7001c8e4d1c"
+      ],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro no servidor
+
+No links
+Missões do Clã
+Gerenciamento de missões QRR para clãs
+
+
+
+POST
+/api/clan-missions/{id}/confirm
+Confirmar presença em uma missão
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da missão
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "userId": "string"
+}
+Responses
+Code	Description	Links
+200	
+Presença confirmada com sucesso
+
+No links
+400	
+Usuário já confirmou presença ou dados inválidos
+
+No links
+404	
+Missão não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/clan-missions/{id}/strategy
+Adicionar estratégia (upload de imagem) para uma missão
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da missão
+
+id
+Request body
+
+multipart/form-data
+strategyImage
+string($binary)
+Imagem da estratégia
+
+Responses
+Code	Description	Links
+200	
+Estratégia adicionada com sucesso
+
+No links
+400	
+Nenhum arquivo enviado ou tipo de arquivo inválido
+
+No links
+404	
+Missão não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+Clãs
+Gerenciamento de clãs e suas operações
+
+
+
+GET
+/api/clans
+Obter todos os clãs
+
+
+Parameters
+Try it out
+Name	Description
+page
+integer
+(query)
+Número da página para paginação
+
+Default value : 1
+
+1
+limit
+integer
+(query)
+Limite de itens por página
+
+Default value : 10
+
+10
+federationId
+string
+(query)
+ID da federação para filtrar clãs
+
+federationId
+Responses
+Code	Description	Links
+200	
+Lista de todos os clãs
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "clans": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Clã dos Guerreiros",
+      "tag": "GWR",
+      "description": "Um clã de guerreiros destemidos.",
+      "leader": "60d5ec49f8c7b7001c8e4d1b",
+      "subLeaders": [
+        "60d5ec49f8c7b7001c8e4d1c"
+      ],
+      "members": [
+        "60d5ec49f8c7b7001c8e4d1b",
+        "60d5ec49f8c7b7001c8e4d1c",
+        "60d5ec49f8c7b7001c8e4d1d"
+      ],
+      "federation": "60d5ec49f8c7b7001c8e4d1e",
+      "banner": "https://example.com/banner_guerreiros.png",
+      "allies": [
+        "60d5ec49f8c7b7001c8e4d1f"
+      ],
+      "enemies": [
+        "60d5ec49f8c7b7001c8e4d20"
+      ],
+      "customRoles": [
+        {
+          "name": "Recrutador",
+          "permissions": [
+            "invite_member"
+          ]
+        }
+      ],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ],
+  "count": 0,
+  "total": 0,
+  "page": 0,
+  "pages": 0,
+  "data": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Clã dos Guerreiros",
+      "tag": "GWR",
+      "description": "Um clã de guerreiros destemidos.",
+      "leader": "60d5ec49f8c7b7001c8e4d1b",
+      "subLeaders": [
+        "60d5ec49f8c7b7001c8e4d1c"
+      ],
+      "members": [
+        "60d5ec49f8c7b7001c8e4d1b",
+        "60d5ec49f8c7b7001c8e4d1c",
+        "60d5ec49f8c7b7001c8e4d1d"
+      ],
+      "federation": "60d5ec49f8c7b7001c8e4d1e",
+      "banner": "https://example.com/banner_guerreiros.png",
+      "allies": [
+        "60d5ec49f8c7b7001c8e4d1f"
+      ],
+      "enemies": [
+        "60d5ec49f8c7b7001c8e4d20"
+      ],
+      "customRoles": [
+        {
+          "name": "Recrutador",
+          "permissions": [
+            "invite_member"
+          ]
+        }
+      ],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ],
+  "cached": true,
+  "cacheKey": "string"
+}
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/clans
+Criar um novo clã
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "tag": "string",
+  "description": "string"
+}
+Responses
+Code	Description	Links
+201	
+Clã criado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  },
+  "message": "string",
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro de validação (ex: nome ou tag ausente, tag já em uso, usuário já pertence a um clã)
+
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/clans/{id}
+Obter um clã específico por ID
+
+
+
+PUT
+/api/clans/{id}
+Atualizar informações de um clã (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã a ser atualizado
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "tag": "string",
+  "description": "string",
+  "rules": "string"
+}
+Responses
+Code	Description	Links
+200	
+Clã atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  },
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar este clã
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+DELETE
+/api/clans/{id}
+Deletar um clã (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã a ser deletado
+
+id
+Responses
+Code	Description	Links
+200	
+Clã deletado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para deletar este clã
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/banner
+Atualizar a bandeira (banner) de um clã
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+Request body
+
+multipart/form-data
+banner
+string($binary)
+Arquivo de imagem para o banner (max 5MB)
+
+Responses
+Code	Description	Links
+200	
+Banner do clã atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "bannerUrl": "string",
+  "banner": "string"
+}
+No links
+400	
+Requisição inválida (ex: nenhum arquivo, arquivo não é imagem, tamanho excedido)
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar o banner deste clã
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/join
+Entrar em um clã
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+Responses
+Code	Description	Links
+200	
+Entrou no clã com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Usuário já é membro do clã ou clã cheio
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/leave
+Sair de um clã
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+Responses
+Code	Description	Links
+200	
+Saiu do clã com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Usuário não é membro do clã ou é o líder do clã
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/promote/{userId}
+Promover um membro a sub-líder (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+userId *
+string
+(path)
+ID do usuário a ser promovido
+
+userId
+Responses
+Code	Description	Links
+200	
+Membro promovido a sub-líder com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Usuário já é líder ou sub-líder, ou não é membro do clã
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para promover membros neste clã
+
+No links
+404	
+Clã ou usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/demote/{userId}
+Rebaixar um sub-líder a membro comum (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+userId *
+string
+(path)
+ID do usuário a ser rebaixado
+
+userId
+Responses
+Code	Description	Links
+200	
+Sub-líder rebaixado a membro comum com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Usuário não é sub-líder
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para rebaixar membros neste clã
+
+No links
+404	
+Clã ou usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/transfer/{userId}
+Transferir liderança do clã (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+userId *
+string
+(path)
+ID do usuário para quem a liderança será transferida
+
+userId
+Responses
+Code	Description	Links
+200	
+Liderança do clã transferida com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Novo líder não é membro do clã
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para transferir liderança deste clã
+
+No links
+404	
+Clã ou usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/kick/{userId}
+Expulsar um membro do clã (Líder ou Sub-líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+userId *
+string
+(path)
+ID do usuário a ser expulso
+
+userId
+Responses
+Code	Description	Links
+200	
+Membro expulso do clã com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Não é possível expulsar o líder do clã, ou usuário não é membro do clã
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para expulsar membros deste clã
+
+No links
+404	
+Clã ou usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/ally/{allyId}
+Adicionar um clã como aliado (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+allyId *
+string
+(path)
+ID do clã aliado a ser adicionado
+
+allyId
+Responses
+Code	Description	Links
+200	
+Clã aliado adicionado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Clã aliado não encontrado ou já é aliado
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para adicionar aliados a este clã
+
+No links
+404	
+Clã ou clã aliado não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/remove-ally/{allyId}
+Remover um clã como aliado (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+allyId *
+string
+(path)
+ID do clã aliado a ser removido
+
+allyId
+Responses
+Code	Description	Links
+200	
+Clã aliado removido com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Clã aliado não é aliado
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para remover aliados deste clã
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/enemy/{enemyId}
+Adicionar um clã como inimigo (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+enemyId *
+string
+(path)
+ID do clã inimigo a ser adicionado
+
+enemyId
+Responses
+Code	Description	Links
+200	
+Clã inimigo adicionado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Clã inimigo não encontrado ou já é inimigo
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para adicionar inimigos a este clã
+
+No links
+404	
+Clã ou clã inimigo não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/remove-enemy/{enemyId}
+Remover um clã como inimigo (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+enemyId *
+string
+(path)
+ID do clã inimigo a ser removido
+
+enemyId
+Responses
+Code	Description	Links
+200	
+Clã inimigo removido com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Clã inimigo não é inimigo
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para remover inimigos deste clã
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/clans/federation/{federationId}
+Obter clãs por ID de federação
+
+
+Parameters
+Try it out
+Name	Description
+federationId *
+string
+(path)
+ID da federação
+
+federationId
+Responses
+Code	Description	Links
+200	
+Lista de clãs da federação
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "clans": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Clã dos Guerreiros",
+      "tag": "GWR",
+      "description": "Um clã de guerreiros destemidos.",
+      "leader": "60d5ec49f8c7b7001c8e4d1b",
+      "subLeaders": [
+        "60d5ec49f8c7b7001c8e4d1c"
+      ],
+      "members": [
+        "60d5ec49f8c7b7001c8e4d1b",
+        "60d5ec49f8c7b7001c8e4d1c",
+        "60d5ec49f8c7b7001c8e4d1d"
+      ],
+      "federation": "60d5ec49f8c7b7001c8e4d1e",
+      "banner": "https://example.com/banner_guerreiros.png",
+      "allies": [
+        "60d5ec49f8c7b7001c8e4d1f"
+      ],
+      "enemies": [
+        "60d5ec49f8c7b7001c8e4d20"
+      ],
+      "customRoles": [
+        {
+          "name": "Recrutador",
+          "permissions": [
+            "invite_member"
+          ]
+        }
+      ],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/clans/{id}/roles
+Adicionar um cargo personalizado a um clã (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "permissions": [
+    "string"
+  ]
+}
+Responses
+Code	Description	Links
+200	
+Cargo personalizado adicionado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para adicionar cargos neste clã
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/roles/{roleName}
+Atualizar um cargo personalizado em um clã (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+roleName *
+string
+(path)
+Nome do cargo a ser atualizado
+
+roleName
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "permissions": [
+    "string"
+  ]
+}
+Responses
+Code	Description	Links
+200	
+Cargo personalizado atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar cargos neste clã
+
+No links
+404	
+Clã ou cargo não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+DELETE
+/api/clans/{id}/roles/{roleName}
+Deletar um cargo personalizado de um clã (Líder do Clã ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+roleName *
+string
+(path)
+Nome do cargo a ser deletado
+
+roleName
+Responses
+Code	Description	Links
+200	
+Cargo personalizado deletado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "clan": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Clã dos Guerreiros",
+    "tag": "GWR",
+    "description": "Um clã de guerreiros destemidos.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "members": [
+      "60d5ec49f8c7b7001c8e4d1b",
+      "60d5ec49f8c7b7001c8e4d1c",
+      "60d5ec49f8c7b7001c8e4d1d"
+    ],
+    "federation": "60d5ec49f8c7b7001c8e4d1e",
+    "banner": "https://example.com/banner_guerreiros.png",
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "customRoles": [
+      {
+        "name": "Recrutador",
+        "permissions": [
+          "invite_member"
+        ]
+      }
+    ],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para deletar cargos neste clã
+
+No links
+404	
+Clã ou cargo não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/clans/{id}/members/{userId}/assign-role
+Atribuir um cargo personalizado a um membro (Líder do Clã ou ADM)
+
+
+
+PUT
+/api/clans/{id}/members/{userId}/remove-role
+Remover um cargo personalizado de um membro (Líder do Clã ou ADM)
+
+
+Federações
+Gerenciamento de federações e suas operações
+
+
+
+GET
+/api/federations
+Obter todas as federações
+
+
+
+POST
+/api/federations
+Criar uma nova federação (apenas ADM)
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string"
+}
+Responses
+Code	Description	Links
+201	
+Federação criada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  },
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro de validação ou federação já existe
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado, permissão de ADM necessária
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/federations/{id}
+Obter detalhes de uma federação por ID
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+Responses
+Code	Description	Links
+200	
+Detalhes da federação
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  },
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  },
+  "cached": true,
+  "cacheKey": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}
+Atualizar detalhes de uma federação (líder ou ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação a ser atualizada
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string",
+  "rules": "string"
+}
+Responses
+Code	Description	Links
+200	
+Federação atualizada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  },
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar esta federação
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+DELETE
+/api/federations/{id}
+Deletar uma federação
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação a ser deletada
+
+id
+Responses
+Code	Description	Links
+200	
+Federação deletada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para deletar esta federação
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/leader
+Transferir liderança de uma federação
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "newLeaderId": "string"
+}
+Responses
+Code	Description	Links
+200	
+Liderança transferida com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro de validação
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para transferir liderança
+
+No links
+404	
+Federação ou novo líder não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/banner
+Atualizar o banner de uma federação
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+Request body
+
+multipart/form-data
+banner
+string($binary)
+Arquivo de imagem para o banner (max 5MB)
+
+Responses
+Code	Description	Links
+200	
+Banner da federação atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "bannerUrl": "string"
+}
+No links
+400	
+Requisição inválida (ex: nenhum arquivo, arquivo não é imagem, tamanho excedido)
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar o banner desta federação
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/add-clan/{clanId}
+Adicionar um clã a uma federação
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+clanId *
+string
+(path)
+ID do clã a ser adicionado
+
+clanId
+Responses
+Code	Description	Links
+200	
+Clã adicionado à federação com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para adicionar clãs a esta federação
+
+No links
+404	
+Federação ou clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/remove-clan/{clanId}
+Remover um clã de uma federação
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+clanId *
+string
+(path)
+ID do clã a ser removido
+
+clanId
+Responses
+Code	Description	Links
+200	
+Clã removido da federação com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para remover clãs desta federação
+
+No links
+404	
+Federação ou clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/promote-subleader/{userId}
+Promover um usuário a sub-líder da federação
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+userId *
+string
+(path)
+ID do usuário a ser promovido
+
+userId
+Responses
+Code	Description	Links
+200	
+Usuário promovido a sub-líder com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para promover sub-líderes nesta federação
+
+No links
+404	
+Federação ou usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/demote-subleader/{userId}
+Rebaixar um sub-líder da federação
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+userId *
+string
+(path)
+ID do usuário a ser rebaixado
+
+userId
+Responses
+Code	Description	Links
+200	
+Usuário rebaixado de sub-líder com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para rebaixar sub-líderes nesta federação
+
+No links
+404	
+Federação ou usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/add-ally/{allyId}
+Adicionar uma federação aliada
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+allyId *
+string
+(path)
+ID da federação aliada a ser adicionada
+
+allyId
+Responses
+Code	Description	Links
+200	
+Federação aliada adicionada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para adicionar aliados a esta federação
+
+No links
+404	
+Federação ou federação aliada não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/remove-ally/{allyId}
+Remover uma federação aliada
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+allyId *
+string
+(path)
+ID da federação aliada a ser removida
+
+allyId
+Responses
+Code	Description	Links
+200	
+Federação aliada removida com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para remover aliados desta federação
+
+No links
+404	
+Federação ou federação aliada não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/add-enemy/{enemyId}
+Adicionar uma federação inimiga
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+enemyId *
+string
+(path)
+ID da federação inimiga a ser adicionada
+
+enemyId
+Responses
+Code	Description	Links
+200	
+Federação inimiga adicionada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para adicionar inimigos a esta federação
+
+No links
+404	
+Federação ou federação inimiga não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/federations/{id}/remove-enemy/{enemyId}
+Remover uma federação inimiga
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da federação
+
+id
+enemyId *
+string
+(path)
+ID da federação inimiga a ser removida
+
+enemyId
+Responses
+Code	Description	Links
+200	
+Federação inimiga removida com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "federation": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Federação Alfa",
+    "description": "A maior federação do servidor.",
+    "leader": "60d5ec49f8c7b7001c8e4d1b",
+    "subLeaders": [
+      "60d5ec49f8c7b7001c8e4d1c"
+    ],
+    "clans": [
+      "60d5ec49f8c7b7001c8e4d1d",
+      "60d5ec49f8c7b7001c8e4d1e"
+    ],
+    "allies": [
+      "60d5ec49f8c7b7001c8e4d1f"
+    ],
+    "enemies": [
+      "60d5ec49f8c7b7001c8e4d20"
+    ],
+    "banner": "https://example.com/banner_alfa.png",
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para remover inimigos desta federação
+
+No links
+404	
+Federação ou federação inimiga não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+Canais Globais
+Gerenciamento de canais de texto e voz globais
+
+
+
+GET
+/api/global-channels
+Listar todos os canais globais (texto e voz)
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de canais globais
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "globalChannels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Canal Geral",
+      "description": "Canal de texto para discussões gerais.",
+      "type": "text",
+      "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+      "activeUsers": [],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/global-channels
+Criar um novo canal global (apenas ADM)
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string",
+  "type": "text",
+  "userLimit": 0
+}
+Responses
+Code	Description	Links
+200	
+Canal global criado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "globalChannel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Canal Geral",
+    "description": "Canal de texto para discussões gerais.",
+    "type": "text",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+    "activeUsers": [],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro de validação ou dados inválidos
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Apenas ADM pode criar canais globais
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/global-channels/text
+Listar canais de texto globais
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de canais de texto globais
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "textChannels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Canal Geral",
+      "description": "Canal de texto para discussões gerais.",
+      "type": "text",
+      "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+      "activeUsers": [],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/global-channels/voice
+Listar canais de voz globais
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de canais de voz globais
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "voiceChannels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Canal Geral",
+      "description": "Canal de texto para discussões gerais.",
+      "type": "text",
+      "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+      "activeUsers": [],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+PUT
+/api/global-channels/{id}/join
+Entrar em um canal de voz global
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal de voz global
+
+id
+Responses
+Code	Description	Links
+200	
+Usuário entrou no canal de voz com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "globalChannel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Canal Geral",
+    "description": "Canal de texto para discussões gerais.",
+    "type": "text",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+    "activeUsers": [],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro na requisição (ex: canal não é de voz, usuário já está no canal, canal lotado)
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Canal global não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+PUT
+/api/global-channels/{id}/leave
+Sair de um canal de voz global
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal de voz global
+
+id
+Responses
+Code	Description	Links
+200	
+Usuário saiu do canal de voz com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "globalChannel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Canal Geral",
+    "description": "Canal de texto para discussões gerais.",
+    "type": "text",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+    "activeUsers": [],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro na requisição (ex: canal não é de voz, usuário não está no canal)
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Canal global não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+DELETE
+/api/global-channels/{id}
+Deletar um canal global (apenas ADM)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal global a ser deletado
+
+id
+Responses
+Code	Description	Links
+200	
+Canal global removido com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Apenas ADM pode deletar canais globais
+
+No links
+404	
+Canal global não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+Chat Global
+Gerenciamento de mensagens de chat global
+
+
+
+POST
+/api/global-chat/message
+Enviar mensagem no chat global
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "content": "string",
+  "type": "text",
+  "fileUrl": "string",
+  "message": "string"
+}
+Responses
+Code	Description	Links
+200	
+Mensagem enviada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "sender": "60d5ec49f8c7b7001c8e4d1b",
+    "content": "Olá a todos no chat global!",
+    "timestamp": "2023-10-27T10:00:00Z"
+  },
+  "chatMessage": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "sender": "60d5ec49f8c7b7001c8e4d1b",
+    "content": "Olá a todos no chat global!",
+    "timestamp": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/global-chat/messages
+Obter mensagens do chat global
+
+
+Parameters
+Try it out
+Name	Description
+page
+integer
+(query)
+Número da página para paginação
+
+Default value : 1
+
+1
+limit
+integer
+(query)
+Limite de mensagens por página
+
+Default value : 30
+
+30
+Responses
+Code	Description	Links
+200	
+Lista de mensagens do chat global
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "count": 0,
+  "total": 0,
+  "page": 0,
+  "pages": 0,
+  "data": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "sender": "60d5ec49f8c7b7001c8e4d1b",
+      "content": "Olá a todos no chat global!",
+      "timestamp": "2023-10-27T10:00:00Z"
+    }
+  ],
+  "messages": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "sender": "60d5ec49f8c7b7001c8e4d1b",
+      "content": "Olá a todos no chat global!",
+      "timestamp": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro no servidor
+
+No links
+Convites
+Gerenciamento de convites para clãs e federações
+
+
+
+POST
+/api/invites
+Enviar convite para um usuário
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "userId": "string",
+  "type": "clan",
+  "targetId": "string"
+}
+Responses
+Code	Description	Links
+200	
+Convite enviado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "message": "string",
+  "invite": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "userId": "60d5ec49f8c7b7001c8e4d1b",
+    "type": "clan",
+    "targetId": "60d5ec49f8c7b7001c8e4d1c",
+    "status": "pending",
+    "createdAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro na requisição (ex: dados inválidos)
+
+No links
+
+GET
+/api/invites
+Listar convites do usuário logado
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de convites
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "invites": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "userId": "60d5ec49f8c7b7001c8e4d1b",
+      "type": "clan",
+      "targetId": "60d5ec49f8c7b7001c8e4d1c",
+      "status": "pending",
+      "createdAt": "2023-10-27T10:00:00Z"
+    }
+  ],
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/invites/me
+Buscar convites específicos do usuário logado
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de convites do usuário
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "invites": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "userId": "60d5ec49f8c7b7001c8e4d1b",
+      "type": "clan",
+      "targetId": "60d5ec49f8c7b7001c8e4d1c",
+      "status": "pending",
+      "createdAt": "2023-10-27T10:00:00Z"
+    }
+  ],
+  "count": 0
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/invites/{id}/accept
+Aceitar um convite
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do convite a ser aceito
+
+id
+Responses
+Code	Description	Links
+200	
+Convite aceito com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "message": "string",
+  "inviteId": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Convite não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/invites/{id}/reject
+Rejeitar um convite
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do convite a ser rejeitado
+
+id
+Responses
+Code	Description	Links
+200	
+Convite rejeitado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "message": "string",
+  "inviteId": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Convite não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+Solicitações de Entrada
+Gerenciamento de solicitações para entrar em clãs ou federações
+
+
+
+POST
+/api/join-requests
+Criar uma nova solicitação para entrar em um clã ou federação
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "type": "clan",
+  "targetId": "string",
+  "message": "string"
+}
+Responses
+Code	Description	Links
+200	
+Solicitação criada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "message": "string",
+  "joinRequest": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "userId": "60d5ec49f8c7b7001c8e4d1b",
+    "type": "clan",
+    "targetId": "60d5ec49f8c7b7001c8e4d1c",
+    "message": "Gostaria muito de fazer parte do seu clã!",
+    "status": "pending",
+    "createdAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro na requisição (ex: dados inválidos)
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Usuário ou alvo (clã/federação) não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/join-requests
+Listar solicitações de entrada do usuário logado
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de solicitações de entrada
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "joinRequests": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "userId": "60d5ec49f8c7b7001c8e4d1b",
+      "type": "clan",
+      "targetId": "60d5ec49f8c7b7001c8e4d1c",
+      "message": "Gostaria muito de fazer parte do seu clã!",
+      "status": "pending",
+      "createdAt": "2023-10-27T10:00:00Z"
+    }
+  ],
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/join-requests/pending
+Listar solicitações pendentes para aprovação (para líderes/administradores)
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de solicitações pendentes
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "pendingRequests": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "userId": "60d5ec49f8c7b7001c8e4d1b",
+      "type": "clan",
+      "targetId": "60d5ec49f8c7b7001c8e4d1c",
+      "message": "Gostaria muito de fazer parte do seu clã!",
+      "status": "pending",
+      "createdAt": "2023-10-27T10:00:00Z"
+    }
+  ],
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para visualizar solicitações pendentes
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/join-requests/{id}/approve
+Aprovar uma solicitação de entrada
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da solicitação de entrada a ser aprovada
+
+id
+Responses
+Code	Description	Links
+200	
+Solicitação aprovada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "message": "string",
+  "requestId": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para aprovar esta solicitação
+
+No links
+404	
+Solicitação não encontrada
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/join-requests/{id}/reject
+Rejeitar uma solicitação de entrada
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da solicitação de entrada a ser rejeitada
+
+id
+Responses
+Code	Description	Links
+200	
+Solicitação rejeitada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "message": "string",
+  "requestId": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para rejeitar esta solicitação
+
+No links
+404	
+Solicitação não encontrada
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+DELETE
+/api/join-requests/{id}/cancel
+Cancelar a própria solicitação de entrada
+
+
+QRR
+Gerenciamento de Quests, Raids e Recompensas (QRR)
+
+
+
+POST
+/api/qrrs
+Criar um novo QRR
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "title": "string",
+  "description": "string",
+  "clanId": "string",
+  "startTime": "2025-07-12T22:17:41.708Z",
+  "endTime": "2025-07-12T22:17:41.708Z",
+  "imageUrl": "string",
+  "type": "string",
+  "priority": "string",
+  "maxParticipants": 0,
+  "requiredRoles": [
+    "string"
+  ],
+  "rewards": [
+    {
+      "name": "string",
+      "quantity": 0
+    }
+  ],
+  "requirements": [
+    "string"
+  ],
+  "metadata": {}
+}
+Responses
+Code	Description	Links
+201	
+QRR criado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+400	
+Erro de validação
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para criar QRR para este clã
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/qrrs/clan/{clanId}
+Obter todos os QRRs para um clã específico
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã
+
+clanId
+Responses
+Code	Description	Links
+200	
+Lista de QRRs do clã
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "title": "Missão de Resgate na Floresta",
+      "description": "Resgatar os aldeões capturados pelos goblins.",
+      "clan": "60d5ec49f8c7b7001c8e4d1b",
+      "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+      "startTime": "2023-10-27T10:00:00Z",
+      "endTime": "2023-10-27T12:00:00Z",
+      "status": "active",
+      "participants": [
+        {
+          "user": "60d5ec49f8c7b7001c8e4d1d",
+          "isPresent": true,
+          "performance": "Excelente desempenho em combate."
+        }
+      ],
+      "createdAt": "2023-10-26T09:00:00Z",
+      "updatedAt": "2023-10-27T11:30:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/qrrs/available/{clanId}
+Obter QRRs disponíveis para um clã (incluindo QRRs de federação)
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã
+
+clanId
+Responses
+Code	Description	Links
+200	
+Lista de QRRs disponíveis
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "title": "Missão de Resgate na Floresta",
+      "description": "Resgatar os aldeões capturados pelos goblins.",
+      "clan": "60d5ec49f8c7b7001c8e4d1b",
+      "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+      "startTime": "2023-10-27T10:00:00Z",
+      "endTime": "2023-10-27T12:00:00Z",
+      "status": "active",
+      "participants": [
+        {
+          "user": "60d5ec49f8c7b7001c8e4d1d",
+          "isPresent": true,
+          "performance": "Excelente desempenho em combate."
+        }
+      ],
+      "createdAt": "2023-10-26T09:00:00Z",
+      "updatedAt": "2023-10-27T11:30:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/qrrs/{id}
+Obter um único QRR por ID
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+Responses
+Code	Description	Links
+200	
+Detalhes do QRR
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+QRR não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/qrrs/{id}
+Atualizar detalhes de um QRR
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "title": "string",
+  "description": "string",
+  "startTime": "2025-07-12T22:17:41.738Z",
+  "endTime": "2025-07-12T22:17:41.738Z",
+  "imageUrl": "string",
+  "type": "string",
+  "priority": "string",
+  "maxParticipants": 0,
+  "requiredRoles": [
+    "string"
+  ],
+  "rewards": [
+    {
+      "name": "string",
+      "quantity": 0
+    }
+  ],
+  "requirements": [
+    "string"
+  ],
+  "metadata": {}
+}
+Responses
+Code	Description	Links
+200	
+QRR atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+400	
+Erro de validação
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar este QRR
+
+No links
+404	
+QRR não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+DELETE
+/api/qrrs/{id}
+Deletar um QRR
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR a ser deletado
+
+id
+Responses
+Code	Description	Links
+200	
+QRR deletado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para deletar este QRR
+
+No links
+404	
+QRR não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/qrrs/{id}/status
+Atualizar o status de um QRR
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "status": "pending"
+}
+Responses
+Code	Description	Links
+200	
+Status do QRR atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+400	
+Status inválido
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar o status deste QRR
+
+No links
+404	
+QRR não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/qrrs/{id}/join
+Entrar em um QRR
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+Responses
+Code	Description	Links
+200	
+Entrou no QRR com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+400	
+Usuário já está no QRR ou QRR cheio
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não possui a função necessária para participar deste QRR
+
+No links
+404	
+QRR não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/qrrs/{id}/leave
+Sair de um QRR
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+Responses
+Code	Description	Links
+200	
+Saiu do QRR com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+400	
+Usuário não está no QRR
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+QRR não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/qrrs/{id}/mark-present
+Marcar presença em um QRR (para líderes de clã/administradores)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "userId": "string",
+  "isPresent": true
+}
+Responses
+Code	Description	Links
+200	
+Presença marcada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+400	
+Requisição inválida
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para marcar presença neste QRR
+
+No links
+404	
+QRR ou usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/qrrs/{id}/participant/{userId}/performance
+Atualizar o desempenho de um participante em um QRR
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+userId *
+string
+(path)
+ID do participante
+
+userId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "performance": "string",
+  "performanceData": "string"
+}
+Responses
+Code	Description	Links
+200	
+Desempenho do participante atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+400	
+Requisição inválida
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar o desempenho neste QRR
+
+No links
+404	
+QRR ou participante não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/qrrs/{id}/complete
+Concluir um QRR
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "success": true,
+  "notes": "string",
+  "evidenceUrls": [
+    "string"
+  ],
+  "metrics": {}
+}
+Responses
+Code	Description	Links
+200	
+QRR concluído com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+400	
+Requisição inválida
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para concluir este QRR
+
+No links
+404	
+QRR não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/qrrs/{id}/cancel
+Cancelar um QRR
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+Responses
+Code	Description	Links
+200	
+QRR cancelado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "data": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "title": "Missão de Resgate na Floresta",
+    "description": "Resgatar os aldeões capturados pelos goblins.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "createdBy": "60d5ec49f8c7b7001c8e4d1c",
+    "startTime": "2023-10-27T10:00:00Z",
+    "endTime": "2023-10-27T12:00:00Z",
+    "status": "active",
+    "participants": [
+      {
+        "user": "60d5ec49f8c7b7001c8e4d1d",
+        "isPresent": true,
+        "performance": "Excelente desempenho em combate."
+      }
+    ],
+    "createdAt": "2023-10-26T09:00:00Z",
+    "updatedAt": "2023-10-27T11:30:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para cancelar este QRR
+
+No links
+404	
+QRR não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/qrrs/{id}/accept-for-clan/{clanId}
+Aceitar um QRR de federação para um clã
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+clanId *
+string
+(path)
+ID do clã
+
+clanId
+Responses
+Code	Description	Links
+200	
+QRR aceito para o clã com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para aceitar QRR para este clã
+
+No links
+404	
+QRR ou clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/qrrs/{id}/reject-for-clan/{clanId}
+Rejeitar um QRR de federação para um clã
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do QRR
+
+id
+clanId *
+string
+(path)
+ID do clã
+
+clanId
+Responses
+Code	Description	Links
+200	
+QRR rejeitado para o clã com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para rejeitar QRR para este clã
+
+No links
+404	
+QRR ou clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+Notificações Segmentadas
+Envio de notificações para segmentos específicos de usuários (Admin, Clã, Federação)
+
+
+
+POST
+/api/notifications/admin/send-all
+Enviar notificação para todos os usuários (apenas ADMs)
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "title": "string",
+  "body": "string",
+  "data": {},
+  "priority": "high",
+  "sound": "default"
+}
+Responses
+Code	Description	Links
+200	
+Notificação enviada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "sent": 0,
+  "failed": 0,
+  "total": 0,
+  "details": {
+    "title": "string",
+    "recipientCount": 0,
+    "timestamp": "2025-07-12T22:17:41.839Z"
+  }
+}
+No links
+400	
+Título e/ou corpo da mensagem são obrigatórios
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas ADMs podem enviar notificações para todos os usuários.
+
+No links
+500	
+Erro interno do servidor ou erro ao buscar destinatários
+
+No links
+
+POST
+/api/notifications/clan/send/{clanId}
+Enviar notificação para membros de um clã (apenas Líderes do clã)
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã para o qual a notificação será enviada
+
+clanId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "title": "string",
+  "body": "string",
+  "data": {},
+  "priority": "high",
+  "sound": "default"
+}
+Responses
+Code	Description	Links
+200	
+Notificação enviada com sucesso para os membros do clã
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "sent": 0,
+  "failed": 0,
+  "total": 0,
+  "details": {
+    "title": "string",
+    "clanInfo": {
+      "id": "string",
+      "name": "string",
+      "memberCount": 0
+    },
+    "recipientCount": 0,
+    "timestamp": "2025-07-12T22:17:41.850Z"
+  }
+}
+No links
+400	
+Título e/ou corpo da mensagem são obrigatórios
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas Líderes do clã podem enviar notificações para o clã.
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro interno do servidor ou erro ao buscar membros do clã
+
+No links
+
+POST
+/api/notifications/federation/send/{federationId}
+Enviar notificação para membros de uma federação (apenas Líderes da federação)
+
+
+Parameters
+Try it out
+Name	Description
+federationId *
+string
+(path)
+ID da federação para a qual a notificação será enviada
+
+federationId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "title": "string",
+  "body": "string",
+  "data": {},
+  "priority": "high",
+  "sound": "default"
+}
+Responses
+Code	Description	Links
+200	
+Notificação enviada com sucesso para os membros da federação
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "sent": 0,
+  "failed": 0,
+  "total": 0,
+  "details": {
+    "title": "string",
+    "federationInfo": {
+      "id": "string",
+      "name": "string",
+      "clanCount": 0,
+      "memberCount": 0
+    },
+    "recipientCount": 0,
+    "timestamp": "2025-07-12T22:17:41.862Z"
+  }
+}
+No links
+400	
+Título e/ou corpo da mensagem são obrigatórios
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas Líderes da federação podem enviar notificações para a federação.
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro interno do servidor ou erro ao buscar membros da federação
+
+No links
+
+GET
+/api/notifications/admin/preview-recipients
+Visualizar quantos usuários receberão a notificação (apenas ADMs)
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Contagem de destinatários e pré-visualização retornadas com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "recipientCount": 0,
+  "metadata": {},
+  "preview": [
+    {
+      "userName": "string",
+      "userRole": "string"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas ADMs podem visualizar a pré-visualização de destinatários.
+
+No links
+500	
+Erro interno do servidor ou erro ao buscar destinatários
+
+No links
+
+GET
+/api/notifications/clan/preview-recipients/{clanId}
+Visualizar quantos membros do clã receberão a notificação (apenas Líderes do clã)
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã para pré-visualizar os destinatários
+
+clanId
+Responses
+Code	Description	Links
+200	
+Contagem de destinatários e pré-visualização retornadas com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "recipientCount": 0,
+  "metadata": {},
+  "preview": [
+    {
+      "userName": "string",
+      "userRole": "string"
+    }
+  ],
+  "clanInfo": {
+    "id": "string",
+    "name": "string"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas Líderes do clã podem visualizar a pré-visualização de destinatários.
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro interno do servidor ou erro ao buscar membros do clã
+
+No links
+
+GET
+/api/notifications/federation/preview-recipients/{federationId}
+Visualizar quantos membros da federação receberão a notificação (apenas Líderes da federação)
+
+
+Parameters
+Try it out
+Name	Description
+federationId *
+string
+(path)
+ID da federação para pré-visualizar os destinatários
+
+federationId
+Responses
+Code	Description	Links
+200	
+Contagem de destinatários e pré-visualização retornadas com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "recipientCount": 0,
+  "metadata": {},
+  "preview": [
+    {
+      "userName": "string",
+      "userRole": "string"
+    }
+  ],
+  "federationInfo": {
+    "id": "string",
+    "name": "string"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. Apenas Líderes da federação podem visualizar a pré-visualização de destinatários.
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro interno do servidor ou erro ao buscar membros da federação
+
+No links
+Estatísticas
+Rotas para obter estatísticas do sistema e do usuário
+
+
+
+GET
+/api/stats/global
+Obter estatísticas globais do sistema
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Estatísticas globais retornadas com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "totalUsers": 0,
+  "onlineUsers": 0,
+  "activeClans": 0,
+  "activeCalls": 0,
+  "activeMissions": 0,
+  "totalMessages": 0,
+  "lastUpdated": "2025-07-12T22:17:41.883Z"
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/stats/user/{userId}
+Obter estatísticas de um usuário específico
+
+
+Parameters
+Try it out
+Name	Description
+userId *
+string
+(path)
+ID do usuário para obter as estatísticas
+
+userId
+Responses
+Code	Description	Links
+200	
+Estatísticas do usuário retornadas com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "totalCalls": 0,
+  "totalMessages": 0,
+  "onlineTime": "string",
+  "onlineTimeMinutes": 0,
+  "memberSince": "2025-07-12T22:17:41.888Z",
+  "lastSeen": "2025-07-12T22:17:41.888Z",
+  "status": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Acesso negado. O usuário não tem permissão para ver as estatísticas de outro usuário.
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+Uploads
+Gerenciamento de uploads de arquivos e identidades visuais
+
+
+
+POST
+/api/upload/profile-picture
+Upload da foto de perfil do usuário
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+multipart/form-data
+profilePicture
+string($binary)
+Arquivo de imagem para a foto de perfil
+
+Responses
+Code	Description	Links
+200	
+Foto de perfil enviada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "imageUrl": "string",
+  "avatar": "string"
+}
+No links
+400	
+Erro na requisição ou arquivo inválido
+
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/upload/clan-flag/{clanId}
+Upload da bandeira do clã
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã
+
+clanId
+Request body
+
+multipart/form-data
+clanFlag
+string($binary)
+Arquivo de imagem para a bandeira do clã
+
+Responses
+Code	Description	Links
+200	
+Bandeira do clã enviada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "imageUrl": "string",
+  "flag": "string"
+}
+No links
+400	
+Erro na requisição ou arquivo inválido
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não é líder do clã
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+PUT
+/api/upload/federation-tag/{federationId}
+Atualizar a TAG da federação
+
+
+Parameters
+Try it out
+Name	Description
+federationId *
+string
+(path)
+ID da federação
+
+federationId
+Request body
+
+multipart/form-data
+federationTag
+string($binary)
+Arquivo de imagem para a TAG da federação
+
+Responses
+Code	Description	Links
+200	
+TAG da federação atualizada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "imageUrl": "string",
+  "tag": "string"
+}
+No links
+400	
+Erro na requisição (ex: TAG inválida ou já em uso)
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não é ADM ou líder de clã da federação
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/upload/user-identity/{userId}
+Obter informações de identidade visual do usuário
+
+
+Parameters
+Try it out
+Name	Description
+userId *
+string
+(path)
+ID do usuário
+
+userId
+Responses
+Code	Description	Links
+200	
+Informações de identidade visual do usuário
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": {
+    "profilePictureUrl": "string",
+    "clanFlagUrl": "string",
+    "federationTagUrl": "string"
+  },
+  "identity": {
+    "username": "string",
+    "avatar": "string",
+    "role": "string",
+    "clanRole": "string",
+    "clan": {
+      "id": "string",
+      "name": "string",
+      "flag": "string",
+      "federation": {
+        "id": "string",
+        "name": "string",
+        "tag": "string"
+      }
+    }
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/upload/clan-flags
+Listar todas as bandeiras de clãs
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de bandeiras de clãs
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": [
+    {
+      "clanId": "string",
+      "clanName": "string",
+      "flagUrl": "string"
+    }
+  ],
+  "clanFlags": [
+    {
+      "_id": "string",
+      "name": "string",
+      "flag": "string"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/upload/federation-tags
+Listar todas as TAGs de federações
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de TAGs de federações
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "data": [
+    {
+      "federationId": "string",
+      "federationName": "string",
+      "tagUrl": "string"
+    }
+  ],
+  "federationTags": [
+    {
+      "_id": "string",
+      "name": "string",
+      "tag": "string"
+    }
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+Usuários
+Gerenciamento de perfis de usuários e informações relacionadas
+
+
+
+POST
+/api/users/{id}/foto
+Upload de foto de perfil para um usuário
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do usuário
+
+id
+Request body
+
+multipart/form-data
+foto
+string($binary)
+Arquivo de imagem para a foto de perfil (max 5MB)
+
+Responses
+Code	Description	Links
+200	
+Foto de perfil atualizada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "fotoPerfil": "string"
+}
+No links
+400	
+Requisição inválida (ex: nenhum arquivo, arquivo não é imagem, tamanho excedido)
+
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar este perfil
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/cla/{id}/membros
+Listar membros de um clã específico
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do clã
+
+id
+Responses
+Code	Description	Links
+200	
+Lista de membros do clã retornada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "membros": [
+    {
+      "username": "string",
+      "fotoPerfil": "string"
+    }
+  ]
+}
+No links
+403	
+Proibido, usuário não é membro do clã ou não é ADM
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/users/{id}
+Obter informações de um usuário por ID
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do usuário
+
+id
+Responses
+Code	Description	Links
+200	
+Informações do usuário retornadas com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "user": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "username": "testuser",
+    "role": "user",
+    "avatar": "https://example.com/avatar.png",
+    "bio": "Um usuário de teste.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "federation": "60d5ec49f8c7b7001c8e4d1c",
+    "lastSeen": "2023-10-27T10:00:00Z",
+    "online": true
+  }
+}
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/users/{id}
+Atualizar informações de perfil de um usuário
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do usuário a ser atualizado
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "username": "string",
+  "bio": "string"
+}
+Responses
+Code	Description	Links
+200	
+Perfil do usuário atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "user": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "username": "testuser",
+    "role": "user",
+    "avatar": "https://example.com/avatar.png",
+    "bio": "Um usuário de teste.",
+    "clan": "60d5ec49f8c7b7001c8e4d1b",
+    "federation": "60d5ec49f8c7b7001c8e4d1c",
+    "lastSeen": "2023-10-27T10:00:00Z",
+    "online": true
+  }
+}
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+403	
+Proibido, usuário não tem permissão para atualizar este perfil
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/users/{id}/status
+Atualizar status online/offline de um usuário
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do usuário
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "status": "online"
+}
+Responses
+Code	Description	Links
+200	
+Status atualizado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string",
+  "status": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Usuário não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+Canais de Voz
+Gerenciamento de canais de voz para comunicação em tempo real
+
+
+
+GET
+/api/voice-channels
+Obter todos os canais de voz
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de todos os canais de voz
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "voiceChannels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Sala de Voz Geral",
+      "description": "Canal de voz para comunicação geral",
+      "type": "global",
+      "userLimit": 20,
+      "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+      "activeUsers": [],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/voice-channels
+Criar um novo canal de voz
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string",
+  "type": "global",
+  "clanId": "string",
+  "federationId": "string",
+  "userLimit": 15
+}
+Responses
+Code	Description	Links
+200	
+Canal de voz criado com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "voiceChannel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Sala de Voz Geral",
+    "description": "Canal de voz para comunicação geral",
+    "type": "global",
+    "userLimit": 20,
+    "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+    "activeUsers": [],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Erro de validação ou canal já existe
+
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não tem permissão para criar este tipo de canal
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/voice-channels/global
+Obter canais de voz globais
+
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+Lista de canais de voz globais
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "globalVoiceChannels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Sala de Voz Geral",
+      "description": "Canal de voz para comunicação geral",
+      "type": "global",
+      "userLimit": 20,
+      "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+      "activeUsers": [],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/voice-channels/clan/{clanId}
+Obter canais de voz de um clã específico
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã
+
+clanId
+Responses
+Code	Description	Links
+200	
+Lista de canais de voz do clã
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "clanVoiceChannels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Sala de Voz Geral",
+      "description": "Canal de voz para comunicação geral",
+      "type": "global",
+      "userLimit": 20,
+      "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+      "activeUsers": [],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/voice-channels/federation/{federationId}
+Obter canais de voz de uma federação específica
+
+
+Parameters
+Try it out
+Name	Description
+federationId *
+string
+(path)
+ID da federação
+
+federationId
+Responses
+Code	Description	Links
+200	
+Lista de canais de voz da federação
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "federationVoiceChannels": [
+    {
+      "_id": "60d5ec49f8c7b7001c8e4d1a",
+      "name": "Sala de Voz Geral",
+      "description": "Canal de voz para comunicação geral",
+      "type": "global",
+      "userLimit": 20,
+      "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+      "activeUsers": [],
+      "createdAt": "2023-10-27T10:00:00Z",
+      "updatedAt": "2023-10-27T10:00:00Z"
+    }
+  ]
+}
+No links
+401	
+Não autorizado, token ausente ou inválido
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/voice-channels/{id}/join
+Entrar em um canal de voz
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal de voz
+
+id
+Responses
+Code	Description	Links
+200	
+Entrou no canal de voz com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "voiceChannel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Sala de Voz Geral",
+    "description": "Canal de voz para comunicação geral",
+    "type": "global",
+    "userLimit": 20,
+    "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+    "activeUsers": [],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Usuário já está no canal de voz ou canal lotado
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Canal de voz não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+PUT
+/api/voice-channels/{id}/leave
+Sair de um canal de voz
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal de voz
+
+id
+Responses
+Code	Description	Links
+200	
+Saiu do canal de voz com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "voiceChannel": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "name": "Sala de Voz Geral",
+    "description": "Canal de voz para comunicação geral",
+    "type": "global",
+    "userLimit": 20,
+    "createdBy": "60d5ec49f8c7b7001c8e4d1b",
+    "activeUsers": [],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+}
+No links
+400	
+Usuário não está no canal de voz
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Canal de voz não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+DELETE
+/api/voice-channels/{id}
+Deletar um canal de voz
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID do canal de voz
+
+id
+Responses
+Code	Description	Links
+200	
+Canal de voz removido com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "message": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Proibido, usuário não é o criador do canal ou não é ADM
+
+No links
+404	
+Canal de voz não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+VoIP
+Rotas para gerenciamento de chamadas de voz e vídeo (VoIP)
+
+
+
+POST
+/api/voip/call/initiate
+Iniciar uma nova chamada VoIP
+
+
+
+POST
+/api/voip/call/accept
+Aceitar uma chamada VoIP
+
+
+
+POST
+/api/voip/call/reject
+Rejeitar uma chamada VoIP
+
+
+
+POST
+/api/voip/call/end
+Encerrar uma chamada VoIP
+
+
+
+GET
+/api/voip/call/history
+Obter histórico de chamadas VoIP do usuário
+
+
+
+POST
+/api/voip/initiate-call
+Iniciar uma chamada de voz/vídeo 1x1
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "receiverId": "string",
+  "callType": "voice"
+}
+Responses
+Code	Description	Links
+200	
+Chamada iniciada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "msg": "string",
+  "callId": "string",
+  "roomName": "string",
+  "jitsiToken": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+404	
+Chamador ou receptor não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/voip/accept-call
+Aceitar uma chamada de voz/vídeo
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "callId": "string"
+}
+Responses
+Code	Description	Links
+200	
+Chamada aceita com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "msg": "string",
+  "call": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "caller": "60d5ec49f8c7b7001c8e4d1b",
+    "receiver": "60d5ec49f8c7b7001c8e4d1c",
+    "status": "active",
+    "startTime": "2023-10-27T10:00:00Z",
+    "acceptedTime": "2023-10-27T10:00:05Z",
+    "endTime": "2023-10-27T10:10:00Z"
+  },
+  "roomName": "string",
+  "jitsiToken": "string"
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Não tem permissão para aceitar esta chamada
+
+No links
+404	
+Chamada não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/voip/reject-call
+Rejeitar uma chamada de voz/vídeo
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "callId": "string"
+}
+Responses
+Code	Description	Links
+200	
+Chamada rejeitada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "msg": "string",
+  "call": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "caller": "60d5ec49f8c7b7001c8e4d1b",
+    "receiver": "60d5ec49f8c7b7001c8e4d1c",
+    "status": "active",
+    "startTime": "2023-10-27T10:00:00Z",
+    "acceptedTime": "2023-10-27T10:00:05Z",
+    "endTime": "2023-10-27T10:10:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Não tem permissão para rejeitar esta chamada
+
+No links
+404	
+Chamada não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+POST
+/api/voip/end-call
+Encerrar uma chamada de voz/vídeo
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "callId": "string"
+}
+Responses
+Code	Description	Links
+200	
+Chamada encerrada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "msg": "string",
+  "call": {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "caller": "60d5ec49f8c7b7001c8e4d1b",
+    "receiver": "60d5ec49f8c7b7001c8e4d1c",
+    "status": "active",
+    "startTime": "2023-10-27T10:00:00Z",
+    "acceptedTime": "2023-10-27T10:00:05Z",
+    "endTime": "2023-10-27T10:10:00Z"
+  }
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Não tem permissão para encerrar esta chamada
+
+No links
+404	
+Chamada não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/voip/call-history
+Obter histórico de chamadas do usuário autenticado
+
+
+Missões de Clã
+Gerenciamento de missões QRR para clãs
+
+
+
+POST
+/api/clan-missions
+Criar uma nova missão QRR
+
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string",
+  "clanId": "string",
+  "scheduledTime": "2025-07-12T22:17:42.073Z",
+  "title": "string",
+  "type": "daily",
+  "reward": 0,
+  "deadline": "2025-07-12T22:17:42.073Z"
+}
+Responses
+Code	Description	Links
+201	
+Missão criada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "_id": "60d5ec49f8c7b7001c8e4d1a",
+  "clanId": "60d5ec49f8c7b7001c8e4d1b",
+  "title": "Missão de Coleta de Recursos",
+  "description": "Coletar 500 unidades de madeira e 200 de pedra.",
+  "type": "daily",
+  "reward": 100,
+  "deadline": "2023-10-28T23:59:59Z",
+  "status": "active",
+  "confirmedMembers": [],
+  "strategyMediaUrls": [],
+  "createdAt": "2023-10-27T10:00:00Z",
+  "updatedAt": "2023-10-27T10:00:00Z"
+}
+No links
+400	
+Erro na requisição (ex: dados inválidos)
+
+No links
+401	
+Não autorizado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/clan-missions/clan/{clanId}
+Listar missões de um clã específico
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã para listar as missões
+
+clanId
+Responses
+Code	Description	Links
+200	
+Lista de missões do clã
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+[
+  {
+    "_id": "60d5ec49f8c7b7001c8e4d1a",
+    "clanId": "60d5ec49f8c7b7001c8e4d1b",
+    "title": "Missão de Coleta de Recursos",
+    "description": "Coletar 500 unidades de madeira e 200 de pedra.",
+    "type": "daily",
+    "reward": 100,
+    "deadline": "2023-10-28T23:59:59Z",
+    "status": "active",
+    "confirmedMembers": [],
+    "strategyMediaUrls": [],
+    "createdAt": "2023-10-27T10:00:00Z",
+    "updatedAt": "2023-10-27T10:00:00Z"
+  }
+]
+No links
+400	
+Erro na requisição
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+GET
+/api/clan-missions/{id}
+Buscar missão por ID
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da missão
+
+id
+Responses
+Code	Description	Links
+200	
+Detalhes da missão
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "_id": "60d5ec49f8c7b7001c8e4d1a",
+  "clanId": "60d5ec49f8c7b7001c8e4d1b",
+  "title": "Missão de Coleta de Recursos",
+  "description": "Coletar 500 unidades de madeira e 200 de pedra.",
+  "type": "daily",
+  "reward": 100,
+  "deadline": "2023-10-28T23:59:59Z",
+  "status": "active",
+  "confirmedMembers": [],
+  "strategyMediaUrls": [],
+  "createdAt": "2023-10-27T10:00:00Z",
+  "updatedAt": "2023-10-27T10:00:00Z"
+}
+No links
+400	
+Erro na requisição
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Missão não encontrada
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/clan-missions/{id}/cancel
+Cancelar missão
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da missão a ser cancelada
+
+id
+Responses
+Code	Description	Links
+200	
+Missão cancelada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "_id": "60d5ec49f8c7b7001c8e4d1a",
+  "clanId": "60d5ec49f8c7b7001c8e4d1b",
+  "title": "Missão de Coleta de Recursos",
+  "description": "Coletar 500 unidades de madeira e 200 de pedra.",
+  "type": "daily",
+  "reward": 100,
+  "deadline": "2023-10-28T23:59:59Z",
+  "status": "active",
+  "confirmedMembers": [],
+  "strategyMediaUrls": [],
+  "createdAt": "2023-10-27T10:00:00Z",
+  "updatedAt": "2023-10-27T10:00:00Z"
+}
+No links
+400	
+Erro na requisição
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Missão não encontrada
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/clan-missions/{id}/confirm-presence
+Confirmar presença em uma missão
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da missão
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "userId": "string"
+}
+Responses
+Code	Description	Links
+200	
+Presença confirmada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "_id": "60d5ec49f8c7b7001c8e4d1a",
+  "clanId": "60d5ec49f8c7b7001c8e4d1b",
+  "title": "Missão de Coleta de Recursos",
+  "description": "Coletar 500 unidades de madeira e 200 de pedra.",
+  "type": "daily",
+  "reward": 100,
+  "deadline": "2023-10-28T23:59:59Z",
+  "status": "active",
+  "confirmedMembers": [],
+  "strategyMediaUrls": [],
+  "createdAt": "2023-10-27T10:00:00Z",
+  "updatedAt": "2023-10-27T10:00:00Z"
+}
+No links
+400	
+Erro na requisição
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Missão não encontrada
+
+No links
+500	
+Erro interno do servidor
+
+No links
+
+POST
+/api/clan-missions/{id}/strategy-media
+Adicionar mídia de estratégia (upload de imagem)
+
+
+Parameters
+Try it out
+Name	Description
+id *
+string
+(path)
+ID da missão
+
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "mediaUrl": "string"
+}
+Responses
+Code	Description	Links
+200	
+Mídia de estratégia adicionada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "_id": "60d5ec49f8c7b7001c8e4d1a",
+  "clanId": "60d5ec49f8c7b7001c8e4d1b",
+  "title": "Missão de Coleta de Recursos",
+  "description": "Coletar 500 unidades de madeira e 200 de pedra.",
+  "type": "daily",
+  "reward": 100,
+  "deadline": "2023-10-28T23:59:59Z",
+  "status": "active",
+  "confirmedMembers": [],
+  "strategyMediaUrls": [],
+  "createdAt": "2023-10-27T10:00:00Z",
+  "updatedAt": "2023-10-27T10:00:00Z"
+}
+No links
+400	
+Erro na requisição
+
+No links
+401	
+Não autorizado
+
+No links
+404	
+Missão não encontrada
+
+No links
+500	
+Erro interno do servidor
+
+No links
+Chat do Clã
+
+
+POST
+/api/clan-chat/{clanId}/message
+Enviar mensagem no chat do clã
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã
+
+clanId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "message": "string",
+  "type": "text",
+  "fileUrl": "string"
+}
+Responses
+Code	Description	Links
+200	
+Mensagem enviada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "chatMessage": "string"
+}
+No links
+400	
+Requisição inválida
+
+No links
+403	
+Permissão negada
+
+No links
+404	
+Usuário ou clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/clan-chat/{clanId}/messages
+Obter mensagens do chat do clã
+
+
+Parameters
+Try it out
+Name	Description
+clanId *
+string
+(path)
+ID do clã
+
+clanId
+page
+integer
+(query)
+Número da página para paginação
+
+Default value : 1
+
+1
+limit
+integer
+(query)
+Limite de mensagens por página
+
+Default value : 30
+
+30
+Responses
+Code	Description	Links
+200	
+Lista de mensagens do chat do clã
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "messages": [
+    "string"
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Permissão negada
+
+No links
+404	
+Clã não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+Chat de Federação
+
+
+POST
+/api/federation-chat/{federationId}/message
+Enviar mensagem no chat da federação
+
+
+Parameters
+Try it out
+Name	Description
+federationId *
+string
+(path)
+ID da federação
+
+federationId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "message": "string",
+  "type": "text",
+  "fileUrl": "string"
+}
+Responses
+Code	Description	Links
+200	
+Mensagem enviada com sucesso
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "chatMessage": "string"
+}
+No links
+400	
+Requisição inválida
+
+No links
+403	
+Permissão negada
+
+No links
+404	
+Usuário ou federação não encontrado
+
+No links
+500	
+Erro no servidor
+
+No links
+
+GET
+/api/federation-chat/{federationId}/messages
+Obter mensagens do chat da federação
+
+
+Parameters
+Try it out
+Name	Description
+federationId *
+string
+(path)
+ID da federação
+
+federationId
+page
+integer
+(query)
+Número da página para paginação
+
+Default value : 1
+
+1
+limit
+integer
+(query)
+Limite de mensagens por página
+
+Default value : 30
+
+30
+Responses
+Code	Description	Links
+200	
+Lista de mensagens do chat da federação
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "success": true,
+  "messages": [
+    "string"
+  ]
+}
+No links
+401	
+Não autorizado
+
+No links
+403	
+Permissão negada
+
+No links
+404	
+Federação não encontrada
+
+No links
+500	
+Erro no servidor
+
+No links
