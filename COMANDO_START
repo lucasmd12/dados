@@ -1,0 +1,699 @@
+Aqui está o frontend e BACKEND
+
+Preciso que conheça o projeto completo linha por linha do código do backend e frontend e dps faça uma TABELA completa de comparação do que tem no BACKEND e no frontend e das coisas que já estão funcionais dps da tabela vc vai ler o arquivo que mandei completo escrito dados e usar ele para fazer a 2 tabela que será sobre tudo que preciso para concluir as metas de conseguir o projeto pronto e funcional sem o uso de nenhum plashouders e tudo for funcional e operante como engrenagem agora meu projeto parece aqueles carrinho de plástico que n vira a roda mas a intenção é fazer todos os parafusos serem reais e tem contato direto com meus usuários do aplicativo federacaomad que tem muita coisa mas a maioria está com plashouders ou falta a criação do código então a sua tarefa é desvendar tudo isso e trazer com clarificação sobre toda lógica mecanismo e compreensão do projeto no Estado atual (eu mandei o backend completo e o frontend eu mandei apenas a pasta lib)
+
+Para que você conheça o projeto mas já SABENDO que é um aplicativo voip feito com flutter e Dart mais backend de nodes e várias coisas que eu tenho
+
+O projeto atual tem o authservice com uma correção então vou deixar ele aqui junto com o pubspecyaml para garantirmos não sair do nosso escopo atual pois já temos muita coisa pra por no lugar
+
+import 'package:flutter/foundation.dart'; // Para ChangeNotifier
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:lucasbeatsfederacao/models/user_model.dart'; // Importa o modelo User
+import 'package:lucasbeatsfederacao/models/role_model.dart'; // Importa a extensão RoleExtension
+import 'package:lucasbeatsfederacao/services/api_service.dart';
+import 'package:lucasbeatsfederacao/utils/logger.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+
+class AuthService extends ChangeNotifier {
+final ApiService _apiService = ApiService();
+final FlutterSecureStorage _secureStorage = const FlutterSecureStorage();
+
+bool _isAuthenticated = false;
+bool _isLoading = true;
+bool get isAdmin => _currentUser?.role == Role.admMaster;
+String? _token;
+User? _currentUser; // Alterado de User para User
+String? _lastErrorMessage;
+
+// Getters
+bool get isAuthenticated => _isAuthenticated;
+bool get isLoading => _isLoading;
+String? get token => _token;
+User? get currentUser => _currentUser; // Alterado de User para User
+String? get errorMessage => _lastErrorMessage;
+
+ApiService get apiService => _apiService;
+
+AuthService() {
+_checkInitialAuthStatus();
+}
+
+Future<void> _checkInitialAuthStatus() async {
+Logger.info("Checking initial authentication status...");
+final storedToken = await _secureStorage.read(key: "jwt_token");
+if (storedToken != null) {
+Logger.info("Token found, attempting to fetch profile...");
+_token = storedToken;
+try {
+await fetchUserProfile();
+if (_currentUser != null) {
+_isAuthenticated = true;
+Logger.info("User authenticated from stored token.");
+_setSentryUser(); // Set Sentry user on initial auth
+} else {
+await logout(); // Clear invalid token/state
+}
+} catch (e) {
+Logger.error("Failed to fetch profile with stored token: ${e.toString()}");
+_lastErrorMessage = e.toString();
+await logout(); // Clear invalid token/state
+}
+} else {
+Logger.info("No stored token found.");
+_isAuthenticated = false;
+}
+_isLoading = false;
+notifyListeners();
+}
+
+Future<void> fetchUserProfile() async {
+if (_token == null) {
+Logger.warning("Cannot fetch profile without a token.");
+_lastErrorMessage = "Not authenticated";
+throw Exception(_lastErrorMessage);
+}
+try {
+final response = await _apiService.get("/api/auth/profile", requireAuth: true);
+if (response != null && response is Map<String, dynamic>) {
+_currentUser = User.fromJson(response); // Alterado de User para User
+Logger.info("User profile fetched successfully: ${_currentUser?.username}");
+_lastErrorMessage = null;
+_setSentryUser(); // Set Sentry user after fetching profile
+notifyListeners();
+} else {
+Logger.warning("Failed to parse user profile from response.");
+_currentUser = null;
+_lastErrorMessage = "Failed to get user profile";
+throw Exception(_lastErrorMessage);
+}
+} catch (e) {
+Logger.error("Error fetching user profile: ${e.toString()}");
+_lastErrorMessage = e.toString();
+_currentUser = null;
+rethrow;
+}
+}
+
+Future<bool> login(String username, String password) async {
+setLoading(true);
+_lastErrorMessage = null;
+try {
+final response = await _apiService.post(
+"/api/auth/login",
+{"username": username, "password": password},
+requireAuth: false,
+);
+
+if (response != null && response is Map<String, dynamic>) {  
+    final decodedResponse = response;  
+    if (decodedResponse.containsKey("token")) {  
+      final newToken = decodedResponse["token"] as String?;  
+        if (newToken != null) {  
+          await _secureStorage.write(key: "jwt_token", value: newToken);  
+          if (_currentUser != null) {  
+            final user = _currentUser!;  
+            await _secureStorage.write(key: "userId", value: user.id);  
+          }  
+        _token = newToken;  
+        await fetchUserProfile();  
+        if (_currentUser != null) {  
+           setAuthenticated(true);  
+           Logger.info("Login successful for user: ${_currentUser?.username}");  
+           _setSentryUser(); // Set Sentry user on successful login  
+           return true;  
+        } else {  
+          _lastErrorMessage = "Profile fetch failed after login";  
+          await _clearAuthData();  
+          setAuthenticated(false);  
+          return false;  
+        }  
+      } else {  
+         _lastErrorMessage = "Token not found in login response";  
+         throw Exception(_lastErrorMessage);  
+      }  
+    } else {  
+       _lastErrorMessage = decodedResponse["msg"] ?? "Invalid login response format";  
+       throw Exception(_lastErrorMessage);  
+    }  
+  } else {  
+     _lastErrorMessage = "Empty or invalid login response";  
+     throw Exception(_lastErrorMessage);  
+  }  
+} catch (e) {  
+  Logger.error("Login error: ${e.toString()}");  
+  _lastErrorMessage = e.toString().replaceFirst("Exception: ", "");  
+  await _clearAuthData();  
+  setAuthenticated(false);  
+  return false;  
+} finally {  
+  setLoading(false);  
+}
+
+}
+
+Future<bool> register(String username, String password) async {
+setLoading(true);
+_lastErrorMessage = null;
+try {
+final response = await _apiService.post(
+"/api/auth/register",
+{"username": username, "password": password},
+requireAuth: false,
+);
+
+if (response != null) {  
+      Logger.info("Registration request successful for user: $username. Attempting to log in automatically...");  
+      // Tenta logar o usuário automaticamente após o registro bem-sucedido  
+      return await login(username, password);  
+  } else {  
+      Logger.info("Registration request successful (no content) for user: $username. Attempting to log in automatically...");  
+      return await login(username, password);  
+  }  
+
+} catch (e) {  
+  Logger.error("Registration error: ${e.toString()}");  
+  _lastErrorMessage = e.toString().replaceFirst("Exception: ", "");  
+  return false;  
+} finally {  
+  setLoading(false);  
+}
+
+}
+
+Future<void> logout() async {
+Logger.info("Logging out user...");
+setLoading(true);
+await _clearAuthData();
+setAuthenticated(false);
+_clearSentryUser(); // Clear Sentry user on logout
+Logger.info("Logout successful");
+setLoading(false);
+}
+
+Future<void> _clearAuthData() async {
+_currentUser = null;
+_token = null;
+await _secureStorage.delete(key: "jwt_token");
+}
+
+void _setSentryUser() {
+if (_currentUser != null) {
+final currentUser = _currentUser!; // Use a local non-nullable variable
+Sentry.configureScope(
+(scope) {
+String? userRoleDisplayName;
+// Access displayName using the RoleExtension.
+userRoleDisplayName = currentUser.role.displayName;
+
+scope.setUser(
+SentryUser(
+id: currentUser.id,
+username: currentUser.username,
+data: {
+'role': userRoleDisplayName,
+'clan': currentUser.clanName,
+'federation': currentUser.federationName,
+},
+),
+);
+scope.setTag('user_role', userRoleDisplayName ?? 'unknown');
+if (currentUser.clanName != null) {
+scope.setTag('user_clan', currentUser.clanName!);
+}
+if (currentUser.federationName != null) {
+scope.setTag('user_federation', currentUser.federationName!);
+}
+}
+);
+} else {
+_clearSentryUser();
+}
+}
+
+void _clearSentryUser() {
+Sentry.configureScope((scope) {
+scope.setUser(null);
+scope.removeTag('user_role');
+scope.removeTag('user_clan');
+scope.removeTag('user_federation');
+});
+}
+
+void setLoading(bool loading) {
+if (_isLoading != loading) {
+_isLoading = loading;
+notifyListeners();
+}
+}
+
+void setAuthenticated(bool authenticated) {
+if (_isAuthenticated != authenticated) {
+_isAuthenticated = authenticated;
+notifyListeners();
+}
+}
+
+@override
+void dispose() {
+Logger.info("Disposing AuthService.");
+super.dispose();
+}
+}
+
+E agora o pubspecyaml
+
+name: lucasbeatsfederacao
+description: 'Aplicativo FEDERACAOMAD: Comunicação e organização.'
+publish_to: 'none'
+version: 2.1.0+4
+
+environment:
+sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+flutter:
+sdk: flutter
+cupertino_icons: ^1.0.8
+
+sentry_flutter: ^9.1.0
+flutter_dotenv: ^5.0.0
+package_info_plus: ^8.0.0
+
+Firebase
+
+firebase_core: ^3.14.0
+firebase_database: ^11.3.7
+firebase_messaging: ^15.2.7
+firebase_auth: ^5.6.0
+firebase_crashlytics: ^4.0.0
+firebase_app_check: ^0.3.2+7
+
+Jitsi Meet SDK Flutter (oficial)
+
+jitsi_meet_flutter_sdk: ^10.2.0
+
+Backend Communication
+
+http: ^1.2.1
+socket_io_client: ^3.1.2
+
+Estado e armazenamento
+
+provider: ^6.1.2
+shared_preferences: ^2.3.3
+connectivity_plus: ^6.1.4
+
+UI e formatação
+
+intl: ^0.20.2
+flutter_svg: ^2.0.10+1
+
+Melhorias de UI/UX
+
+flutter_chat_ui: ^1.6.15
+infinite_scroll_pagination: ^4.1.0
+flutter_slidable: ^3.1.1
+pull_to_refresh: ^2.0.0
+flutter_sound: ^9.11.3
+
+Funcionalidades
+
+image_picker: ^1.1.2
+file_picker: ^8.1.2
+permission_handler: ^12.0.0+1
+flutter_secure_storage: ^9.2.2
+
+WebRTC para VoIP (mantido para compatibilidade)
+
+flutter_webrtc: ^0.14.1
+uuid: ^4.4.0
+
+Audio
+
+audioplayers: ^6.0.0
+
+Cache e performance
+
+cached_network_image: ^3.3.1
+
+Notificações
+
+flutter_local_notifications: ^19.2.1
+just_audio: ^0.10.4
+flutter_animate: ^4.0.0
+animations: ^2.0.0
+
+dev_dependencies:
+flutter_test:
+sdk: flutter
+flutter_lints: ^6.0.0
+flutter_launcher_icons: ^0.14.3
+sentry_dart_plugin: ^3.0.0 # Adicionado para Source Maps
+
+sentry:
+upload_debug_symbols: true
+upload_source_maps: true
+commits:
+auto: true
+
+flutter_icons:
+android: true
+ios: true
+image_path: "assets/images_png/app_logo.png"
+adaptive_icon_background: "#000000"
+adaptive_icon_foreground: "assets/images_png/app_logo.png"
+
+flutter:
+uses-material-design: true
+
+assets:
+- .env
+- assets/images_png/
+- assets/images_png/backgrounds/
+- assets/images_png/clan_images/
+- assets/audio/
+- assets/fonts/
+
+fonts:
+- family: Gothic
+fonts:
+- asset: assets/fonts/gothic.ttf
+- family: Digital
+fonts:
+- asset: assets/fonts/digital.ttf
+
+Eu acho que como você queria me ajudar muito vc chutou por alto
+
+Mas você tem que ser precisa no que está fazendo você tem que ser como uma médica fullstack e precisa entender meu projeto completo cada código e cada linha e entender o objetivo dele vc devera fazer uma análogia perfeita com o corpo humano sendo o cérebro o BACKEND e o frontend claro é o corpo mas o BACKEND não é só o cérebro a massa ele é a consciência em si e ao msm tempo a alma que vibra e aloja no crânio na glândula pineal onde está o centro de tudo mas dps disso precisa fazer a análogia completa com o corpo do projeto mas entenda que é um aplicativo voip para Android para a comunidade da galera do jogo de mundo aberto igual GTA mas é madoutbigcity porém eu tô criando o aplicativo da comunidade não chega ser um discorda mas supera nas estratégias que eu tenho feito você pode acompanhar cada parte do corpo e entender tudo sobre ele seja inteligente e consiga trazer agora não só uma tabela mas Um diagnóstico robusto de um médico que passou meu projeto ( pode falar na analogia que vc é o doutor e eu sou o pai do projeto )
+
+Meu filho está nas suas mãos cuide dele e traga essa consciência e inteligente de saber que estamos junto nessa cara você faz parte de mim e juntos cuidaremos do meu filho que tbm é parte sua em filho pois sem você ele jamais teria aprendido a andar mas agora vários plashouders tomam conta onde deveria ser funções reais e relacionadas ao meu filho você pode ver que ele tem até o espírito Spiritlogger onde deverá ser anexado ao dashbord do adm master que sou eu idcloned
+Que não tá sendo vinculado a nenhum clã no frontend mas no BACKEND eu estou em um mas talvez alguma coisa impeça uma lógica ou permissões que o ADM gerencie outro clã
+
+Imagine meu filho só pra vc entender como realmente é meu projeto
+
+Os líder de clã com seus sublider e membros ficam lá juntos e fazem amizade com outro clã aí eles viram clã aliados e tem seus inimigos tbm mas aí junta 3 5 10 clã 42 clã depende mto ( dentro do jogo é assim tanto que o projeto vem a necessidade desse público alvo os donos de federações, mas pq federação ??? ?)
+
+Imagine os estados são clã a população são membros cada membro e prefeito ou deputado no seu estado mas as federações são países então entendi se que líder de federação são como presidente e seus sublideres que são cada líder de um clã mas eles não tem msm poder que o líder ou EU NE CLARO IMAGINE QUE NESSAA REALIDADE DEUS ME PEDROE MAS EU SERIA O DEUS  então é impossível eu ser barrado de um clã ou dizer que n estou em um pq eu realmente tenho o meu clã e minha federação mas posso apagar elas se eu quiser eu preciso disso que você análise cada linha da minha conversa pq n são só um pedido , é cada linha tem algo sobre meu filho  é um aplicativo voip então os clã precisam estar dentro das federações e cada clã lá com seus vizinhos mas somente no seu clã ele pode interagir intimamente como um membro morador de lá agora de outro estado ou melhor em outro clã somente os donos de lá interagem pessoalmente intimamente mas ele de fora pode ver tudo ué ele pode ser um turista inclusive qualuwer cidadão de qualquer federação pode ser um turista no clã de outro ou federação e saber explicitamente todos os líderes e membros que estão ali (mas somente os íntimos sabem se estão online ou não ) e Deus né que é o ADM Master com o nome de  idcloned que sou eu enfim com base nisso vc pode ver muita coisa e trazer agora tabelas mais robustas em conceito e soluções com base em tudo que tenho e que você investigou a respeito obg pela sua atenção e seja como um médico abençoado para deixar meu filho vivo respeitando e real e tocavel e mutável como qualquer genética pq todos as contas criadas são como novas células desse corpo e o espírito logger do ADM devera mostrar tudo isso em vez de plashouders com painéis de controle e administração que seria ótimo se funcionasse mas estão todos desligados e sem vida :c e eu quero que todos eles funcionem e voltem a respirar e funcionar corretamente em real time eu já tenho tudo tanto no BACKEND quanto no frontend nos .env você tem direito de acessar completamente o DNA do meu filho e fazer isso por completo e dps disso teremos algo pra conversar
+Claro eu quero exatamente isso você entendeu muito bem ❤️‍🩹 preciso desse diagnóstico completo sim lembre se sempre MEU FILHO TEM ALERGIA A EMAIL. Jamais use email no meu projeto :) uma coisa é um órgão que funciona por força divina a existência por loguin e senha agora jamais introduzir email no projeto isso não é a forma que uso de autenticação para os usuários somente loguin e senha
+
+O backend tá completo tá tudo nele que vc precisa saber que eu uso ,
+
+O frontend imagine através do lib o pubspecyaml e o novo authservice que mandei  novo é o atual o que tá dentro de lib é o antigo por causa de um problema de null lá mais já corrigi , a questão então é usar o authservice que mandei junto com o pubspecyaml, tudo que for além disso considerar um projeto flutter que já tenha essas pastas como assets o importante é oq o código chama e oq tem nele as pastas como main activyt e build gradle não foram enviados mas pra ajuda prioritária
+
+Esse é o gradle #!/usr/bin/env bash
+
+##############################################################################
+
+
+
+Gradle start up script for UN*X
+
+
+
+##############################################################################
+
+Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+
+DEFAULT_JVM_OPTS=""
+
+APP_NAME="Gradle"
+APP_BASE_NAME=basename "$0"
+
+Use the maximum available, or set MAX_FD != -1 to use that value.
+
+MAX_FD="maximum"
+
+warn ( ) {
+echo "$*"
+}
+
+die ( ) {
+echo
+echo "$*"
+echo
+exit 1
+}
+
+OS specific support (must be 'true' or 'false').
+
+cygwin=false
+msys=false
+darwin=false
+case "uname" in
+CYGWIN* )
+cygwin=true
+;;
+Darwin* )
+darwin=true
+;;
+MINGW* )
+msys=true
+;;
+esac
+
+Attempt to set APP_HOME
+
+Resolve links: $0 may be a link
+
+PRG="$0"
+
+Need this for relative symlinks.
+
+while [ -h "$PRG" ] ; do
+ls=ls -ld "$PRG"
+link=expr "$ls" : '.*-> \(.*\)$'
+if expr "$link" : '/.*' > /dev/null; then
+PRG="$link"
+else
+PRG=dirname "$PRG""/$link"
+fi
+done
+SAVED="pwd"
+cd "dirname \"$PRG\"/" >/dev/null
+APP_HOME="pwd -P"
+cd "$SAVED" >/dev/null
+
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+
+Determine the Java command to use to start the JVM.
+
+if [ -n "$JAVA_HOME" ] ; then
+if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+# IBM's JDK on AIX uses strange locations for the executables
+JAVACMD="$JAVA_HOME/jre/sh/java"
+else
+JAVACMD="$JAVA_HOME/bin/java"
+fi
+if [ ! -x "$JAVACMD" ] ; then
+die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation."
+fi
+else
+JAVACMD="java"
+which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation."
+fi
+
+Increase the maximum file descriptors if we can.
+
+if [ "$cygwin" = "false" -a "$darwin" = "false" ] ; then
+MAX_FD_LIMIT=ulimit -H -n
+if [ $? -eq 0 ] ; then
+if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
+MAX_FD="$MAX_FD_LIMIT"
+fi
+ulimit -n $MAX_FD
+if [ $? -ne 0 ] ; then
+warn "Could not set maximum file descriptor limit: $MAX_FD"
+fi
+else
+warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
+fi
+fi
+
+For Darwin, add options to specify how the application appears in the dock
+
+if $darwin; then
+GRADLE_OPTS="$GRADLE_OPTS "-Xdock:name=$APP_NAME" "-Xdock:icon=$APP_HOME/media/gradle.icns""
+fi
+
+For Cygwin, switch paths to Windows format before running java
+
+if $cygwin ; then
+APP_HOME=cygpath --path --mixed "$APP_HOME"
+CLASSPATH=cygpath --path --mixed "$CLASSPATH"
+JAVACMD=cygpath --unix "$JAVACMD"
+
+# We build the pattern for arguments to be converted via cygpath  
+ROOTDIRSRAW=`find -L / -maxdepth 1 -mindepth 1 -type d 2>/dev/null`  
+SEP=""  
+for dir in $ROOTDIRSRAW ; do  
+    ROOTDIRS="$ROOTDIRS$SEP$dir"  
+    SEP="|"  
+done  
+OURCYGPATTERN="(^($ROOTDIRS))"  
+# Add a user-defined pattern to the cygpath arguments  
+if [ "$GRADLE_CYGPATTERN" != "" ] ; then  
+    OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"  
+fi  
+# Now convert the arguments - kludge to limit ourselves to /bin/sh  
+i=0  
+for arg in "$@" ; do  
+    CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`  
+    CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option  
+
+    if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition  
+        eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`  
+    else  
+        eval `echo args$i`="\"$arg\""  
+    fi  
+    i=$((i+1))  
+done  
+case $i in  
+    (0) set -- ;;  
+    (1) set -- "$args0" ;;  
+    (2) set -- "$args0" "$args1" ;;  
+    (3) set -- "$args0" "$args1" "$args2" ;;  
+    (4) set -- "$args0" "$args1" "$args2" "$args3" ;;  
+    (5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;  
+    (6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;  
+    (7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;  
+    (8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;  
+    (9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;  
+esac
+
+fi
+
+Split up the JVM_OPTS And GRADLE_OPTS values into an array, following the shell quoting and substitution rules
+
+function splitJvmOpts() {
+JVM_OPTS=("$@")
+}
+eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
+JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
+
+exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
+
+E o // Modificado para build em debug - 30/05/2025
+plugins {
+id "com.android.application"
+id "kotlin-android"
+id "dev.flutter.flutter-gradle-plugin"
+id 'com.google.gms.google-services' // Adicionado plugin Google Services
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('../local.properties') // Adjusted path relative to app module
+if (localPropertiesFile.exists()) {
+localPropertiesFile.withReader('UTF-8') { reader ->
+localProperties.load(reader)
+}
+}
+
+def getPubspecVersionInfo() {
+def pubspecFile = rootProject.file("../pubspec.yaml") // Path relative to app module
+if (!pubspecFile.exists()) {
+throw new GradleException("File not found: ${pubspecFile.absolutePath}")
+}
+def pubspecContent = pubspecFile.text
+def versionLine = pubspecContent.readLines().find { it.startsWith("version:") }
+if (versionLine == null) {
+throw new GradleException("Missing 'version:' line in pubspec.yaml")
+}
+def matcher = versionLine =~ /version:\s*(\d+.\d+.\d+)+(\d+)/
+if (!matcher.find()) {
+matcher = versionLine =~ /version:\s*(\d+.\d+.\d+)/
+if (!matcher.find()) {
+throw new GradleException("Invalid 'version:' format in pubspec.yaml. Expected 'X.Y.Z+B' or 'X.Y.Z'. Found: ${versionLine}")
+}
+return [name: matcher.group(1), code: 1]
+}
+return [name: matcher.group(1), code: matcher.group(2).toInteger()]
+}
+
+def versionInfo = getPubspecVersionInfo()
+
+android {
+namespace "com.lucasbeats.federacao"
+compileSdk 35
+ndkVersion "25.1.8937393"
+
+compileOptions {  
+    sourceCompatibility JavaVersion.VERSION_17  
+    targetCompatibility JavaVersion.VERSION_17  
+    coreLibraryDesugaringEnabled true  
+}  
+
+kotlinOptions {  
+    jvmTarget = '17'  
+}  
+
+sourceSets {  
+    main.java.srcDirs += 'src/main/kotlin'  
+}  
+
+defaultConfig {  
+    applicationId "com.lucasbeats.federacao"  
+    minSdkVersion 24  
+    targetSdkVersion 35  
+    versionCode versionInfo.code  
+    versionName versionInfo.name  
+    multiDexEnabled true  
+
+    // ðŸ‘‡ CORTA x86 e x86_64 pra evitar erro no Sentry e no Jetifier  
+    ndk {  
+        abiFilters "armeabi-v7a", "arm64-v8a"  
+    }  
+}  
+
+buildTypes {  
+    release {  
+        signingConfig signingConfigs.debug // Usa debug como release  
+        minifyEnabled false  
+        shrinkResources false  
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'  
+    }  
+    debug {  
+        minifyEnabled false  
+        shrinkResources false  
+    }  
+}  
+
+lintOptions {  
+    disable 'InvalidPackage'  
+    checkReleaseBuilds false  
+    abortOnError false  
+}  
+
+configurations {  
+    all {  
+        exclude group: 'io.github.webrtc-sdk', module: 'android'  
+    }  
+}
+
+}
+
+flutter {
+source '../..'
+}
+
+dependencies {
+implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0"
+coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+implementation 'androidx.multidex:multidex:2.0.1'
+implementation 'androidx.core:core-ktx:1.12.0'
+implementation 'androidx.appcompat:appcompat:1.6.1'
+testImplementation 'junit:junit:4.13.2'
+androidTestImplementation 'androidx.test:runner:1.6.1'
+androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}
+Build grade e ainda tenho Google service.json
+Se você ler os arquivos que te mandei vc vai perceber claramente que é mongoose mongodb redis render JWT weebsocekts vai ver tbm swagger sentry.io firebase fireaut crachilitz com query eu sei que uso o cracklits por lá e tudo que vc precisar já estão nos arquivos
+
+
+
