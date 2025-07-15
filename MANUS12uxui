@@ -1,0 +1,177 @@
+ERRORS CRITICOS 
+
+The named parameter 'socketService' is required, but there's no corresponding argument • lib/main.dart:157:66 • missing_required_argument
+Target of URI doesn't exist: 'package:provider/provider' • lib/screens/admin/admin_main_dashboard.dart:2:8 • uri_does_not_exist
+Undefined name 'Provider' • lib/screens/admin/admin_main_dashboard.dart:26:28 • undefined_identifier
+The name 'AdminUserManagementScreen' isn't a class • lib/screens/admin/admin_main_dashboard.dart:292:91 • creation_with_non_type
+The name 'AdminSystemSettingsScreen' isn't a class • lib/screens/admin/admin_main_dashboard.dart:303:91 • creation_with_non_type
+The name 'AdminReportsScreen' isn't a class • lib/screens/admin/admin_main_dashboard.dart:318:91 • creation_with_non_type
+Target of URI doesn't exist: 'package:provider/provider' • lib/screens/admin/admin_reports_screen.dart:2:8 • uri_does_not_exist
+Undefined name 'Provider' • lib/screens/admin/admin_reports_screen.dart:41:28 • undefined_identifier
+Undefined name 'Provider' • lib/screens/admin/admin_reports_screen.dart:42:28 • undefined_identifier
+Target of URI doesn't exist: 'package:lucasbeatsfederacaomad/services/admin_service.dart' • lib/screens/admin/admin_system_settings.dart:3:8 • uri_does_not_exist
+Target of URI doesn't exist: 'package:lucasbeatsfederacaomad/models/system_setting.dart' • lib/screens/admin/admin_system_settings.dart:4:8 • uri_does_not_exist
+Missing concrete implementation of 'abstract class State<T extends StatefulWidget> with Diagnosticable.build' • lib/screens/admin/admin_system_settings.dart:13:7 • non_abstract_class_inherits_abstract_member
+Undefined class 'SystemSetting' • lib/screens/admin/admin_system_settings.dart:14:3 • undefined_class
+The method 'SystemSetting' isn't defined for the type '_AdminSystemSettingsScreenState' • lib/screens/admin/admin_system_settings.dart:14:36 • undefined_method
+The name 'AdminService' isn't a type, so it can't be used as a type argument • lib/screens/admin/admin_system_settings.dart:39:40 • non_type_as_type_argument
+The name 'AdminService' isn't a type, so it can't be used as a type argument • lib/screens/admin/admin_system_settings.dart:63:40 • non_type_as_type_argument
+The name 'AdminService' isn't a type, so it can't be used as a type argument • lib/screens/admin/admin_system_settings.dart:110:50 • non_type_as_type_argument
+The name 'AdminService' isn't a type, so it can't be used as a type argument • lib/screens/admin/admin_system_settings.dart:136:40 • non_type_as_type_argument
+The name 'AdminService' isn't a type, so it can't be used as a type argument • lib/screens/admin/admin_system_settings.dart:179:50 • non_type_as_type_argument
+The getter 'email' isn't defined for the type 'User' • lib/screens/admin/admin_user_management.dart:57:24 • undefined_getter
+The getter 'email' isn't defined for the type 'User' • lib/screens/admin/admin_user_management.dart:235:30 • undefined_getter
+The getter 'email' isn't defined for the type 'User' • lib/screens/admin/admin_user_management.dart:237:30 • undefined_getter
+The method '_buildActionButton' isn't defined for the type '_AdminUserManagementScreenState' • lib/screens/admin/admin_user_management.dart:280:15 • undefined_method
+The method '_buildActionButton' isn't defined for the type '_AdminUserManagementScreenState' • lib/screens/admin/admin_user_management.dart:286:15 • undefined_method
+The method '_buildActionButton' isn't defined for the type '_AdminUserManagementScreenState' • lib/screens/admin/admin_user_management.dart:292:15 • undefined_method
+There's no constant named 'idcloned' in 'Role' • lib/screens/admin/admin_user_management.dart:317:17 • undefined_enum_constant
+The named parameter 'callId' is required, but there's no corresponding argument • lib/screens/call_screen.dart:184:35 • missing_required_argument
+The named parameter 'roomId' isn't defined • lib/screens/call_screen.dart:184:46 • undefined_named_parameter
+The named parameter 'callId' is required, but there's no corresponding argument • lib/screens/call_screen.dart:196:35 • missing_required_argument
+Target of URI doesn't exist: 'package:provider/provider' • lib/screens/federation_management_screen.dart:2:8 • uri_does_not_exist
+Undefined name 'Provider' • lib/screens/federation_management_screen.dart:32:33 • undefined_identifier
+The method 'Consumer' isn't defined for the type '_FederationManagementScreenState' • lib/screens/federation_management_screen.dart:58:12 • undefined_method
+There's no constant named 'federationLeader' in 'Role' • lib/screens/federation_management_screen.dart:63:39 • undefined_enum_constant
+The method '_buildControlButton' isn't defined for the type '_VoiceCallScreenState' • lib/screens/voice_call_screen.dart:407:19 • undefined_method
+The method '_buildControlButton' isn't defined for the type '_VoiceCallScreenState' • lib/screens/voice_call_screen.dart:415:19 • undefined_method
+The method '_buildControlButton' isn't defined for the type '_VoiceCallScreenState' • lib/screens/voice_call_screen.dart:423:21 • undefined_method
+The method '_buildControlButton' isn't defined for the type '_VoiceCallScreenState' • lib/screens/voice_call_screen.dart:431:21 • undefined_method
+The method '_buildControlButton' isn't defined for the type '_VoiceCallScreenState' • lib/screens/voice_call_screen.dart:438:19 • undefined_method
+There's no constant named 'idcloned' in 'Role' • lib/services/auth_service.dart:25:90 • undefined_enum_constant
+The getter 'chatType' isn't defined for the type 'Message' • lib/services/chat_service.dart:31:22 • undefined_getter
+The getter 'chatType' isn't defined for the type 'Message' • lib/services/chat_service.dart:33:29 • undefined_getter
+The getter 'entityId' isn't defined for the type 'Message' • lib/services/chat_service.dart:34:31 • undefined_getter
+The getter 'chatType' isn't defined for the type 'Message' • lib/services/chat_service.dart:35:29 • undefined_getter
+The getter 'entityId' isn't defined for the type 'Message' • lib/services/chat_service.dart:36:31 • undefined_getter
+The getter 'chatType' isn't defined for the type 'Message' • lib/services/chat_service.dart:38:79 • undefined_getter
+The named parameter 'callId' is required, but there's no corresponding argument • lib/widgets/incoming_call_overlay.dart:283:20 • missing_required_argument
+The named parameter 'callId' is required, but there's no corresponding argument • lib/widgets/incoming_call_overlay.dart:297:25 • missing_required_argument
+The named parameter 'roomId' isn't defined • lib/widgets/incoming_call_overlay.dart:297:36 • undefined_named_parameter
+Here is the complete list of warnings from the flutter analyze command, in a copyable list format:
+
+
+WARNINGS 
+The value of the local variable 'isIncomingCall' isn't used • lib/main.dart:208:21 • unused_local_variable
+This default clause is covered by the previous cases • lib/providers/context_provider.dart:171:7 • unreachable_switch_default
+The value of the local variable 'systemLogs' isn't used • lib/screens/admin/admin_reports_screen.dart:48:13 • unused_local_variable
+The value of the field '_isLoading' isn't used • lib/screens/admin/admin_system_settings.dart:24:8 • unused_field
+The value of the field '_regions' isn't used • lib/screens/admin/admin_system_settings.dart:26:22 • unused_field
+The declaration '_saveSettings' isn't referenced • lib/screens/admin/admin_system_settings.dart:58:16 • unused_element
+The declaration '_createBackup' isn't referenced • lib/screens/admin/admin_system_settings.dart:85:16 • unused_element
+The declaration '_clearCache' isn't referenced • lib/screens/admin/admin_system_settings.dart:134:16 • unused_element
+The declaration '_restartServer' isn't referenced • lib/screens/admin/admin_system_settings.dart:154:16 • unused_element
+The declaration '_buildSettingsSection' isn't referenced • lib/screens/admin/admin_system_settings.dart:203:10 • unused_element
+The declaration '_buildSwitchSetting' isn't referenced • lib/screens/admin/admin_system_settings.dart:235:10 • unused_element
+The declaration '_buildDropdownSetting' isn't referenced • lib/screens/admin/admin_system_settings.dart:279:10 • unused_element
+The declaration '_buildSliderSetting' isn't referenced • lib/screens/admin/admin_system_settings.dart:334:10 • unused_element
+The declaration '_buildActionSetting' isn't referenced • lib/screens/admin/admin_system_settings.dart:389:10 • unused_element
+The left operand can't be null, so the right operand is never executed • lib/screens/admin/admin_user_management.dart:170:39 • dead_null_aware_expression
+The declaration '_getRoleDisplayName' isn't referenced • lib/screens/admin/admin_user_management.dart:324:10 • unused_element
+The left operand can't be null, so the right operand is never executed • lib/screens/admin_manage_clans_screen.dart:258:105 • dead_null_aware_expression
+The declaration '_showAssignClanDialog' isn't referenced • lib/screens/admin_manage_clans_screen.dart:548:8 • unused_element
+The left operand can't be null, so the right operand is never executed • lib/screens/admin_manage_federations_screen.dart:183:69 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/call_screen.dart:106:96 • dead_null_aware_expression
+The value of the field '_isLoading' isn't used • lib/screens/clan_detail_screen.dart:22:8 • unused_field
+The left operand can't be null, so the right operand is never executed • lib/screens/clan_list_screen.dart:192:44 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/clan_list_screen.dart:193:58 • dead_null_aware_expression
+The member 'notifyListeners' can only be used within 'package:flutter/src/foundation/change_notifier.dart' or a test • lib/screens/clan_text_chat_screen.dart:60:27 • invalid_use_of_visible_for_testing_member
+The member 'notifyListeners' can only be used within instance members of subclasses of 'package:flutter/src/foundation/change_notifier.dart' • lib/screens/clan_text_chat_screen.dart:60:27 • invalid_use_of_protected_member
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_detail_screen.dart:47:47 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_detail_screen.dart:140:46 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_detail_screen.dart:170:46 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_detail_screen.dart:190:47 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_leader_panel_screen.dart:14:73 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_leader_panel_screen.dart:23:67 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_list_screen.dart:214:50 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_list_screen.dart:246:115 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_list_screen.dart:260:90 • dead_null_aware_expression
+The member 'notifyListeners' can only be used within 'package:flutter/src/foundation/change_notifier.dart' or a test • lib/screens/global_chat_screen.dart:58:27 • invalid_use_of_visible_for_testing_member
+The member 'notifyListeners' can only be used within instance members of subclasses of 'package:flutter/src/foundation/change_notifier.dart' • lib/screens/global_chat_screen.dart:58:27 • invalid_use_of_protected_member
+The left operand can't be null, so the right operand is never executed • lib/screens/home_screen.dart:215:50 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/home_screen.dart:219:60 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/home_screen.dart:222:97 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/home_screen.dart:228:109 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/settings_screen.dart:63:45 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/voice_rooms_screen.dart:257:44 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/services/auth_service.dart:198:60 • dead_null_aware_expression
+The value of the field '_metricsSuffix' isn't used • lib/services/cache_service.dart:11:23 • unused_field
+The operand can't be 'null', so the condition is always 'true' • lib/services/chat_service.dart:89:58 • unnecessary_null_comparison
+The operand can't be 'null', so the condition is always 'true' • lib/services/chat_service.dart:107:50 • unnecessary_null_comparison
+The declaration '_sendMessageViaFirebase' isn't referenced • lib/services/chat_service.dart:111:16 • unused_element
+The value of the local variable 'currentUserRoleInClan' isn't used • lib/services/clan_service.dart:166:13 • unused_local_variable
+The value of the local variable 'currentUserRoleInClan' isn't used • lib/services/clan_service.dart:195:13 • unused_local_variable
+The value of the field '_notificationsReceived' isn't used • lib/services/firebase_service.dart:49:7 • unused_field
+The value of the field '_notificationsShown' isn't used • lib/services/firebase_service.dart:50:7 • unused_field
+The value of the field '_lastNotificationTime' isn't used • lib/services/firebase_service.dart:51:13 • unused_field
+The value of the local variable 'cacheControl' isn't used • lib/services/http_file_service.dart:30:19 • unused_local_variable
+The left operand can't be null, so the right operand is never executed • lib/widgets/call_history_feed_widget.dart:117:36 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/call_history_feed_widget.dart:118:34 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/call_history_feed_widget.dart:119:39 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/federations_panel_widget.dart:85:50 • dead_null_aware_expression
+The declaration '_showPromoteUserDialog' isn't referenced • lib/widgets/quick_actions_widget.dart:335:8 • unused_element
+The declaration '_getAuthToken' isn't referenced • lib/widgets/user_dashboard_widget.dart:170:11 • unused_element
+The declaration '_canCreateRoom' isn't referenced • lib/widgets/voice_room_widget.dart:151:8 • unused_element
+The declaration '_canJoinRoom' isn't referenced • lib/widgets/voice_room_widget.dart:166:8 • unused_element
+The left operand can't be null, so the right operand is never executed • lib/widgets/voice_room_widget.dart:190:44 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/voice_room_widget.dart:281:44 • dead_null_aware_expression
+The declaration '_getRoomDisplayName' isn't referenced • lib/widgets/voice_room_widget.dart:331:10 • unused_element
+Here is the complete list of infos from the flutter analyze command, in a copyable list format:
+
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_main_dashboard.dart:186:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_main_dashboard.dart:426:26 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_main_dashboard.dart:428:45 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_organization_management.dart:197:42 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_organization_management.dart:197:72 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_organization_management.dart:298:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_reports_screen.dart:333:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_reports_screen.dart:367:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_reports_screen.dart:394:38 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_reports_screen.dart:396:57 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:209:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:240:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:272:37 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:284:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:339:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/animation_showcase_screen.dart:332:64 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:277:34 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:286:40 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:317:54 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:365:48 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:380:43 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:402:49 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:442:33 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/chat_list_tab.dart:445:47 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/chat_list_tab.dart:453:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:83:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:179:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:217:22 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:219:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/admin_notification_dialog.dart:230:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/call_history_feed_widget.dart:200:26 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/common/organization_badge.dart:22:22 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:97:30 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:98:30 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:102:45 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/member_list_item.dart:30:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/quick_actions_widget.dart:24:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/admin/quick_stats_widget.dart:23:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/admin/user_management_card.dart:75:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/admin/user_management_card.dart:125:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/chat/message_with_context.dart:22:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/chat/message_with_context.dart:25:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/common/context_aware_app_bar.dart:25:26 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/common/context_aware_app_bar.dart:30:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/common/context_aware_app_bar.dart:36:38 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/common/user_avatar_with_context.dart:22:22 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/exploration/clan_mini_card.dart:24:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/exploration/clan_mini_card.dart:35:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/exploration/context_indicator.dart:20:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/exploration/federation_card.dart:26:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/exploration/federation_card.dart:37:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/media/image_preview_widget.dart:23:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/media/image_preview_widget.dart:35:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/media/image_upload_widget.dart:24:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/media/image_upload_widget.dart:36:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/voip/call_participant_card.dart:24:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/voip/voice_controls_widget.dart:46:35 • deprecated_member_use
