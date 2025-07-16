@@ -1,0 +1,58 @@
+The named parameter 'socketService' is required, but there's no corresponding argument • lib/main.dart:157:66 • missing_required_argument
+The name 'StatsService' isn't a type, so it can't be used as a type argument • lib/screens/admin/admin_main_dashboard.dart:28:40 • non_type_as_type_argument
+The method 'getUserStats' isn't defined for the type 'AdminService' • lib/screens/admin/admin_reports_screen.dart:46:44 • undefined_method
+The method 'getClanFederationStats' isn't defined for the type 'AdminService' • lib/screens/admin/admin_reports_screen.dart:47:54 • undefined_method
+The named parameter 'color' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:272:15 • missing_required_argument
+The named parameter 'icon' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:272:15 • missing_required_argument
+The named parameter 'onPressed' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:272:15 • missing_required_argument
+The named parameter 'text' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:272:15 • missing_required_argument
+Too many positional arguments: 0 expected, but 4 found • lib/screens/admin/admin_user_management.dart:273:17 • extra_positional_arguments_could_be_named
+The named parameter 'color' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:278:15 • missing_required_argument
+The named parameter 'icon' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:278:15 • missing_required_argument
+The named parameter 'onPressed' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:278:15 • missing_required_argument
+The named parameter 'text' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:278:15 • missing_required_argument
+Too many positional arguments: 0 expected, but 4 found • lib/screens/admin/admin_user_management.dart:279:17 • extra_positional_arguments_could_be_named
+The named parameter 'color' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:284:15 • missing_required_argument
+The named parameter 'icon' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:284:15 • missing_required_argument
+The named parameter 'onPressed' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:284:15 • missing_required_argument
+The named parameter 'text' is required, but there's no corresponding argument • lib/screens/admin/admin_user_management.dart:284:15 • missing_required_argument
+Too many positional arguments: 0 expected, but 4 found • lib/screens/admin/admin_user_management.dart:285:17 • extra_positional_arguments_could_be_named
+A function body must be provided • lib/screens/call_screen.dart:183:51 • missing_function_body
+Expected to find ',' • lib/screens/call_screen.dart:183:51 • expected_token
+The await expression can only be used in an async function • lib/screens/call_screen.dart:183:51 • await_in_wrong_context
+Too many positional arguments: 0 expected, but 1 found • lib/screens/call_screen.dart:183:51 • extra_positional_arguments
+The named parameter 'callId' is required, but there's no corresponding argument • lib/screens/call_screen.dart:183:69 • missing_required_argument
+The named parameter 'roomId' isn't defined • lib/screens/call_screen.dart:183:80 • undefined_named_parameter
+Expected to find ')' • lib/screens/call_screen.dart:183:128 • expected_token
+The named parameter 'callId' is required, but there's no corresponding argument • lib/screens/call_screen.dart:195:35 • missing_required_argument
+The parameter 'clanId' can't have a value of 'null' because of its type, but the implicit default value is 'null' • lib/screens/clan_management_screen.dart:15:47 • missing_default_value_for_parameter
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/clan_text_chat_screen.dart:105:23 • undefined_method
+The method 'getMessages' isn't defined for the type 'ChatService' • lib/screens/clan_text_chat_screen.dart:127:44 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/clan_text_chat_screen.dart:302:21 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/clan_text_chat_screen.dart:320:21 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/clan_text_chat_screen.dart:336:21 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/clan_text_chat_screen.dart:355:19 • undefined_method
+The parameter 'federationId' can't have a value of 'null' because of its type, but the implicit default value is 'null' • lib/screens/federation_management_screen.dart:12:53 • missing_default_value_for_parameter
+The method 'listenToMessages' isn't defined for the type 'ChatService' • lib/screens/federation_text_chat_screen.dart:34:19 • undefined_method
+The method 'getMessages' isn't defined for the type 'ChatService' • lib/screens/federation_text_chat_screen.dart:51:51 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/federation_text_chat_screen.dart:69:19 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/federation_text_chat_screen.dart:101:21 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/federation_text_chat_screen.dart:129:21 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/global_chat_screen.dart:103:23 • undefined_method
+The method 'getMessages' isn't defined for the type 'ChatService' • lib/screens/global_chat_screen.dart:126:44 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/global_chat_screen.dart:302:29 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/global_chat_screen.dart:325:29 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/global_chat_screen.dart:346:29 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/screens/global_chat_screen.dart:370:27 • undefined_method
+The argument type 'String?' can't be assigned to the parameter type 'String'. • lib/screens/home_screen.dart:60:52 • argument_type_not_assignable
+Undefined name 'token' • lib/services/voip_service.dart:196:16 • undefined_identifier
+The method 'atualizarStatusPresenca' isn't defined for the type 'ChatService' • lib/widgets/app_lifecycle_reactor.dart:63:19 • undefined_method
+The method 'getMessages' isn't defined for the type 'ChatService' • lib/widgets/chat_widget.dart:73:25 • undefined_method
+The method 'sendMessage' isn't defined for the type 'ChatService' • lib/widgets/chat_widget.dart:99:25 • undefined_method
+The method 'listenToMessages' isn't defined for the type 'ChatService' • lib/widgets/chat_widget.dart:162:33 • undefined_method
+The method 'getCachedMessagesForEntity' isn't defined for the type 'ChatService' • lib/widgets/chat_widget.dart:192:34 • undefined_method
+The named parameter 'callId' is required, but there's no corresponding argument • lib/widgets/incoming_call_overlay.dart:283:25 • missing_required_argument
+The named parameter 'callId' is required, but there's no corresponding argument • lib/widgets/incoming_call_overlay.dart:297:25 • missing_required_argument
+The named parameter 'roomId' isn't defined • lib/widgets/incoming_call_overlay.dart:297:36 • undefined_named_parameter
+The named parameter 'roomId' is required, but there's no corresponding argument • lib/widgets/member_list_item.dart:190:35 • missing_required_argument
+The named parameter 'call' isn't defined • lib/widgets/member_list_item.dart:191:15 • undefined_named_parameter
