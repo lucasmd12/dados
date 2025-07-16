@@ -1,0 +1,114 @@
+The value of the local variable 'signalingService' isn't used • lib/main.dart:138:11 • unused_local_variable
+The value of the local variable 'isIncomingCall' isn't used • lib/main.dart:208:21 • unused_local_variable
+Unused import: 'package:flutter/foundation.dart' • lib/models/system_setting.dart:1:8 • unused_import
+This default clause is covered by the previous cases • lib/providers/context_provider.dart:171:7 • unreachable_switch_default
+The value of the local variable 'systemLogs' isn't used • lib/screens/admin/admin_reports_screen.dart:48:13 • unused_local_variable
+The value of the field '_isLoading' isn't used • lib/screens/admin/admin_system_settings.dart:31:8 • unused_field
+The value of the field '_regions' isn't used • lib/screens/admin/admin_system_settings.dart:33:22 • unused_field
+The declaration '_saveSettings' isn't referenced • lib/screens/admin/admin_system_settings.dart:65:16 • unused_element
+The declaration '_createBackup' isn't referenced • lib/screens/admin/admin_system_settings.dart:92:16 • unused_element
+The declaration '_clearCache' isn't referenced • lib/screens/admin/admin_system_settings.dart:141:16 • unused_element
+The declaration '_restartServer' isn't referenced • lib/screens/admin/admin_system_settings.dart:161:16 • unused_element
+The declaration '_buildSettingsSection' isn't referenced • lib/screens/admin/admin_system_settings.dart:210:10 • unused_element
+The declaration '_buildSwitchSetting' isn't referenced • lib/screens/admin/admin_system_settings.dart:242:10 • unused_element
+The declaration '_buildDropdownSetting' isn't referenced • lib/screens/admin/admin_system_settings.dart:286:10 • unused_element
+The declaration '_buildSliderSetting' isn't referenced • lib/screens/admin/admin_system_settings.dart:341:10 • unused_element
+The declaration '_buildActionSetting' isn't referenced • lib/screens/admin/admin_system_settings.dart:396:10 • unused_element
+The left operand can't be null, so the right operand is never executed • lib/screens/admin/admin_user_management.dart:169:39 • dead_null_aware_expression
+The declaration '_getRoleDisplayName' isn't referenced • lib/screens/admin/admin_user_management.dart:316:10 • unused_element
+The left operand can't be null, so the right operand is never executed • lib/screens/admin_manage_clans_screen.dart:258:105 • dead_null_aware_expression
+The declaration '_showAssignClanDialog' isn't referenced • lib/screens/admin_manage_clans_screen.dart:548:8 • unused_element
+The left operand can't be null, so the right operand is never executed • lib/screens/admin_manage_federations_screen.dart:183:69 • dead_null_aware_expression
+The name Call is shown, but isn't used • lib/screens/call_screen.dart:5:66 • unused_shown_name
+The value of the field '_isLoading' isn't used • lib/screens/clan_detail_screen.dart:22:8 • unused_field
+The left operand can't be null, so the right operand is never executed • lib/screens/clan_list_screen.dart:192:44 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/clan_list_screen.dart:193:58 • dead_null_aware_expression
+The member 'notifyListeners' can only be used within 'package:flutter/src/foundation/change_notifier.dart' or a test • lib/screens/clan_text_chat_screen.dart:60:27 • invalid_use_of_visible_for_testing_member
+The member 'notifyListeners' can only be used within instance members of subclasses of 'package:flutter/src/foundation/change_notifier.dart' • lib/screens/clan_text_chat_screen.dart:60:27 • invalid_use_of_protected_member
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_detail_screen.dart:47:47 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_detail_screen.dart:140:46 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_detail_screen.dart:170:46 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_detail_screen.dart:190:47 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_leader_panel_screen.dart:14:73 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_leader_panel_screen.dart:23:67 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_list_screen.dart:214:50 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_list_screen.dart:246:115 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/federation_list_screen.dart:260:90 • dead_null_aware_expression
+The member 'notifyListeners' can only be used within 'package:flutter/src/foundation/change_notifier.dart' or a test • lib/screens/global_chat_screen.dart:58:27 • invalid_use_of_visible_for_testing_member
+The member 'notifyListeners' can only be used within instance members of subclasses of 'package:flutter/src/foundation/change_notifier.dart' • lib/screens/global_chat_screen.dart:58:27 • invalid_use_of_protected_member
+The left operand can't be null, so the right operand is never executed • lib/screens/home_screen.dart:215:50 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/home_screen.dart:219:60 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/home_screen.dart:222:97 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/home_screen.dart:228:109 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/settings_screen.dart:63:45 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/screens/voice_rooms_screen.dart:257:44 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/services/auth_service.dart:198:60 • dead_null_aware_expression
+The value of the field '_metricsSuffix' isn't used • lib/services/cache_service.dart:11:23 • unused_field
+Unused import: 'package:lucasbeatsfederacao/utils/logger.dart' • lib/services/chat_service.dart:5:8 • unused_import
+Unused import: 'package:lucasbeatsfederacao/models/role_model.dart' • lib/services/chat_service.dart:7:8 • unused_import
+The value of the field '_apiService' isn't used • lib/services/chat_service.dart:11:20 • unused_field
+The value of the field '_firebaseService' isn't used • lib/services/chat_service.dart:12:26 • unused_field
+The value of the field '_authService' isn't used • lib/services/chat_service.dart:13:21 • unused_field
+The value of the field '_messages' isn't used • lib/services/chat_service.dart:16:36 • unused_field
+The value of the local variable 'currentUserRoleInClan' isn't used • lib/services/clan_service.dart:166:13 • unused_local_variable
+The value of the local variable 'currentUserRoleInClan' isn't used • lib/services/clan_service.dart:195:13 • unused_local_variable
+The value of the field '_notificationsReceived' isn't used • lib/services/firebase_service.dart:49:7 • unused_field
+The value of the field '_notificationsShown' isn't used • lib/services/firebase_service.dart:50:7 • unused_field
+The value of the field '_lastNotificationTime' isn't used • lib/services/firebase_service.dart:51:13 • unused_field
+The value of the local variable 'cacheControl' isn't used • lib/services/http_file_service.dart:30:19 • unused_local_variable
+The method 'atualizarStatusPresenca' isn't defined for the type 'ChatService' • lib/widgets/app_lifecycle_reactor.dart:63:19 • undefined_method
+The left operand can't be null, so the right operand is never executed • lib/widgets/call_history_feed_widget.dart:117:36 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/call_history_feed_widget.dart:118:34 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/call_history_feed_widget.dart:119:39 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/call_history_feed_widget.dart:262:35 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/call_history_feed_widget.dart:270:39 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/federations_panel_widget.dart:85:50 • dead_null_aware_expression
+The declaration '_showPromoteUserDialog' isn't referenced • lib/widgets/quick_actions_widget.dart:335:8 • unused_element
+The declaration '_getAuthToken' isn't referenced • lib/widgets/user_dashboard_widget.dart:170:11 • unused_element
+The declaration '_canCreateRoom' isn't referenced • lib/widgets/voice_room_widget.dart:151:8 • unused_element
+The declaration '_canJoinRoom' isn't referenced • lib/widgets/voice_room_widget.dart:166:8 • unused_element
+The left operand can't be null, so the right operand is never executed • lib/widgets/voice_room_widget.dart:190:44 • dead_null_aware_expression
+The left operand can't be null, so the right operand is never executed • lib/widgets/voice_room_widget.dart:281:44 • dead_null_aware_expression
+The declaration '_getRoomDisplayName' isn't referenced • lib/widgets/voice_room_widget.dart:331:10 • unused_element
+Infos:
+
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_main_dashboard.dart:188:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_main_dashboard.dart:428:26 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_main_dashboard.dart:430:45 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_organization_management.dart:197:42 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_organization_management.dart:197:72 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_organization_management.dart:298:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_reports_screen.dart:333:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_reports_screen.dart:367:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_reports_screen.dart:394:38 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_reports_screen.dart:396:57 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:216:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:247:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:279:37 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:291:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:346:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_system_settings.dart:396:29 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_user_management.dart:181:42 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/admin/admin_user_management.dart:181:73 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/animation_showcase_screen.dart:332:64 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:277:34 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:286:40 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:317:54 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:365:48 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:380:43 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:402:49 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/splash_screen.dart:442:33 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/chat_list_tab.dart:445:47 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/chat_list_tab.dart:453:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:83:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:179:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:217:22 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/tabs/home_tab.dart:219:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/admin_notification_dialog.dart:230:41 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/call_history_feed_widget.dart:200:26 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/common/organization_badge.dart:22:22 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:97:30 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:98:30 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/incoming_call_overlay.dart:102:45 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/member_list_item.dart:30:35 • deprecated_member_use
+'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/quick_actions_widget.dart:24:35 • deprecated_member_use
