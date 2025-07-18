@@ -1,0 +1,222 @@
+--------- beginning of crash
+--------- beginning of system
+--------- beginning of main
+2025-07-18 12:20:35.998 26902-26902 flutter                 com.lucasbeats.federacao             I  [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(61)] Using the Impeller rendering backend (Vulkan).
+2025-07-18 12:20:36.158 26902-10948 flutter                 com.lucasbeats.federacao             I  The Dart VM service is listening on http://127.0.0.1:41635/F1LXOliPruw=/
+2025-07-18 12:20:37.451 26902-26902 FlutterWebRTCPlugin     com.lucasbeats.federacao             W  audioFocusChangeListener [Earpiece(name=Earpiece)] Earpiece(name=Earpiece)
+2025-07-18 12:20:37.451 26902-26902 FlutterWebRTCPlugin     com.lucasbeats.federacao             W  audioFocusChangeListener [Speakerphone(name=Speakerphone), Earpiece(name=Earpiece)] Speakerphone(name=Speakerphone)
+2025-07-18 12:20:37.863 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App Initialization Started.
+2025-07-18 12:20:37.870 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Screen orientation set to portrait.
+2025-07-18 12:20:37.870 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Running FEDERACAOMAD App.
+2025-07-18 12:20:37.997 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Building FEDERACAOMADApp Widget.
+2025-07-18 12:20:38.000 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] CIRURGIA: Verificando pulso inicial (status de autenticação)...
+2025-07-18 12:20:38.134 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] AppLifecycleReactor initialized and observing.
+2025-07-18 12:20:38.573 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider initialized. Listening to AuthService changes.
+2025-07-18 12:20:38.574 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Status changed to Unauthenticated.
+2025-07-18 12:20:38.574 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Disconnecting SocketService...
+2025-07-18 12:20:38.575 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Disconnecting socket...
+2025-07-18 12:20:38.593 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Starting keep-alive service...
+2025-07-18 12:20:38.593 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Sending keep-alive ping...
+2025-07-18 12:20:39.740 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot update presence: currentUser is null when trying to update.
+2025-07-18 12:20:40.296 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Token encontrado no armazenamento seguro. Tentando reanimar sessão.
+2025-07-18 12:20:40.299 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.com/api/auth/profile
+2025-07-18 12:20:49.949 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Checking if server is awake...
+2025-07-18 12:20:49.949 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Ensuring server is awake...
+2025-07-18 12:21:00.442 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:21:06.887 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.resumed
+2025-07-18 12:21:06.887 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot update presence: currentUser is null when trying to update.
+2025-07-18 12:21:08.634 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Server keep-alive ping failed: TimeoutException after 0:00:30.000000: Future not completed
+2025-07-18 12:21:08.634 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Keep-alive ping successful
+2025-07-18 12:21:19.951 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Server keep-alive ping failed: TimeoutException after 0:00:30.000000: Future not completed
+2025-07-18 12:21:19.951 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Server is awake and responsive
+2025-07-18 12:21:19.952 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Attempting login for: idcloned
+2025-07-18 12:21:19.954 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] CIRURGIA: Iniciando procedimento de login para 'idcloned'.
+2025-07-18 12:21:19.990 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] API POST Request: https://beckend-ydd1.onrender.com/api/auth/login, Data: {"username":"idcloned","password":"30092010"}
+2025-07-18 12:21:33.510 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null,"bio":"","status":"online","clan":{"_id":"6873e279dce35fa96dba653b","name":"Clã Vazio","tag":"CVZ","customRoles":[]},"clanRole":"Leader","createdAt":"2025-06-05T02:01:37.937Z","updatedAt":"2025-07-18T15:21:32.900Z","__v":0,"online":true,"ultimaAtividade":"2025-07-15T03:51:38.648Z","role":"ADM","lastSeen":"2025-07-18T15:21:32.899Z","mustChangePasswordOnNextLogin":false}
+2025-07-18 12:21:33.517 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Perfil do usuário obtido com sucesso: idcloned
+2025-07-18 12:21:33.519 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-18 12:21:33.519 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Status changed to Authenticated.
+2025-07-18 12:21:33.519 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Connecting SocketService...
+2025-07-18 12:21:33.521 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Sessão reanimada com sucesso para: idcloned.
+2025-07-18 12:21:33.526 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-18 12:21:33.560 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Erro ao carregar dados do dashboard: Error: Could not find the correct Provider<StatsService> above this AdminMainDashboard Widget
+                                                                                                    
+                                                                                                    This happens because you used a `BuildContext` that does not include the provider
+                                                                                                    of your choice. There are a few common scenarios:
+                                                                                                    
+                                                                                                    - You added a new provider in your `main.dart` and performed a hot-reload.
+                                                                                                      To fix, perform a hot-restart.
+                                                                                                    
+                                                                                                    - The provider you are trying to read is in a different route.
+                                                                                                    
+                                                                                                      Providers are "scoped". So if you insert of provider inside a route, then
+                                                                                                      other routes will not be able to access that provider.
+                                                                                                    
+                                                                                                    - You used a `BuildContext` that is an ancestor of the provider you are trying to read.
+                                                                                                    
+                                                                                                      Make sure that AdminMainDashboard is under your MultiProvider/Provider<StatsService>.
+                                                                                                      This usually happens when you are creating a provider and trying to read it immediately.
+                                                                                                    
+                                                                                                      For example, instead of:
+                                                                                                    
+                                                                                                      ```
+                                                                                                      Widget build(BuildContext context) {
+                                                                                                        return Provider<Example>(
+                                                                                                          create: (_) => Example(),
+                                                                                                          // Will throw a ProviderNotFo
+2025-07-18 12:21:34.027 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Socket connection attempt failed: No JWT token or userId found.
+2025-07-18 12:21:34.156 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-18 12:21:34.156 26902-26902 flutter                 com.lucasbeats.federacao             I    Error: A RenderFlex overflowed by 782 pixels on the bottom.
+2025-07-18 12:21:34.433 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"_id":"6840fa81d3e355548749dfc6","username":"idcloned","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDBmYTgxZDNlMzU1NTQ4NzQ5ZGZjNiIsInJvbGUiOiJBRE0iLCJpYXQiOjE3NTI4NTIwOTQsImV4cCI6MTc1NTQ0NDA5NH0.QoJsdPu44vDvQCzPWBTuSACn7Gi9AH88qsY0htbZSzM","role":"ADM","clan":"6873e279dce35fa96dba653b","federation":null}
+2025-07-18 12:21:34.459 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.com/api/auth/profile
+2025-07-18 12:21:35.249 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null,"bio":"","status":"online","clan":{"_id":"6873e279dce35fa96dba653b","name":"Clã Vazio","tag":"CVZ","customRoles":[]},"clanRole":"Leader","createdAt":"2025-06-05T02:01:37.937Z","updatedAt":"2025-07-18T15:21:32.900Z","__v":0,"online":true,"ultimaAtividade":"2025-07-15T03:51:38.648Z","role":"ADM","lastSeen":"2025-07-18T15:21:32.899Z","mustChangePasswordOnNextLogin":false}
+2025-07-18 12:21:35.252 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Perfil do usuário obtido com sucesso: idcloned
+2025-07-18 12:21:35.253 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Login bem-sucedido. Nova identidade assumida: idcloned
+2025-07-18 12:21:35.255 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Login successful via AuthService for user: idcloned
+2025-07-18 12:21:35.341 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Login Screen Error
+2025-07-18 12:21:35.341 26902-26902 flutter                 com.lucasbeats.federacao             I    Error: Bad state: No element
+2025-07-18 12:21:49.999 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.com/api/users?page=1&limit=10
+2025-07-18 12:21:51.100 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"users":[{"_id":"6865479d73db0d812060775c","username":"DaianaM","avatar":null,"bio":"","status":"offline","clan":null,"clanRole":null,"federation":null,"federationRole":null,"role":"Leader","online":true,"mustChangePasswordOnNextLogin":false,"passwordResetBy":null,"passwordResetAt":null,"ultimaAtividade":"2025-07-02T14:52:13.391Z","lastSeen":"2025-07-05T17:03:10.651Z","createdAt":"2025-07-02T14:52:13.392Z","updatedAt":"2025-07-05T17:03:10.653Z","__v":0,"isOnline":false,"id":"6865479d73db0d812060775c"},{"federation":null,"federationRole":null,"role":"user","mustChangePasswordOnNextLogin":false,"passwordResetBy":null,"passwordResetAt":null,"_id":"6841c13adcb0a2a86b75152a","username":"Daianadoula","avatar":null,"bio":"","status":"offline","clan":null,"clanRole":null,"online":false,"ultimaAtividade":"2025-06-05T23:15:27.122Z","createdAt":"2025-06-05T16:09:30.077Z","updatedAt":"2025-06-05T23:15:27.123Z","__v":0,"lastSeen":"2025-07-18T15:21:51.323Z","isOnline":true,"id":"684
+2025-07-18 12:21:51.103 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] getAllUsers: Received 10 users from paginated response.
+2025-07-18 12:22:23.245 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Erro ao carregar dados do relatório
+2025-07-18 12:22:23.245 26902-26902 flutter                 com.lucasbeats.federacao             I    Error: Error: Could not find the correct Provider<StatsService> above this AdminReportsScreen Widget
+                                                                                                    
+                                                                                                    This happens because you used a `BuildContext` that does not include the provider
+                                                                                                    of your choice. There are a few common scenarios:
+                                                                                                    
+                                                                                                    - You added a new provider in your `main.dart` and performed a hot-reload.
+                                                                                                      To fix, perform a hot-restart.
+                                                                                                    
+                                                                                                    - The provider you are trying to read is in a different route.
+                                                                                                    
+                                                                                                      Providers are "scoped". So if you insert of provider inside a route, then
+                                                                                                      other routes will not be able to access that provider.
+                                                                                                    
+                                                                                                    - You used a `BuildContext` that is an ancestor of the provider you are trying to read.
+                                                                                                    
+                                                                                                      Make sure that AdminReportsScreen is under your MultiProvider/Provider<StatsService>.
+                                                                                                      This usually happens when you are creating a provider and trying to read it immediately.
+                                                                                                    
+                                                                                                      For example, instead of:
+                                                                                                    
+                                                                                                      ```
+                                                                                                      Widget build(BuildContext context) {
+                                                                                                        return Provider<Example>(
+                                                                                                          create: (_) => Example(),
+                                                                                                          // Will throw a ProviderNotFoundError, because `context` is associate
+2025-07-18 12:22:23.246 26902-26902 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      Provider._inheritedElementOf (package:provider/src/provider.dart:377:7)
+                                                                                                    #1      Provider.of (package:provider/src/provider.dart:327:30)
+                                                                                                    #2      _AdminReportsScreenState._loadReportData (package:lucasbeatsfederacao/screens/admin/admin_reports_screen.dart:59:149)
+                                                                                                    #3      _AdminReportsScreenState.initState (package:lucasbeatsfederacao/screens/admin/admin_reports_screen.dart:49:85)
+                                                                                                    #4      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+                                                                                                    #5      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #6      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+                                                                                                    #7      Element.updateChild (package:flutter/src/widgets/framework.dart:3998:20)
+                                                                                                    #8      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+                                                                                                    #9      Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+                                                                                                    #10     StatelessElement.update (package:flutter/src/widgets/framework.dart:5787:5)
+                                                                                                    #11     Element.updateChild (pa
+2025-07-18 12:22:23.320 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-18 12:22:23.320 26902-26902 flutter                 com.lucasbeats.federacao             I    Error: A RenderFlex overflowed by 782 pixels on the bottom.
+2025-07-18 12:22:31.213 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Platform Error:
+2025-07-18 12:22:31.213 26902-26902 flutter                 com.lucasbeats.federacao             I    Error: dependOnInheritedWidgetOfExactType<_ScaffoldMessengerScope>() or dependOnInheritedElement() was called before _AdminSystemSettingsScreenState.initState() completed.
+                                                                                                    When an inherited widget changes, for example if the value of Theme.of() changes, its dependent widgets are rebuilt. If the dependent widget's reference to the inherited widget is in a constructor or an initState() method, then the rebuilt dependent widget will not reflect the changes in the inherited widget.
+                                                                                                    Typically references to inherited widgets should occur in widget build() methods. Alternatively, initialization based on inherited widgets can be placed in the didChangeDependencies method, which is called after initState and whenever the dependencies change thereafter.
+2025-07-18 12:22:31.214 26902-26902 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      StatefulElement.dependOnInheritedElement.<anonymous closure> (package:flutter/src/widgets/framework.dart:5946:9)
+                                                                                                    #1      StatefulElement.dependOnInheritedElement (package:flutter/src/widgets/framework.dart:5993:6)
+                                                                                                    #2      Element.dependOnInheritedWidgetOfExactType (package:flutter/src/widgets/framework.dart:4982:14)
+                                                                                                    #3      ScaffoldMessenger.of (package:flutter/src/material/scaffold.dart:159:17)
+                                                                                                    #4      _AdminSystemSettingsScreenState._loadSettings (package:lucasbeatsfederacao/screens/admin/admin_system_settings.dart:52:25)
+                                                                                                    #5      _AdminSystemSettingsScreenState.initState (package:lucasbeatsfederacao/screens/admin/admin_system_settings.dart:38:5)
+                                                                                                    #6      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+                                                                                                    #7      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #8      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+                                                                                                    #9      Element.updateChild (package:flutter/src/widgets/framework.dart:3998:20)
+                                                                                                    #10     C
+2025-07-18 12:22:31.214 26902-26902 flutter                 com.lucasbeats.federacao             I  ----------------FIREBASE CRASHLYTICS----------------
+2025-07-18 12:22:31.214 26902-26902 flutter                 com.lucasbeats.federacao             I  dependOnInheritedWidgetOfExactType<_ScaffoldMessengerScope>() or dependOnInheritedElement() was called before _AdminSystemSettingsScreenState.initState() completed.
+                                                                                                    When an inherited widget changes, for example if the value of Theme.of() changes, its dependent widgets are rebuilt. If the dependent widget's reference to the inherited widget is in a constructor or an initState() method, then the rebuilt dependent widget will not reflect the changes in the inherited widget.
+                                                                                                    Typically references to inherited widgets should occur in widget build() methods. Alternatively, initialization based on inherited widgets can be placed in the didChangeDependencies method, which is called after initState and whenever the dependencies change thereafter.
+2025-07-18 12:22:31.215 26902-26902 flutter                 com.lucasbeats.federacao             I  #0      StatefulElement.dependOnInheritedElement.<anonymous closure> (package:flutter/src/widgets/framework.dart:5946:9)
+                                                                                                    #1      StatefulElement.dependOnInheritedElement (package:flutter/src/widgets/framework.dart:5993:6)
+                                                                                                    #2      Element.dependOnInheritedWidgetOfExactType (package:flutter/src/widgets/framework.dart:4982:14)
+                                                                                                    #3      ScaffoldMessenger.of (package:flutter/src/material/scaffold.dart:159:17)
+                                                                                                    #4      _AdminSystemSettingsScreenState._loadSettings (package:lucasbeatsfederacao/screens/admin/admin_system_settings.dart:52:25)
+                                                                                                    #5      _AdminSystemSettingsScreenState.initState (package:lucasbeatsfederacao/screens/admin/admin_system_settings.dart:38:5)
+                                                                                                    #6      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+                                                                                                    #7      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #8      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+                                                                                                    #9      Element.updateChild (package:flutter/src/widgets/framework.dart:3998:20)
+                                                                                                    #10     ComponentEleme
+2025-07-18 12:22:31.215 26902-26902 flutter                 com.lucasbeats.federacao             I  ----------------------------------------------------
+2025-07-18 12:22:38.654 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Erro ao carregar dados do relatório
+2025-07-18 12:22:38.654 26902-26902 flutter                 com.lucasbeats.federacao             I    Error: Error: Could not find the correct Provider<StatsService> above this AdminReportsScreen Widget
+                                                                                                    
+                                                                                                    This happens because you used a `BuildContext` that does not include the provider
+                                                                                                    of your choice. There are a few common scenarios:
+                                                                                                    
+                                                                                                    - You added a new provider in your `main.dart` and performed a hot-reload.
+                                                                                                      To fix, perform a hot-restart.
+                                                                                                    
+                                                                                                    - The provider you are trying to read is in a different route.
+                                                                                                    
+                                                                                                      Providers are "scoped". So if you insert of provider inside a route, then
+                                                                                                      other routes will not be able to access that provider.
+                                                                                                    
+                                                                                                    - You used a `BuildContext` that is an ancestor of the provider you are trying to read.
+                                                                                                    
+                                                                                                      Make sure that AdminReportsScreen is under your MultiProvider/Provider<StatsService>.
+                                                                                                      This usually happens when you are creating a provider and trying to read it immediately.
+                                                                                                    
+                                                                                                      For example, instead of:
+                                                                                                    
+                                                                                                      ```
+                                                                                                      Widget build(BuildContext context) {
+                                                                                                        return Provider<Example>(
+                                                                                                          create: (_) => Example(),
+                                                                                                          // Will throw a ProviderNotFoundError, because `context` is associate
+2025-07-18 12:22:38.654 26902-26902 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      Provider._inheritedElementOf (package:provider/src/provider.dart:377:7)
+                                                                                                    #1      Provider.of (package:provider/src/provider.dart:327:30)
+                                                                                                    #2      _AdminReportsScreenState._loadReportData (package:lucasbeatsfederacao/screens/admin/admin_reports_screen.dart:59:149)
+                                                                                                    #3      _AdminReportsScreenState.initState (package:lucasbeatsfederacao/screens/admin/admin_reports_screen.dart:49:85)
+                                                                                                    #4      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+                                                                                                    #5      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #6      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+                                                                                                    #7      Element.updateChild (package:flutter/src/widgets/framework.dart:3998:20)
+                                                                                                    #8      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+                                                                                                    #9      Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+                                                                                                    #10     StatelessElement.update (package:flutter/src/widgets/framework.dart:5787:5)
+                                                                                                    #11     Element.updateChild (pa
+2025-07-18 12:22:38.708 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-18 12:22:38.708 26902-26902 flutter                 com.lucasbeats.federacao             I    Error: A RenderFlex overflowed by 782 pixels on the bottom.
+2025-07-18 12:22:40.139 26902-26902 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Platform Error:
+2025-07-18 12:22:40.140 26902-26902 flutter                 com.lucasbeats.federacao             I    Error: dependOnInheritedWidgetOfExactType<_ScaffoldMessengerScope>() or dependOnInheritedElement() was called before _AdminSystemSettingsScreenState.initState() completed.
+                                                                                                    When an inherited widget changes, for example if the value of Theme.of() changes, its dependent widgets are rebuilt. If the dependent widget's reference to the inherited widget is in a constructor or an initState() method, then the rebuilt dependent widget will not reflect the changes in the inherited widget.
+                                                                                                    Typically references to inherited widgets should occur in widget build() methods. Alternatively, initialization based on inherited widgets can be placed in the didChangeDependencies method, which is called after initState and whenever the dependencies change thereafter.
+2025-07-18 12:22:40.140 26902-26902 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      StatefulElement.dependOnInheritedElement.<anonymous closure> (package:flutter/src/widgets/framework.dart:5946:9)
+                                                                                                    #1      StatefulElement.dependOnInheritedElement (package:flutter/src/widgets/framework.dart:5993:6)
+                                                                                                    #2      Element.dependOnInheritedWidgetOfExactType (package:flutter/src/widgets/framework.dart:4982:14)
+                                                                                                    #3      ScaffoldMessenger.of (package:flutter/src/material/scaffold.dart:159:17)
+                                                                                                    #4      _AdminSystemSettingsScreenState._loadSettings (package:lucasbeatsfederacao/screens/admin/admin_system_settings.dart:52:25)
+                                                                                                    #5      _AdminSystemSettingsScreenState.initState (package:lucasbeatsfederacao/screens/admin/admin_system_settings.dart:38:5)
+                                                                                                    #6      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+                                                                                                    #7      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #8      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+                                                                                                    #9      Element.updateChild (package:flutter/src/widgets/framework.dart:3998:20)
+                                                                                                    #10     C
+2025-07-18 12:22:40.140 26902-26902 flutter                 com.lucasbeats.federacao             I  ----------------FIREBASE CRASHLYTICS----------------
+2025-07-18 12:22:40.140 26902-26902 flutter                 com.lucasbeats.federacao             I  dependOnInheritedWidgetOfExactType<_ScaffoldMessengerScope>() or dependOnInheritedElement() was called before _AdminSystemSettingsScreenState.initState() completed.
+                                                                                                    When an inherited widget changes, for example if the value of Theme.of() changes, its dependent widgets are rebuilt. If the dependent widget's reference to the inherited widget is in a constructor or an initState() method, then the rebuilt dependent widget will not reflect the changes in the inherited widget.
+                                                                                                    Typically references to inherited widgets should occur in widget build() methods. Alternatively, initialization based on inherited widgets can be placed in the didChangeDependencies method, which is called after initState and whenever the dependencies change thereafter.
+2025-07-18 12:22:40.141 26902-26902 flutter                 com.lucasbeats.federacao             I  #0      StatefulElement.dependOnInheritedElement.<anonymous closure> (package:flutter/src/widgets/framework.dart:5946:9)
+                                                                                                    #1      StatefulElement.dependOnInheritedElement (package:flutter/src/widgets/framework.dart:5993:6)
+                                                                                                    #2      Element.dependOnInheritedWidgetOfExactType (package:flutter/src/widgets/framework.dart:4982:14)
+                                                                                                    #3      ScaffoldMessenger.of (package:flutter/src/material/scaffold.dart:159:17)
+                                                                                                    #4      _AdminSystemSettingsScreenState._loadSettings (package:lucasbeatsfederacao/screens/admin/admin_system_settings.dart:52:25)
+                                                                                                    #5      _AdminSystemSettingsScreenState.initState (package:lucasbeatsfederacao/screens/admin/admin_system_settings.dart:38:5)
+                                                                                                    #6      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+                                                                                                    #7      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #8      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+                                                                                                    #9      Element.updateChild (package:flutter/src/widgets/framework.dart:3998:20)
+                                                                                                    #10     ComponentEleme
+2025-07-18 12:22:40.141 26902-26902 flutter                 com.lucasbeats.federacao             I  ----------------------------------------------------
