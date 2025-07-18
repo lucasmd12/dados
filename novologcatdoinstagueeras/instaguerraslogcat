@@ -220,3 +220,317 @@
                                                                                                     #9      Element.updateChild (package:flutter/src/widgets/framework.dart:3998:20)
                                                                                                     #10     ComponentEleme
 2025-07-18 12:22:40.141 26902-26902 flutter                 com.lucasbeats.federacao             I  ----------------------------------------------------
+
+
+2025-07-18 12:24:02.251 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:24:03.812 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.hidden
+2025-07-18 12:24:03.812 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 6840fa81d3e355548749dfc6 to: offline
+2025-07-18 12:24:03.820 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:24:03.820 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para offline.
+2025-07-18 12:24:03.820 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.paused
+2025-07-18 12:24:03.820 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 6840fa81d3e355548749dfc6 to: offline
+2025-07-18 12:24:03.820 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:24:03.820 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para offline.
+2025-07-18 12:24:06.447 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.hidden
+2025-07-18 12:24:06.448 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 6840fa81d3e355548749dfc6 to: offline
+2025-07-18 12:24:06.448 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:24:06.448 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para offline.
+2025-07-18 12:24:06.448 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:24:06.726 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.resumed
+2025-07-18 12:24:06.726 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 6840fa81d3e355548749dfc6 to: online
+2025-07-18 12:24:06.726 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:24:06.726 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para online.
+2025-07-18 12:24:07.877 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:24:09.231 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.hidden
+2025-07-18 12:24:09.231 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 6840fa81d3e355548749dfc6 to: offline
+2025-07-18 12:24:09.232 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:24:09.232 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para offline.
+2025-07-18 12:24:09.232 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.paused
+2025-07-18 12:24:09.232 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 6840fa81d3e355548749dfc6 to: offline
+2025-07-18 12:24:09.232 26902-26902 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:24:09.232 26902-26902 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para offline.
+2025-07-18 12:24:23.850 26905-26905 flutter                 com.lucasbeats.federacao             I  [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(61)] Using the Impeller rendering backend (Vulkan).
+2025-07-18 12:24:23.998 26905-18818 flutter                 com.lucasbeats.federacao             I  The Dart VM service is listening on http://127.0.0.1:39611/-OaDVfZDbMc=/
+2025-07-18 12:24:25.054 26905-26905 FlutterWebRTCPlugin     com.lucasbeats.federacao             W  audioFocusChangeListener [Earpiece(name=Earpiece)] Earpiece(name=Earpiece)
+2025-07-18 12:24:25.055 26905-26905 FlutterWebRTCPlugin     com.lucasbeats.federacao             W  audioFocusChangeListener [Speakerphone(name=Speakerphone), Earpiece(name=Earpiece)] Speakerphone(name=Speakerphone)
+2025-07-18 12:24:25.404 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App Initialization Started.
+2025-07-18 12:24:25.410 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Screen orientation set to portrait.
+2025-07-18 12:24:25.410 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Running FEDERACAOMAD App.
+2025-07-18 12:24:25.512 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Building FEDERACAOMADApp Widget.
+2025-07-18 12:24:25.514 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] CIRURGIA: Verificando pulso inicial (status de autenticação)...
+2025-07-18 12:24:25.619 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AppLifecycleReactor initialized and observing.
+2025-07-18 12:24:25.961 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider initialized. Listening to AuthService changes.
+2025-07-18 12:24:25.962 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Status changed to Unauthenticated.
+2025-07-18 12:24:25.962 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Disconnecting SocketService...
+2025-07-18 12:24:25.963 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Disconnecting socket...
+2025-07-18 12:24:25.978 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Starting keep-alive service...
+2025-07-18 12:24:25.979 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Sending keep-alive ping...
+2025-07-18 12:24:26.906 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot update presence: currentUser is null when trying to update.
+2025-07-18 12:24:27.421 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Nenhum token encontrado. Paciente está em estado de 'não autenticado'.
+2025-07-18 12:24:27.423 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-18 12:24:27.935 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Server keep-alive ping successful.
+2025-07-18 12:24:27.936 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Keep-alive ping successful
+2025-07-18 12:24:40.657 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Checking if server is awake...
+2025-07-18 12:24:40.657 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Ensuring server is awake...
+2025-07-18 12:24:41.207 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Server keep-alive ping successful.
+2025-07-18 12:24:41.207 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Server is awake and responsive
+2025-07-18 12:24:41.208 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Attempting login for: lucasg
+2025-07-18 12:24:41.209 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] CIRURGIA: Iniciando procedimento de login para 'lucasg'.
+2025-07-18 12:24:41.209 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-18 12:24:41.245 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API POST Request: https://beckend-ydd1.onrender.com/api/auth/login, Data: {"username":"lucasg","password":"102030"}
+2025-07-18 12:24:42.884 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"_id":"687269d8678729a839de286f","username":"lucasg","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzI2OWQ4Njc4NzI5YTgzOWRlMjg2ZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUyODUyMjgzLCJleHAiOjE3NTU0NDQyODN9.H1rAtpKxI7rRozS2EkHc2-Ir0hthRkyhXW4GAdd-FnQ","role":"user","clan":"68731da5d99742b26a41b264","federation":null}
+2025-07-18 12:24:42.917 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.com/api/auth/profile
+2025-07-18 12:24:44.289 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"_id":"687269d8678729a839de286f","username":"lucasg","avatar":null,"bio":"","status":"offline","clan":{"_id":"68731da5d99742b26a41b264","name":"POCASIDEIA","tag":"PCD","customRoles":[]},"clanRole":"Leader","federation":null,"federationRole":null,"role":"user","online":true,"mustChangePasswordOnNextLogin":false,"passwordResetBy":null,"passwordResetAt":null,"ultimaAtividade":"2025-07-12T13:57:44.441Z","lastSeen":"2025-07-18T15:24:44.243Z","createdAt":"2025-07-12T13:57:44.442Z","updatedAt":"2025-07-18T15:24:44.244Z","__v":0}
+2025-07-18 12:24:44.296 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Perfil do usuário obtido com sucesso: lucasg
+2025-07-18 12:24:44.297 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-18 12:24:44.297 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Status changed to Authenticated.
+2025-07-18 12:24:44.297 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider: Connecting SocketService...
+2025-07-18 12:24:44.300 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Login bem-sucedido. Nova identidade assumida: lucasg
+2025-07-18 12:24:44.304 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] AuthProvider received notification from AuthService.
+2025-07-18 12:24:44.304 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Login successful via AuthService for user: lucasg
+2025-07-18 12:24:44.602 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Requesting necessary permissions...
+2025-07-18 12:24:44.668 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] HomeTab initialized
+2025-07-18 12:24:44.748 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.com/api/federations
+2025-07-18 12:24:44.768 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.com/api/federations/
+2025-07-18 12:24:44.783 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.com/api/global-chat/messages?page=1&limit=20
+2025-07-18 12:24:44.784 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Iniciando escuta de mensagens para global/global.
+2025-07-18 12:24:44.861 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.composts
+2025-07-18 12:24:44.880 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.comclan-wars
+2025-07-18 12:24:45.267 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.com/api/federations
+2025-07-18 12:24:45.735 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:24:46.276 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 401, Body: {"msg":"Não autorizado. Token ausente."}
+2025-07-18 12:24:46.278 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ API Error: 401 - Não autorizado. Token ausente. (Code: 401)
+2025-07-18 12:24:46.284 26905-26905 flutter                 com.lucasbeats.federacao             I  Error fetching federation details: Exception: Não autorizado. Token ausente. (Code: 401)
+2025-07-18 12:24:46.363 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Socket connection attempt failed: No JWT token or userId found.
+2025-07-18 12:24:46.392 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Login Screen Error
+2025-07-18 12:24:46.392 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: Bad state: No element
+2025-07-18 12:24:46.434 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Error fetching clan wars
+2025-07-18 12:24:46.434 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: ClientException with SocketException: Failed host lookup: 'beckend-ydd1.onrender.comclan-wars' (OS Error: No address associated with hostname, errno = 7), uri=https://beckend-ydd1.onrender.comclan-wars
+2025-07-18 12:24:46.434 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      IOClient.send (package:http/src/io_client.dart:154:7)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #2      _withClient (package:http/http.dart:167:12)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #3      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1064:7)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #4      ApiService.get.<anonymous closure> (package:lucasbeatsfederacao/services/api_service.dart:140:16)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #5      ApiService._makeRequestWithRetry (package:lucasbeatsfederacao/services/api_service.dart:91:26)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #6      ApiService.get (package:lucasbeatsfederacao/services/api_service.dart:139:28)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #7      ClanWarService.getClanWars (package:lucasbeatsfederacao/services/clan_war_service.dart:33:24)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #8      _ClanWarsListScreenState._fetchClanWars (package:lucasbeatsfederacao/screens/clan_wars_list_screen.dart:34:19)
+                                                                                                    <asynchronous 
+2025-07-18 12:24:46.442 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Error fetching posts
+2025-07-18 12:24:46.442 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: ClientException with SocketException: Failed host lookup: 'beckend-ydd1.onrender.composts' (OS Error: No address associated with hostname, errno = 7), uri=https://beckend-ydd1.onrender.composts
+2025-07-18 12:24:46.442 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      IOClient.send (package:http/src/io_client.dart:154:7)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #2      _withClient (package:http/http.dart:167:12)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #3      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1064:7)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #4      ApiService.get.<anonymous closure> (package:lucasbeatsfederacao/services/api_service.dart:140:16)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #5      ApiService._makeRequestWithRetry (package:lucasbeatsfederacao/services/api_service.dart:91:26)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #6      ApiService.get (package:lucasbeatsfederacao/services/api_service.dart:139:28)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #7      PostService.getPosts (package:lucasbeatsfederacao/services/post_service.dart:31:24)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #8      _InstaClanFeedScreenState._fetchPosts (package:lucasbeatsfederacao/screens/instaclan_feed_screen.dart:34:16)
+                                                                                                    <asynchronous suspension>
+2025-07-18 12:24:46.446 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-18 12:24:46.447 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: setState() or markNeedsBuild() called during build.
+                                                                                                    This _InheritedProviderScope<FederationService?> widget cannot be marked as needing to build because the framework is already in the process of building widgets. A widget can be marked as needing to be built during the build phase only if one of its ancestors is currently building. This exception is allowed because the framework builds parent widgets before children, which means a dirty descendant will always be built. Otherwise, the framework might not visit this widget during this build phase.
+                                                                                                    The widget on which setState() or markNeedsBuild() was called was:
+                                                                                                      _InheritedProviderScope<FederationService?>
+                                                                                                    The widget which was currently being built when the offending call was made was:
+                                                                                                      _VisibilityScope
+2025-07-18 12:24:46.448 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      Element.markNeedsBuild.<anonymous closure> (package:flutter/src/widgets/framework.dart:5271:9)
+                                                                                                    #1      Element.markNeedsBuild (package:flutter/src/widgets/framework.dart:5283:6)
+                                                                                                    #2      _InheritedProviderScopeElement.markNeedsNotifyDependents (package:provider/src/inherited_provider.dart:590:5)
+                                                                                                    #3      ChangeNotifier.notifyListeners (package:flutter/src/foundation/change_notifier.dart:435:24)
+                                                                                                    #4      FederationService.getAllFederations (package:lucasbeatsfederacao/services/federation_service.dart:21:5)
+                                                                                                    #5      _FederationExplorerScreenState._loadFederations (package:lucasbeatsfederacao/screens/exploration/federation_explorer_screen.dart:33:59)
+                                                                                                    #6      _FederationExplorerScreenState.initState (package:lucasbeatsfederacao/screens/exploration/federation_explorer_screen.dart:25:5)
+                                                                                                    #7      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+                                                                                                    #8      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #9      Element.inflateWidget (package:fl
+2025-07-18 12:24:47.451 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"success":true,"messages":[{"_id":"68686d4217257058945e7f1d","sender":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null,"id":"6840fa81d3e355548749dfc6"},"senderRole":"ADM","message":"aaa","type":"text","fileUrl":null,"systemInfo":null,"edited":false,"deleted":false,"reactions":[],"readBy":[],"timestamp":"2025-07-05T00:09:38.861Z","__v":0},{"_id":"6865602473db0d81206077ff","sender":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null,"id":"6840fa81d3e355548749dfc6"},"senderRole":"ADM","message":"aaa","type":"text","fileUrl":null,"systemInfo":null,"edited":false,"deleted":false,"reactions":[],"readBy":[],"timestamp":"2025-07-02T16:36:52.313Z","__v":0},{"_id":"6865466873db0d8120607749","sender":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null,"id":"6840fa81d3e355548749dfc6"},"senderRole":"ADM","message":"","type":"image","fileUrl":"/data/user/0/com.lucasbeats.federacao/cache/scaled_1002705581.jpg","systemInfo":null
+2025-07-18 12:24:47.457 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Mensagens carregadas para global/global: 20
+2025-07-18 12:24:47.759 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Intro music started playing.
+2025-07-18 12:24:48.349 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"success":true,"count":4,"total":4,"page":1,"pages":1,"data":[{"_id":"6865b594991986d59d2eea68","name":"FEDERACAO_6L","description":"BASE_INICIAL","banner":null,"leader":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null},"subLeaders":[],"clans":[{"_id":"68731da5d99742b26a41b264","name":"POCASIDEIA","tag":"PCD"},{"_id":"686886df967098f4aaba12ad","name":"AK47","tag":"MVK"}],"allies":[],"enemies":[],"createdAt":"2025-07-02T22:41:24.141Z","__v":2},{"_id":"6872e27752ddcab2851d51ac","name":"affa","banner":null,"leader":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null},"subLeaders":[],"clans":[],"allies":[],"enemies":[],"createdAt":"2025-07-12T22:32:23.620Z","__v":0},{"_id":"6872e2c352ddcab2851d51c7","name":"6667","description":"fgfg","banner":null,"leader":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null},"subLeaders":[],"clans":[],"allies":[],"enemies":[],"createdAt":"2025-07-12T22:33:39.720Z","__v":0},{"_id":"68
+2025-07-18 12:24:48.559 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API Response Status: 200, Body: {"success":true,"count":4,"total":4,"page":1,"pages":1,"data":[{"_id":"6865b594991986d59d2eea68","name":"FEDERACAO_6L","description":"BASE_INICIAL","banner":null,"leader":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null},"subLeaders":[],"clans":[{"_id":"68731da5d99742b26a41b264","name":"POCASIDEIA","tag":"PCD"},{"_id":"686886df967098f4aaba12ad","name":"AK47","tag":"MVK"}],"allies":[],"enemies":[],"createdAt":"2025-07-02T22:41:24.141Z","__v":2},{"_id":"6872e27752ddcab2851d51ac","name":"affa","banner":null,"leader":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null},"subLeaders":[],"clans":[],"allies":[],"enemies":[],"createdAt":"2025-07-12T22:32:23.620Z","__v":0},{"_id":"6872e2c352ddcab2851d51c7","name":"6667","description":"fgfg","banner":null,"leader":{"_id":"6840fa81d3e355548749dfc6","username":"idcloned","avatar":null},"subLeaders":[],"clans":[],"allies":[],"enemies":[],"createdAt":"2025-07-12T22:33:39.720Z","__v":0},{"_id":"68
+2025-07-18 12:24:49.114 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Notification permission granted.
+2025-07-18 12:24:49.129 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Storage permission denied.
+2025-07-18 12:24:49.131 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.resumed
+2025-07-18 12:24:49.131 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 687269d8678729a839de286f to: online
+2025-07-18 12:24:49.132 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:24:49.132 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para online.
+2025-07-18 12:24:49.170 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:24:50.297 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Microphone permission granted.
+2025-07-18 12:24:50.323 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.resumed
+2025-07-18 12:24:50.324 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 687269d8678729a839de286f to: online
+2025-07-18 12:24:50.324 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:24:50.324 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para online.
+2025-07-18 12:24:59.229 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:25:01.724 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.resumed
+2025-07-18 12:25:01.724 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 687269d8678729a839de286f to: online
+2025-07-18 12:25:01.724 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:25:01.724 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para online.
+2025-07-18 12:25:05.732 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-18 12:25:05.733 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: Null check operator used on a null value
+2025-07-18 12:25:05.738 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      QuickActionsWidget._buildLeaderActions.<anonymous closure>.<anonymous closure> (package:lucasbeatsfederacao/widgets/quick_actions_widget.dart:128:88)
+                                                                                                    #1      MaterialPageRoute.buildContent (package:flutter/src/material/page.dart:55:55)
+                                                                                                    #2      MaterialRouteTransitionMixin.buildPage (package:flutter/src/material/page.dart:193:27)
+                                                                                                    #3      _ModalScopeState.build.<anonymous closure>.<anonymous closure> (package:flutter/src/widgets/routes.dart:1206:57)
+                                                                                                    #4      Builder.build (package:flutter/src/widgets/basic.dart:7919:48)
+                                                                                                    #5      StatelessElement.build (package:flutter/src/widgets/framework.dart:5781:49)
+                                                                                                    #6      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5715:15)
+                                                                                                    #7      Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+                                                                                                    #8      ComponentElement._firstBuild (package:flutter/src/widgets/framework.dart:5697:5)
+                                                                                                    #9      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #10     Element.inflateWidget (package:flutter/src/wi
+2025-07-18 12:25:05.960 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-18 12:25:05.960 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: Invalid argument(s): No host specified in URI 
+2025-07-18 12:25:05.960 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      _HttpClient._openUrl (dart:_http/http_impl.dart:3019:9)
+                                                                                                    #1      _HttpClient.openUrl (dart:_http/http_impl.dart:2875:7)
+                                                                                                    #2      IOClient.send (package:http/src/io_client.dart:117:38)
+                                                                                                    #3      HttpFileService.get (package:flutter_cache_manager/src/web/file_service.dart:37:44)
+                                                                                                    #4      WebHelper._download (package:flutter_cache_manager/src/web/web_helper.dart:115:24)
+                                                                                                    #5      WebHelper._updateFile (package:flutter_cache_manager/src/web/web_helper.dart:96:28)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #6      WebHelper._downloadOrAddToQueue (package:flutter_cache_manager/src/web/web_helper.dart:64:7)
+                                                                                                    <asynchronous suspension>
+2025-07-18 12:25:17.828 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Notifications button pressed.
+2025-07-18 12:25:17.929 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-18 12:25:17.929 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: Error: Could not find the correct Provider<InviteService> above this InviteListScreen Widget
+                                                                                                    
+                                                                                                    This happens because you used a `BuildContext` that does not include the provider
+                                                                                                    of your choice. There are a few common scenarios:
+                                                                                                    
+                                                                                                    - You added a new provider in your `main.dart` and performed a hot-reload.
+                                                                                                      To fix, perform a hot-restart.
+                                                                                                    
+                                                                                                    - The provider you are trying to read is in a different route.
+                                                                                                    
+                                                                                                      Providers are "scoped". So if you insert of provider inside a route, then
+                                                                                                      other routes will not be able to access that provider.
+                                                                                                    
+                                                                                                    - You used a `BuildContext` that is an ancestor of the provider you are trying to read.
+                                                                                                    
+                                                                                                      Make sure that InviteListScreen is under your MultiProvider/Provider<InviteService>.
+                                                                                                      This usually happens when you are creating a provider and trying to read it immediately.
+                                                                                                    
+                                                                                                      For example, instead of:
+                                                                                                    
+                                                                                                      ```
+                                                                                                      Widget build(BuildContext context) {
+                                                                                                        return Provider<Example>(
+                                                                                                          create: (_) => Example(),
+                                                                                                          // Will throw a ProviderNotFoundError, because `context` is associated
+2025-07-18 12:25:17.931 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      Provider._inheritedElementOf (package:provider/src/provider.dart:377:7)
+                                                                                                    #1      Provider.of (package:provider/src/provider.dart:327:30)
+                                                                                                    #2      _InviteListScreenState.initState (package:lucasbeatsfederacao/screens/invite_list_screen.dart:26:31)
+                                                                                                    #3      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+                                                                                                    #4      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+                                                                                                    #5      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+                                                                                                    #6      Element.updateChild (package:flutter/src/widgets/framework.dart:4004:18)
+                                                                                                    #7      SingleChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:7008:14)
+                                                                                                    #8      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+                                                                                                    #9      Element.updateChild (package:flutter/src/widgets/framework.dart:4004:18)
+                                                                                                    #10     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+                                                                                                    #11     Element.rebuild (package:flutter/src/widgets/framework.da
+2025-07-18 12:25:18.170 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Flutter Error:
+2025-07-18 12:25:18.170 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: Invalid argument(s): No host specified in URI 
+2025-07-18 12:25:18.170 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      _HttpClient._openUrl (dart:_http/http_impl.dart:3019:9)
+                                                                                                    #1      _HttpClient.openUrl (dart:_http/http_impl.dart:2875:7)
+                                                                                                    #2      IOClient.send (package:http/src/io_client.dart:117:38)
+                                                                                                    #3      HttpFileService.get (package:flutter_cache_manager/src/web/file_service.dart:37:44)
+                                                                                                    #4      WebHelper._download (package:flutter_cache_manager/src/web/web_helper.dart:115:24)
+                                                                                                    #5      WebHelper._updateFile (package:flutter_cache_manager/src/web/web_helper.dart:96:28)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #6      WebHelper._downloadOrAddToQueue (package:flutter_cache_manager/src/web/web_helper.dart:64:7)
+                                                                                                    <asynchronous suspension>
+2025-07-18 12:25:21.158 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Switched to tab index: 1
+2025-07-18 12:25:32.201 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Switched to tab index: 2
+2025-07-18 12:25:36.393 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Switched to tab index: 3
+2025-07-18 12:25:39.850 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'new_message': Socket not connected.
+2025-07-18 12:25:39.850 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Mensagem enviada via Socket.IO para global/global: vdben
+2025-07-18 12:25:47.603 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:25:51.405 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.resumed
+2025-07-18 12:25:51.405 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 687269d8678729a839de286f to: online
+2025-07-18 12:25:51.405 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:25:51.405 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para online.
+2025-07-18 12:25:51.600 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Iniciando upload de arquivo para chat...
+2025-07-18 12:25:51.602 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Iniciando upload múltiplo de 1 arquivo(s)...
+2025-07-18 12:25:51.611 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Enviando 1 arquivo(s)...
+2025-07-18 12:25:53.089 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Exceção no upload múltiplo: FormatException: Unexpected character (at character 1)
+                                                                                                    <!DOCTYPE html>
+                                                                                                    ^
+2025-07-18 12:25:53.089 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Falha no upload do arquivo: Erro interno no upload: FormatException: Unexpected character (at character 1)
+                                                                                                    <!DOCTYPE html>
+                                                                                                    ^
+2025-07-18 12:25:57.094 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.inactive
+2025-07-18 12:26:00.425 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] App lifecycle state changed: AppLifecycleState.resumed
+2025-07-18 12:26:00.425 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Updating presence for user 687269d8678729a839de286f to: online
+2025-07-18 12:26:00.425 26905-26905 flutter                 com.lucasbeats.federacao             I  [WARN] ⚠️ Cannot emit event 'update_presence': Socket not connected.
+2025-07-18 12:26:00.425 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Status de presença atualizado para online.
+2025-07-18 12:26:00.813 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Iniciando upload de arquivo para chat...
+2025-07-18 12:26:00.813 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Iniciando upload múltiplo de 1 arquivo(s)...
+2025-07-18 12:26:00.815 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Enviando 1 arquivo(s)...
+2025-07-18 12:26:04.962 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Exceção no upload múltiplo: ClientException: Connection closed while receiving data, uri=https://beckend-ydd1.onrender.com/api/upload/multiple
+2025-07-18 12:26:04.962 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Falha no upload do arquivo: Erro interno no upload: ClientException: Connection closed while receiving data, uri=https://beckend-ydd1.onrender.com/api/upload/multiple
+2025-07-18 12:26:12.115 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Switched to tab index: 4
+2025-07-18 12:26:21.158 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Switched to tab index: 5
+2025-07-18 12:26:24.245 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Switched to tab index: 6
+2025-07-18 12:26:25.189 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.comclan-wars
+2025-07-18 12:26:25.238 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Error fetching clan wars
+2025-07-18 12:26:25.238 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: ClientException with SocketException: Failed host lookup: 'beckend-ydd1.onrender.comclan-wars' (OS Error: No address associated with hostname, errno = 7), uri=https://beckend-ydd1.onrender.comclan-wars
+2025-07-18 12:26:25.238 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      IOClient.send (package:http/src/io_client.dart:154:7)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #2      _withClient (package:http/http.dart:167:12)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #3      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1064:7)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #4      ApiService.get.<anonymous closure> (package:lucasbeatsfederacao/services/api_service.dart:140:16)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #5      ApiService._makeRequestWithRetry (package:lucasbeatsfederacao/services/api_service.dart:91:26)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #6      ApiService.get (package:lucasbeatsfederacao/services/api_service.dart:139:28)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #7      ClanWarService.getClanWars (package:lucasbeatsfederacao/services/clan_war_service.dart:33:24)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #8      _ClanWarsListScreenState._fetchClanWars (package:lucasbeatsfederacao/screens/clan_wars_list_screen.dart:34:19)
+                                                                                                    <asynchronous 
+2025-07-18 12:26:32.875 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] API GET Request: https://beckend-ydd1.onrender.comclan-wars
+2025-07-18 12:26:32.912 26905-26905 flutter                 com.lucasbeats.federacao             I  [ERROR] ❌ Error fetching clan wars
+2025-07-18 12:26:32.912 26905-26905 flutter                 com.lucasbeats.federacao             I    Error: ClientException with SocketException: Failed host lookup: 'beckend-ydd1.onrender.comclan-wars' (OS Error: No address associated with hostname, errno = 7), uri=https://beckend-ydd1.onrender.comclan-wars
+2025-07-18 12:26:32.913 26905-26905 flutter                 com.lucasbeats.federacao             I    StackTrace: #0      IOClient.send (package:http/src/io_client.dart:154:7)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #2      _withClient (package:http/http.dart:167:12)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #3      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1064:7)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #4      ApiService.get.<anonymous closure> (package:lucasbeatsfederacao/services/api_service.dart:140:16)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #5      ApiService._makeRequestWithRetry (package:lucasbeatsfederacao/services/api_service.dart:91:26)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #6      ApiService.get (package:lucasbeatsfederacao/services/api_service.dart:139:28)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #7      ClanWarService.getClanWars (package:lucasbeatsfederacao/services/clan_war_service.dart:33:24)
+                                                                                                    <asynchronous suspension>
+                                                                                                    #8      _ClanWarsListScreenState._fetchClanWars (package:lucasbeatsfederacao/screens/clan_wars_list_screen.dart:34:19)
+                                                                                                    <asynchronous 
+2025-07-18 12:26:36.050 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Switched to tab index: 7
+2025-07-18 12:26:47.193 26905-26905 flutter                 com.lucasbeats.federacao             I  [INFO] Switched to tab index: 7
+
